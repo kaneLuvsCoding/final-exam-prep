@@ -7,7 +7,7 @@ import { techWriting } from './techWriting';
 import { bmis } from './bmis';
 
 export const studyData = {
-  "ERP System": erp,
+  "ERP": erp,
   "SQM": sqm,
   "Analysis of Algorithm": algorithms,
   "Advanced DBMS": adbms,

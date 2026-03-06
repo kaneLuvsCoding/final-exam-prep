@@ -96,7 +96,7 @@ export const sqm = {
         "Integrated Case Tools: Integrated CASE tools are helpful in all stages of SDLC, from Requirement gathering to Testing and documentation."
       ]
     }],
-   "IDK TS": [
+   "Twak Sar": [
     {
       question: "Cost of removing defects",
       images: [
