@@ -18,7 +18,7 @@ export default function StudyHub() {
     return dateA - dateB;
   });
 
-  const [activeSubject, setActiveSubject] = useState("SQM");
+  const [activeSubject, setActiveSubject] = useState("Technical Writing");
   const subjectData = studyData[activeSubject];
   const isDocument = subjectData?.type === "document";
   
