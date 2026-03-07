@@ -737,7 +737,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
   const currentMockQuestion = mockExamQuestions[mockCurrentIndex] || null;
   const mockTimeLabel = `${String(Math.floor(mockTimeLeftSeconds / 60)).padStart(2, '0')}:${String(mockTimeLeftSeconds % 60).padStart(2, '0')}`;
   const topActionButtonClass =
-    "inline-flex items-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all backdrop-blur-sm text-xs md:text-sm border border-white/15 shadow-sm focus:outline-none";
+    "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/15 shadow-sm focus:outline-none focus:ring-2 focus:ring-white/40";
 
   return (
     <div className="h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans flex flex-col overflow-hidden relative">
@@ -791,38 +791,81 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
               
               {/* Sound Toggle */}
               <button
+                type="button"
                 onClick={() => setIsSoundEnabled(!isSoundEnabled)}
                 className={topActionButtonClass}
                 title={isSoundEnabled ? "Mute All Sounds" : "Enable Sounds"}
+                aria-label={isSoundEnabled ? "Mute All Sounds" : "Enable Sounds"}
               >
-                <span className="font-semibold">{isSoundEnabled ? "Sound On" : "Sound Off"}</span>
+                {isSoundEnabled ? (
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H3v6h3l5 4V5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.5 8.5a5 5 0 010 7" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.5 6a9 9 0 010 12" />
+                  </svg>
+                ) : (
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5L6 9H3v6h3l5 4V5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3l18 18" />
+                  </svg>
+                )}
               </button>
 
               {/* Dark Mode Toggle */}
               <button
+                type="button"
                 onClick={() => setIsDarkMode(!isDarkMode)}
                 className={topActionButtonClass}
                 title={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                aria-label={isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
               >
-                <span className="font-semibold">{isDarkMode ? "Light Mode" : "Dark Mode"}</span>
+                {isDarkMode ? (
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4" strokeWidth={2} />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+                  </svg>
+                ) : (
+                  <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z" />
+                  </svg>
+                )}
               </button>
 
               {/* Export Summary */}
               <button
+                type="button"
                 onClick={exportSessionSummary}
                 className={topActionButtonClass}
                 title="Export Session Summary"
+                aria-label="Export Session Summary"
               >
-                <span className="font-semibold">Export</span>
+                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v12" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 10l5 5 5-5" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 21h14" />
+                </svg>
               </button>
 
               {!isDocument && (
                 <button
+                  type="button"
                   onClick={toggleMockExamMode}
                   className={`${topActionButtonClass} ${isMockExamMode ? 'bg-emerald-500/20 border-emerald-200/40' : ''}`}
                   title={isMockExamMode ? "Exit Mock Exam Mode" : "Enter Mock Exam Mode"}
+                  aria-label={isMockExamMode ? "Exit Mock Exam Mode" : "Enter Mock Exam Mode"}
                 >
-                  <span className="font-semibold">{isMockExamMode ? "Exit Mock" : "Mock Exam"}</span>
+                  {isMockExamMode ? (
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 6l12 12M18 6L6 18" />
+                    </svg>
+                  ) : (
+                    <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3h6a1 1 0 011 1v1h2a1 1 0 011 1v13a2 2 0 01-2 2H7a2 2 0 01-2-2V6a1 1 0 011-1h2V4a1 1 0 011-1z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5h6" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 11h6" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 15h4" />
+                    </svg>
+                  )}
                 </button>
               )}
             </div>
