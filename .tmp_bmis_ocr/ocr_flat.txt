@@ -1,0 +1,346 @@
+## image1.png
+Transaction Cost Theory
+* Firms seek to economize on transaction costs (t/e costs of
+participating in markets)
+* IT lowers market transaction costs for a firm, making it
+worthwhile for firms to transact with other firms rather than
+grow the number of employees.
+
+## image10.png
+. woes
+Conversion ae
+™ Process of changing from old system to new system
+= Four main strategies
+1. Parallel strategy
+2. Direct cutover
+3. Pilot study
+4. Phased approach
+© Requires end-user training
+™ Finalization of detailed documentation showing how
+system works from technical and end-user standpoint
+
+## image11.png
+E- Business
+= The transformation of key business processes through
+the use of Internet technologies.
+® The key business processes are the organizational
+/ processes or units which include research and
+yo development, marketing, manufacturing and
+inbound and outbound logistics.
+™ The buy-side e-commerce transactions with suppliers
+and the sell-side e-commerce transactions with
+customers can also be considered to be key business
+processes.
+
+## image13.png
+—
+Drives of business Internet adoption
+® Potential for increased revenue arising from
+™ increased reach to a larger customer base
+and
+4 ®™ encouraging loyalty and
+y ™ repeat purchases among existing customers.
+® Cost reduction achieved through delivering services
+electronically.
+® Reductions include staff costs, transport costs
+and costs of materials such as paper.
+
+## image14.png
+Drivers of consumer Internet
+adoption
+® Strategy development for e-business how it is
+important that companies offering e-commerce
+services create a clear online value proposition
+(OVP) to encourage customers to use their
+specific online services.
+® Online value proposition (OVP) -A statement of
+the benefits of online services reinforces the core
+proposition and differentiates from an
+organization's offline offering and those of
+competitors.
+
+## image15.png
+= Typical benefits of online services are
+summarized by the ‘Six Cs’, a simple mnemonic
+IA to show different types of customer value:
+Content Convenience
+Customization Choice
+Community Cost reduction
+Faculty of Information Science
+
+## image16.png
+Marketplace channel structures
+|
+I ® Marketplace channel structures describe the
+way a manufacturer or selling organization
+delivers products and services to its
+customers.
+® Typical channel structures between business
+and consumer organizations are shown in
+Figure 2.5.
+® A distribution channel will consist of one or
+more intermediaries such as wholesalers and
+retailers.
+Faculty of Information Science
+ft
+a _ yN
+—=-\e
+> =)
+ED tusinese-to-consumer (826) transactions
+B28 and B2C interactions between an organization, its suppliers and its
+
+## image17.png
+> BUimjrate
+® The speed at which dotcoms spent investors’
+money.
+* Churn rate
+@=The proportion of customers (typically
+subscribers) that no longer purchase a
+company's products in a time period.
+
+## image18.png
+a B E-Business Ch-3 2 [Protected View) - PowerPoint m= - os x
+@ PROTECTED VIEW Be careful—files from the Internet can contain viruses. Unless you need to edit, it's safer to stay in Protected View. Enable Editing x
+ee EEE &
+* Mougayer (1998) identifies <> university
+SE different types of convergence:
+2c
+4 : Infrastructure convergence -
+. this is the increase in the number of delivery media channels for the
+= Internet such as phone lines, microwave (mobile phones), cable and
+oS satellite. These are now often being used in combination.
+4 2 Information appliance (technology) convergence -
+. the use of different hardware devices to access and deliver the
+*|4 content of the Internet.
+8 = Supplier convergence -
+10 . the overlap between suppliers such as Internet service providers,
+“lee online access providers and more traditional media suppliers such
+== as the telecommunications and cable companies
+3
+_ fFt$skh === corr. SE
+
+## image19.png
+= Prescriptive strategy approach
+® identifies three elements of strategy —
+1. strategic analysis,
+/ 2. strategic development and
+3. strategy implementation, and
+® these are linked together sequentially.
+= Emergent strategy approach
+® strategic analysis, strategic development and
+strategy implementation are interrelated.
+
+## image2.png
+Agency Cost Theory:
+* Firms experience agency costs (the cost of managing and
+supervising) which rise as firm grows
+* IT can reduce agency costs, making it possible for firms to
+grow without adding to the costs of supervising, and
+without adding employees
+
+## image20.png
+Push supply chain models
+= The push model
+® is illustrated by a manufacturer who perhaps
+develops an innovative product
+i "and then identifies a suitable target
+market (Figure 6.7(a))
+=A distribution channel is then created to
+push the product to the market.
+Faculty of Information Science
+Figure 6.7 (a) Push approach to supply chain management
+Push to customer
+——————
+Typical aim: Optimize the production process for cost and efficiency.
+Typical characteristics: | Manufacturer-led new product development,
+poor data integration through limited use of technology,
+long cycle and response times, and high inventory levels.
+Use of IS: Independent data management by supply chain members.
+Limited use of EDI.
+
+## image21.png
+Pull supply chain models
+= The alternative approach, the pull medel,
+@ is focused on the customer's needs and
+= starts with analysis of their requirements through
+/ market research and
+®™ close cooperation with customers and suppliers
+in new product development (Figure 6.7(b}}
+—_
+Figure 6.7 (b) Pull approach to supply chain management
+Pu tom customer
+—
+Typical aim: Enhance product and service quality.
+‘Typical characteristics: Market research driven, technology used to achieve
+‘research and data integraton, short cycle and
+response teres, ow nventory levels
+Use of IS: Integrated internal systems, information sharing between
+‘supply chan members. Extensive use of EDI and e-commerce,
+o often through B28 exchanges and intermediaries.
+a
+
+## image22.png
++ Procurement has not ‘raditionally been a
+significant topic for management study in
+comparison with other areas such as marketing,
+operations or strategy
++ Procurement activities include
+— searching and specification of product by the
+end-user
+— purchasing by the buyer
+— payment by an account and
+— receipt and distribution of goods within a
+warehouse
+—E-procurement can achieve significant
+savings and other benefits which directly
+impact upon the customer.
+
+## image23.png
+Risks and impacts of e-procurement <& ~onerotinonencny
+1. Organizational risks
+— If the cost savings are to be achieved it may be necessary to redeploy staff, or in the
+worst case make them redundant.
++ The threat of redundancy or redeployment is likely to lead to resistance to the
+introduction of the system and this needs to be managed.
++ The purchasing manager will have to carefully explain the reasons for introducing the
+new system.
+— Through empowerment of originators throughout the business to directly purchase their
+own items rather than through a purchasing department, there is a risk that some
+originators may take advantage of this.
++ This is known as ‘maverick or off-contract purchasing’, and it has always happened when
+items are ordered that are unnecessary or too expensive.
+
+## image24.png
+ee EEE EE a
+2. Failure to achieve real cost reductions
+— There is a risk that
+* the retum on investment (ROI) from introducing e-procurement may be lower than that
+forecast and
+* the introduction of the e-procurement system may not pay for itself.
+3. Technology risks
+— Tranmit (1999) reported the biggest barrier to automation of e-procurement as
+integration with existing financial systems, according to 60 per cent of respondents.
+
+## image3.png
+1. Business value chain model
+* Views firm as series of activities that add value to products or
+services
++ Highlights activities where competitive strategies can best be
+applied
++ Primary activities vs. support activities
+Business value chain model
+Primary activities are most directly related to the production and
+distribution _of the firm's products and services, which create
+value for the customer. Include:
+1. Inbound logistics
+(receiving and storing materials for distribution to production)
+2. Operations (transforms inputs into finished products)
+3, Outbound logistics (storing and distributing finished products)
+4, Sales and marketing (promoting and selling the firm's products)
+5. The service activity
+(maintenance and repair of the firm’s goods and service)
+
+## image4.png
+Example: A Coffee Shop
+EEO
++ Inbound Logistics: Buying coffee beans, milk, sugar
++ Operations: Brewing coffee, preparing drinks
++ Outbound Logistics: Serving to customers
++ Marketing & Sales: Social media promotions, discounts
++ Service: Afier-sales support, customer feedback
+Business value chain model
+Support activities make the delivery of the primary activities
+possible and consist of:
+1. Organization infrastructure (administration and
+management)
+2. Human resources (employee recruiting, hiring, and training)
+3. Technology (improving products and the production process)
+4. Procurement (purchasing input)
+
+## image5.png
+Example: A Coffee Shop
+* HR training for baristas
+* procurement of coffee machines
+* accounting
+* technology for POS system
+Business value chain model
+* At each stage, determine how information systems can ...
++ improve operational efficiency and
++ improve customer and supplier intimacy
+
+## image6.png
+’ DATA Warehouses
+= A data warehouse is a database that stores current and historical data of potential
+interest to decision makers throughout the company.
+= The data originate in many core operational transaction systems, such as systems
+for sales, customer accounts, and manufacturing, and may include data from Web
+site transactions.
+= The data warehouse consolidates and standardizes information from different
+‘operational databases so that the information can be used across the enterprise for
+management analysis and decision making.
+= A data warehouse system also provides a range of ad hoc and standardized query
+tools, analytical tools, and graphical reporting facilites.
+= Many firms use intranet portals to make the data warehouse information widely
+available throughout the firm_
+Facey ffarmaion Science
+> DATA Marts
+= Companies often build enterprise-wide data warehouses,
+where
+1. acentral data warehouse serves the entire
+organization
+2. smaller, decentralized warehouses called data marts
+/ © A data mart is a subset of a data warehouse in which
+a summarized or highly focused portion of the
+organization's data
+"is placed in a separate database for a specific
+population of users.
+
+## image7.png
+17.Online Analytical Processing and Data Mining
+OLAP supports multidimensional data analysis, enabling users to view the same data in
+different ways using multiple dimensions
+Each aspect of information— product, pricing, cost, region, or time period represents a
+different dimension.
+OLAP enables users to obtain online answers to ad hoc questions in a fairly rapid amount
+of time, even when the data are stored in very large databases — E.g., sales figures for
+multiple years
+Data mining is more discovery-driven.
+— provides insights into corporate data that cannot be obtained with OLAP by
+* finding hidden patterns and relationships in large databases and
+* inferring rules from them to predict future behavior.
+— The patterns and rules are used
+* to guide decision making and forecast the effect of those decisions.
+— The types of information obtainable from data mining include ... *
+associations, sequences, classifications, clusters, and forecasts.
+
+## image8.png
+Types of Knowledge
+® Knowledge residing in the minds of employees that has
+not been documented is called tacit knowledge.
+® Knowledge that has been documented is called explicit
+/ knowledge.
+® Knowledge can reside in e-mail, voice mail, graphics, and
+unstructured documents as well as structured documents.
+™ Knowledge is a different kind of firm asset from, say,
+buildings and financial assets
+
+## image9.png
+Structural organizational changes enabled by IT
+1. Automation
+‘Increases efficiency
+/ Replaces manual tasks
+/ 2. Rationalization of procedures
+Streamlines standard operating procedures
+"Often found in programs for making continuous
+quality improvements
+Fy tte See
+‘uctural organizational changes & guewenerny
+enabled by IT (Cont’d.)
+3. Business process redesign
+‘> Analyze, simplify, and redesign business processes
+‘Reorganize workflow, combine steps, eliminate
+/ repetition
+/ 4. Paradigm shifts
+Rethink nature of business
+‘Define new business model
+Change nature of organization
