@@ -1270,7 +1270,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                   </p>
                   
                   {/* NEW: VPN Warning Banner */}
-                  <div className="mt-3 flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg p-2.5">
+                  <div className="mt-3 flex hidden  items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg p-2.5">
                     <span className="text-amber-500 text-sm leading-none">⚠️</span>
                     <p className="text-[11px] text-amber-700 leading-snug font-medium">
                       <strong>VPN Required:</strong> Please turn on your VPN to use the AI Coach. 
@@ -1413,7 +1413,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                 </p>
                 
                 {/* NEW: VPN Warning Banner */}
-                <div className="mt-2 flex items-start gap-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-lg p-2">
+                <div className="mt-2 flex hidden items-start gap-2 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-700 rounded-lg p-2">
                   <span className="text-amber-500 text-xs leading-none">⚠️</span>
                   <p className="text-[10px] text-amber-700 dark:text-amber-300 leading-snug font-medium">
                     <strong>VPN Required:</strong> Please turn on your VPN. 
