@@ -740,7 +740,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
     "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/15 shadow-sm focus:outline-none focus:ring-2 focus:ring-white/40";
 
   return (
-    <div className="h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans flex flex-col overflow-hidden relative">
+    <div className="h-screen bg-slate-50 dark:bg-[#171717] text-slate-900 dark:text-slate-100 flex flex-col overflow-hidden relative">
       
       <style>{`
         .hide-scroll::-webkit-scrollbar { display: none; }
@@ -749,7 +749,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
 
       {/* REWARD POP-UP MODAL */}
       <div 
-        className={`fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 dark:bg-slate-900/80 backdrop-blur-sm transition-all duration-300 ${
+        className={`fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#171717]/60 dark:bg-[#171717]/80 backdrop-blur-sm transition-all duration-300 ${
           showCompletionModal ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       >
@@ -887,37 +887,39 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
           </div>
           
           {/* TOPICS NAV - Align Right with padding fix */}
-          <nav className="hide-scroll flex gap-3 overflow-x-auto py-2 px-1 snap-x w-full md:justify-end">
-            {isDocument ? (
-              <span className="px-5 py-2.5 rounded-full font-bold text-sm bg-white/10 text-white border border-white/20">
-                📄 Document Mode
-              </span>
-            ) : (
-              tabs.map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => {
-                    setActiveTab(tab);
-                    setOpenQuestionIndex(null);
-                  }}
-                  className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 whitespace-nowrap snap-start shrink-0 ${
-                    activeTab === tab 
-                      ? 'bg-white text-[#077d8a] shadow-md scale-105 transform' 
-                      : 'bg-[#045c66]/50 text-[#c7f0f4] hover:bg-[#045c66]/80 hover:text-white'
-                  }`}
-                >
-                  {tab}
-                </button>
-              ))
-            )}
-          </nav>
+          <div className="overflow-x-auto py-2 px-1 snap-x w-full md:justify-end">
+            <nav className="flex gap-3 min-w-max">
+              {isDocument ? (
+                <span className="px-5 py-2.5 rounded-full font-bold text-sm bg-white/10 text-white border border-white/20">
+                  📄 Document Mode
+                </span>
+              ) : (
+                tabs.map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => {
+                      setActiveTab(tab);
+                      setOpenQuestionIndex(null);
+                    }}
+                    className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 whitespace-nowrap snap-start shrink-0 ${
+                      activeTab === tab 
+                        ? 'bg-white text-[#077d8a] shadow-md scale-105 transform' 
+                        : 'bg-[#045c66]/50 text-[#c7f0f4] hover:bg-[#045c66]/80 hover:text-white'
+                    }`}
+                  >
+                    {tab}
+                  </button>
+                ))
+              )}
+            </nav>
+          </div>
         </div>
       </header>
 
       <div className="flex flex-1 overflow-hidden relative">
 
         {/* Desktop Sidebar Icons */}
-        <div className="hidden md:flex w-16 h-full shrink-0 border-r border-slate-200/60 dark:border-slate-700/70 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl z-20">
+        <div className="hidden md:flex w-16 h-full shrink-0 border-r border-slate-200/60 dark:border-slate-700/70 bg-white/70 dark:bg-[#171717]/70 backdrop-blur-xl z-20">
           <div className="w-full flex flex-col items-center pt-4">
             <button
               className="p-2.5 rounded-xl bg-slate-100/90 dark:bg-slate-800/90 text-slate-600 dark:text-slate-200 hover:bg-white dark:hover:bg-slate-700 hover:text-[#077d8a] border border-slate-200/80 dark:border-slate-700/80 shadow-sm transition-all"
@@ -937,12 +939,12 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
         
         {isSidebarOpen && (
           <div 
-            className="absolute inset-0 bg-slate-900/40 z-20 md:hidden backdrop-blur-md transition-opacity"
+            className="absolute inset-0 bg-[#171717]/40 z-20 md:hidden backdrop-blur-md transition-opacity"
             onClick={() => setIsSidebarOpen(false)}
           />
         )}
 
-        <aside className={`absolute md:relative w-[85%] h-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-r border-slate-200/60 dark:border-slate-700/60 flex flex-col shadow-2xl md:shadow-none z-30 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shrink-0 ${
+        <aside className={`absolute md:relative w-[85%] h-full bg-white/90 dark:bg-[#171717]/90 backdrop-blur-xl border-r border-slate-200/60 dark:border-slate-700/60 flex flex-col shadow-2xl md:shadow-none z-30 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shrink-0 ${
           isSidebarOpen
             ? 'translate-x-0 md:w-72 md:opacity-100'
             : '-translate-x-full md:translate-x-0 md:w-0 md:opacity-0 md:border-r-0 md:pointer-events-none'
@@ -999,7 +1001,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
               
               <div 
                 onClick={toggleSound}
-                className={`bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-2 text-rose-600 dark:text-rose-300 px-7 py-4 rounded-3xl flex flex-col items-center justify-center shadow-lg w-full md:w-auto md:min-w-[15rem] cursor-pointer hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all duration-300 select-none group ${
+                className={`bg-white/80 dark:bg-[#171717]/80 backdrop-blur-sm border-2 text-rose-600 dark:text-rose-300 px-7 py-4 rounded-3xl flex flex-col items-center justify-center shadow-lg w-full md:w-auto md:min-w-[15rem] cursor-pointer hover:-translate-y-1 active:translate-y-0 active:scale-95 transition-all duration-300 select-none group ${
                   isPlaying ? 'border-rose-400 dark:border-rose-500 bg-rose-50 dark:bg-rose-900/20 shadow-rose-200/60' : 'border-rose-100 dark:border-slate-700 hover:bg-rose-50 dark:hover:bg-slate-800 hover:border-rose-200 dark:hover:border-rose-500/60 shadow-rose-100/50'
                 }`}
               >
@@ -1013,13 +1015,13 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
             </header>
             
             {isDocument ? (
-              <div className="w-full bg-slate-200 dark:bg-slate-900 rounded-3xl shadow-md border border-slate-300 dark:border-slate-700 overflow-hidden flex flex-col h-[calc(100vh-16rem)] min-h-[500px]">
+              <div className="w-full bg-slate-200 dark:bg-[#171717] rounded-3xl shadow-md border border-slate-300 dark:border-slate-700 overflow-hidden flex flex-col h-[calc(100vh-16rem)] min-h-[500px]">
                 <object 
                   data={subjectData.file} 
                   type="application/pdf" 
                   className="w-full h-full flex-1"
                 >
-                  <div className="flex flex-col items-center justify-center h-full p-6 text-center bg-white dark:bg-slate-900">
+                  <div className="flex flex-col items-center justify-center h-full p-6 text-center bg-white dark:bg-[#171717]">
                     <div className="text-6xl mb-6">📄</div>
                     <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">PDF Viewer Blocked</h3>
                     <p className="text-slate-500 dark:text-slate-300 mb-8 max-w-md text-base">
@@ -1039,7 +1041,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
             ) : (
               <div className="flex flex-col">
                 {isMockExamMode ? (
-                  <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm p-4 md:p-6 shadow-sm">
+                  <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-[#171717]/80 backdrop-blur-sm p-4 md:p-6 shadow-sm">
                     {!isMockExamStarted ? (
                       <div className="space-y-5">
                         <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 font-semibold">
@@ -1108,7 +1110,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                             </h3>
 
                             {mockShowAnswer ? (
-                              <div className="mt-4 rounded-xl border border-[#077d8a]/30 bg-white dark:bg-slate-900 p-4 space-y-3">
+                              <div className="mt-4 rounded-xl border border-[#077d8a]/30 bg-white dark:bg-[#171717] p-4 space-y-3">
                                 {currentMockQuestion.type === "comparison" ? (
                                   <div className="overflow-x-auto">
                                     <table className="w-full text-left border-collapse min-w-[520px]">
@@ -1184,19 +1186,19 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                           <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-slate-50/80 dark:bg-slate-800/70 p-5 md:p-6">
                             <h3 className="text-2xl font-black text-slate-800 dark:text-slate-100 mb-4">Mock Exam Report</h3>
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                              <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3">
+                              <div className="rounded-xl bg-white dark:bg-[#171717] border border-slate-200 dark:border-slate-700 p-3">
                                 <p className="text-xs font-bold text-slate-500 dark:text-slate-300">Score</p>
                                 <p className="text-2xl font-black text-[#077d8a]">{mockCorrectCount}/{mockTotal}</p>
                               </div>
-                              <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3">
+                              <div className="rounded-xl bg-white dark:bg-[#171717] border border-slate-200 dark:border-slate-700 p-3">
                                 <p className="text-xs font-bold text-slate-500 dark:text-slate-300">Accuracy</p>
                                 <p className="text-2xl font-black text-emerald-600 dark:text-emerald-300">{mockAccuracy}%</p>
                               </div>
-                              <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3">
+                              <div className="rounded-xl bg-white dark:bg-[#171717] border border-slate-200 dark:border-slate-700 p-3">
                                 <p className="text-xs font-bold text-slate-500 dark:text-slate-300">Wrong</p>
                                 <p className="text-2xl font-black text-rose-600 dark:text-rose-300">{mockWrongCount}</p>
                               </div>
-                              <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 p-3">
+                              <div className="rounded-xl bg-white dark:bg-[#171717] border border-slate-200 dark:border-slate-700 p-3">
                                 <p className="text-xs font-bold text-slate-500 dark:text-slate-300">Skipped</p>
                                 <p className="text-2xl font-black text-amber-600 dark:text-amber-300">{mockSkippedCount}</p>
                               </div>
@@ -1303,7 +1305,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
 
         {/* --- DESKTOP AI SIDEBAR --- */}
         {isAiSidebarOpen && (
-          <aside className="hidden lg:flex w-[24rem] xl:w-[27rem] h-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-l border-slate-200/70 dark:border-slate-700/70 shrink-0 shadow-[0_0_40px_-15px_rgba(0,0,0,0.1)]">
+          <aside className="hidden lg:flex w-[24rem] xl:w-[27rem] h-full bg-white/95 dark:bg-[#171717]/95 backdrop-blur-xl border-l border-slate-200/70 dark:border-slate-700/70 shrink-0 shadow-[0_0_40px_-15px_rgba(0,0,0,0.1)]">
             <div className="w-full h-full p-4 xl:p-5 flex flex-col">
               <div className="mb-4 pb-4 border-b border-slate-200/80 dark:border-slate-700/80 flex justify-between items-start">
                 <div>
@@ -1379,7 +1381,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                     )}
 
                     {lastAiPrompt && (
-                      <div className="mb-3 p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                      <div className="mb-3 p-2.5 rounded-lg bg-white dark:bg-[#171717] border border-slate-200 dark:border-slate-700">
                         <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400 dark:text-slate-300 mb-1">You</p>
                         <p className="text-sm text-slate-700 dark:text-slate-100 whitespace-pre-wrap">{lastAiPrompt}</p>
                       </div>
@@ -1417,7 +1419,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
       {/* --- GLOBAL FLOATING AI BUTTON --- */}
       <button
         type="button"
-        className={`fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-white dark:bg-slate-900 shadow-2xl border-[3px] border-[#077d8a] hover:scale-105 active:scale-95 transition-all flex items-center justify-center ${
+        className={`fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-white dark:bg-[#171717] shadow-2xl border-[3px] border-[#077d8a] hover:scale-105 active:scale-95 transition-all flex items-center justify-center ${
           (isAiSidebarOpen || isMobileAiModalOpen) ? 'opacity-0 scale-50 pointer-events-none' : 'opacity-100 scale-100'
         }`}
         onClick={() => {
@@ -1439,13 +1441,13 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
         }`}
       >
         <div
-          className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-[#171717]/50 backdrop-blur-sm"
           onClick={() => setIsMobileAiModalOpen(false)}
         />
 
         <div className="relative h-full w-full p-3 flex items-end">
           <div
-            className="w-full max-h-[88vh] rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-2xl flex flex-col overflow-hidden"
+            className="w-full max-h-[88vh] rounded-2xl bg-white dark:bg-[#171717] border border-slate-200 dark:border-slate-700 shadow-2xl flex flex-col overflow-hidden"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="px-4 py-3 border-b border-slate-200/80 dark:border-slate-700/80 flex items-center justify-between">
@@ -1524,7 +1526,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                     )}
 
                     {lastAiPrompt && (
-                      <div className="mb-3 p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                      <div className="mb-3 p-2.5 rounded-lg bg-white dark:bg-[#171717] border border-slate-200 dark:border-slate-700">
                         <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400 dark:text-slate-300 mb-1">You</p>
                         <p className="text-sm text-slate-700 dark:text-slate-100 whitespace-pre-wrap">{lastAiPrompt}</p>
                       </div>
