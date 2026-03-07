@@ -138,7 +138,7 @@ export default function AccordionItem({
               )}
 
               {type === 'comparison' ? (
-                <div className="min-w-max md:min-w-0 overflow-hidden rounded-xl shadow-sm bg-slate-50/40 dark:bg-slate-800/60">
+                <div className="min-w-max md:min-w-0 overflow-hidden">
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="bg-[#077d8a]/10">
@@ -169,11 +169,11 @@ export default function AccordionItem({
                   </table>
                 </div>
               ) : (
-                <div className="max-w-none rounded-xl bg-slate-50/40 dark:bg-slate-800/60 p-4 md:p-5">
+                <div className="max-w-none">
                   {answer.map((paragraph, index) => (
                     <p
                       key={index}
-                      className="mb-4 text-slate-700 dark:text-slate-200 text-base md:text-[17px] font-semibold leading-8 text-justify hyphens-auto last:mb-0"
+                      className="mb-2 text-slate-700 dark:text-slate-200 text-base md:text-[17px] font-medium leading-6 text-justify last:mb-0"
                     >
                       {paragraph}
                     </p>
