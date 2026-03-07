@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { GoogleGenAI } from '@google/genai';
 import { studyData } from './data/index';
 import AccordionItem from './components/AccordionItem';
 
@@ -13,12 +12,6 @@ const examSchedule = {
 };
 
 const geminiModel = "gemini-3-flash-preview";
-const geminiApiKeyPrimary = import.meta.env.VITE_GEMINI_API_KEY;
-const geminiApiKeySecondary =
-  import.meta.env.VITE_GEMINI_API_KEY_2 || import.meta.env.VITE_GEMINI_API_KEY2;
-
-const geminiApiKeys = [...new Set([geminiApiKeyPrimary, geminiApiKeySecondary].filter(Boolean))];
-const geminiClients = geminiApiKeys.map((apiKey) => new GoogleGenAI({ apiKey }));
 
 const formatAnswerForAI = (qa) => {
   if (!qa) return "";
@@ -103,25 +96,31 @@ const toReadableAiError = (error) => {
   return fallback;
 };
 
-const isRateLimitOrQuotaError = (error) => {
-  const rawMessage = typeof error === "string" ? error : error instanceof Error ? error.message : "";
-  const payload = parseGeminiErrorPayload(error) || parseGeminiErrorPayload(rawMessage);
-  const status = payload?.status;
-  const code = Number(payload?.code);
-  const message = String(payload?.message || rawMessage || "");
+const extractGeminiText = (responsePayload) => {
+  if (!responsePayload || typeof responsePayload !== "object") return "";
 
-  if (status === "RESOURCE_EXHAUSTED" || code === 429) return true;
+  if (typeof responsePayload.text === "string" && responsePayload.text.trim()) {
+    return responsePayload.text.trim();
+  }
 
-  return /(rate.?limit|quota|too many requests|resource has been exhausted|token limit)/i.test(message);
-};
+  const candidates = Array.isArray(responsePayload.candidates)
+    ? responsePayload.candidates
+    : [];
 
-const isAuthKeyError = (error) => {
-  const rawMessage = typeof error === "string" ? error : error instanceof Error ? error.message : "";
-  const payload = parseGeminiErrorPayload(error) || parseGeminiErrorPayload(rawMessage);
-  const status = payload?.status;
-  const code = Number(payload?.code);
+  const parts = [];
+  for (const candidate of candidates) {
+    const contentParts = Array.isArray(candidate?.content?.parts)
+      ? candidate.content.parts
+      : [];
 
-  return status === "PERMISSION_DENIED" || status === "UNAUTHENTICATED" || code === 401 || code === 403;
+    for (const part of contentParts) {
+      if (typeof part?.text === "string" && part.text.trim()) {
+        parts.push(part.text.trim());
+      }
+    }
+  }
+
+  return parts.join("\n").trim();
 };
 
 const renderAiInline = (text) => {
@@ -331,11 +330,6 @@ export default function StudyHub() {
       return;
     }
 
-    if (geminiClients.length === 0) {
-      setAiError("Missing Gemini API key. Add VITE_GEMINI_API_KEY (and optional VITE_GEMINI_API_KEY_2) in your .env file.");
-      return;
-    }
-
     const formattedAnswer = formatAnswerForAI(targetQa);
     const userRequest = includeOptionalMessage ? aiPrompt.trim() : "";
 
@@ -381,55 +375,34 @@ export default function StudyHub() {
     }
 
     try {
-      let lastError = null;
-      let rateLimitFailureCount = 0;
+      const apiResponse = await fetch("/api/gemini", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: geminiModel,
+          prompt
+        })
+      });
 
-      for (const client of geminiClients) {
-        try {
-          const response = await client.models.generateContent({
-            model: geminiModel,
-            contents: prompt
-          });
+      const responsePayload = await apiResponse.json().catch(() => null);
 
-          const output = (
-            typeof response?.text === "function" ? response.text() : response?.text
-          )
-            ?.toString()
-            .trim();
-
-          if (!output) {
-            throw new Error("Gemini returned an empty response.");
-          }
-
-          setAiResponse(output);
-
-          if (includeOptionalMessage) {
-            setAiPrompt("");
-          }
-
-          return;
-        } catch (error) {
-          lastError = error;
-
-          if (isRateLimitOrQuotaError(error)) {
-            rateLimitFailureCount += 1;
-            continue;
-          }
-
-          if (isAuthKeyError(error)) {
-            continue;
-          }
-
-          break;
-        }
+      if (!apiResponse.ok) {
+        throw responsePayload?.error || responsePayload || new Error("Failed to get AI explanation.");
       }
 
-      if (rateLimitFailureCount === geminiClients.length) {
-        setAiError("AI chat is not available for limited tokens.");
-        return;
+      const output = extractGeminiText(responsePayload);
+
+      if (!output) {
+        throw new Error("Gemini returned an empty response.");
       }
 
-      throw lastError || new Error("Failed to get AI explanation.");
+      setAiResponse(output);
+
+      if (includeOptionalMessage) {
+        setAiPrompt("");
+      }
     } catch (error) {
       setAiError(toReadableAiError(error));
     } finally {

@@ -15,17 +15,27 @@ Study app for exam Q&A practice with subject tabs, progress tracking, and AI exp
 
 ## Gemini AI Sidebar Setup
 
-The right sidebar uses Gemini directly from the frontend (no backend required).
+The right sidebar calls a Vercel Serverless Function at `/api/gemini`.
 
 1. Copy `.env.example` to `.env`
-2. Add your Gemini API key:
+2. Add your Gemini server keys:
 	```bash
-	VITE_GEMINI_API_KEY=your_primary_gemini_api_key_here
-	VITE_GEMINI_API_KEY_2=your_backup_gemini_api_key_here
+	GEMINI_API_KEY=your_primary_gemini_api_key_here
+	GEMINI_API_KEY_BACKUP=your_backup_gemini_api_key_here
 	```
-3. Restart the dev server if it is already running
+3. For local testing with `/api/gemini`, run:
+	```bash
+	npx vercel dev
+	```
 
-When the primary key hits rate/quota limits, the app automatically tries the backup key.
+When the primary key hits auth/rate/quota limits, the serverless function automatically tries the backup key.
+
+## Deploy On Vercel (GitHub)
+
+1. Add `GEMINI_API_KEY` and `GEMINI_API_KEY_BACKUP` in Vercel Project Settings -> Environment Variables (Production)
+2. Commit and push your changes to the production branch connected to Vercel (usually `main`)
+3. Vercel will automatically build and deploy from GitHub
+4. If needed, use the Vercel dashboard "Redeploy" button for the latest commit
 
 ## AI Sidebar Behavior
 
