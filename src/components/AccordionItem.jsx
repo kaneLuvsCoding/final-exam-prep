@@ -16,7 +16,7 @@ export default function AccordionItem({
   isSendingToAi
 }) {
   return (
-    <div className="flex gap-3 md:gap-4 items-start w-full mb-4">
+    <div className="font-sans flex gap-3 md:gap-4 items-start w-full mb-4">
       <div
         onClick={onToggleMemorized}
         className={`mt-5 md:mt-6 flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-110 active:scale-95 ${
