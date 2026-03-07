@@ -226,6 +226,12 @@ export default function StudyHub() {
     if (typeof window === "undefined") return true;
     return window.innerWidth >= 768;
   });
+  
+  const [isAiSidebarOpen, setIsAiSidebarOpen] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth >= 1024;
+  });
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [showCompletionModal, setShowCompletionModal] = useState(false);
   const [activeAiQuestionIndex, setActiveAiQuestionIndex] = useState(null);
@@ -236,9 +242,7 @@ export default function StudyHub() {
   const [aiError, setAiError] = useState("");
   const [isAiLoading, setIsAiLoading] = useState(false);
 
-  // NEW: Global Sound Toggle State
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
-
   const [checkAudioIndex, setCheckAudioIndex] = useState(1);
 
   const [memorizedQs, setMemorizedQs] = useState(() => {
@@ -252,7 +256,6 @@ export default function StudyHub() {
 
   const [now, setNow] = useState(new Date());
   
-  // Audio Refs
   const popAudio = useRef(typeof Audio !== "undefined" ? new Audio('/pop.mp3') : null);
   const checkAudios = useRef([]);
 
@@ -315,6 +318,7 @@ export default function StudyHub() {
   };
 
   const currentQAs = isDocument ? [] : (subjectData?.[activeTab] || []);
+  
   const askAiForExplanation = async (qaIndex, includeOptionalMessage = false) => {
     if (isDocument) {
       setAiError("AI explanation works only in question tabs.");
@@ -367,6 +371,14 @@ export default function StudyHub() {
     setAiError("");
     setAiResponse("");
     setLastAiPrompt(userRequest || "ဒီ Q&A ကို မြန်မာလိုရှင်းပြပါ");
+
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) {
+        setIsAiSidebarOpen(true);
+      } else {
+        setIsMobileAiModalOpen(true);
+      }
+    }
 
     try {
       let lastError = null;
@@ -438,7 +450,7 @@ export default function StudyHub() {
     activeAiQuestionIndex !== null && aiPrompt.trim().length > 0 && !isAiLoading;
 
   const playCheckSound = (forceIndex = null) => {
-    if (!isSoundEnabled) return; // Prevent sound if muted
+    if (!isSoundEnabled) return; 
 
     const indexToPlay = forceIndex !== null ? forceIndex : checkAudioIndex;
     
@@ -501,7 +513,7 @@ export default function StudyHub() {
   };
 
   const toggleSound = () => {
-    if (!isSoundEnabled) return; // Prevent sound if muted
+    if (!isSoundEnabled) return; 
 
     if (popAudio.current) {
       if (isPlaying) {
@@ -560,7 +572,6 @@ export default function StudyHub() {
               allowFullScreen
             ></iframe>
           </div>
-
           
           <button 
             onClick={() => setShowCompletionModal(false)}
@@ -575,13 +586,14 @@ export default function StudyHub() {
       <header className="bg-gradient-to-r from-[#045c66] via-[#077d8a] to-[#0996a6] text-white shadow-lg z-40 shrink-0 border-b border-[#045c66]/30">
         <div className="px-4 md:px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
           
-          {/* Logo & Sound Toggle Wrapper */}
+          {/* Logo & Toggles Wrapper */}
           <div className="flex items-center justify-between shrink-0 w-full md:w-auto">
             <div className="flex items-center gap-3">
-              <h1 className="text-2xl md:text-3xl font-black tracking-tighter flex items-center gap-2 drop-shadow-sm">
-                E.X.A.M
+              <h1 className="text-2xl md:text-3xl font-black tracking-tighter flex items-center gap-2 drop-shadow-sm mr-2">
+                S.T.U.D.Y
               </h1>
               
+              {/* Sound Toggle */}
               <button 
                 onClick={() => setIsSoundEnabled(!isSoundEnabled)}
                 className="p-1.5 md:p-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all backdrop-blur-sm text-sm border border-white/10 shadow-sm focus:outline-none flex items-center justify-center"
@@ -591,6 +603,7 @@ export default function StudyHub() {
               </button>
             </div>
             
+            {/* Mobile Subject Menu Hamburger */}
             <button 
               className="md:hidden p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all backdrop-blur-sm ml-auto"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -606,11 +619,8 @@ export default function StudyHub() {
             </button>
           </div>
           
-          <nav className="hide-scroll flex gap-3 overflow-x-auto pb-2 md:pb-0 snap-x w-full md:justify-start">
-            <span className="px-5 py-2.5 rounded-full font-bold text-sm bg-white/10 text-white border border-white/20 whitespace-nowrap">
-              📚 {activeSubject}
-            </span>
-
+          {/* TOPICS NAV - Align Right with padding fix */}
+          <nav className="hide-scroll flex gap-3 overflow-x-auto py-2 px-1 snap-x w-full md:justify-end">
             {isDocument ? (
               <span className="px-5 py-2.5 rounded-full font-bold text-sm bg-white/10 text-white border border-white/20">
                 📄 Document Mode
@@ -639,6 +649,7 @@ export default function StudyHub() {
 
       <div className="flex flex-1 overflow-hidden relative">
 
+        {/* Desktop Sidebar Icons */}
         <div className="hidden md:flex w-16 h-full shrink-0 border-r border-slate-200/60 bg-white/70 backdrop-blur-xl z-20">
           <div className="w-full flex flex-col items-center pt-4">
             <button
@@ -787,7 +798,7 @@ export default function StudyHub() {
                   </div>
                 )}
 
-                <div className="flex gap-4 md:gap-8 relative mt-2">
+                <div className="flex gap-4 md:gap-8 relative mt-2 pb-24">
                   
                   <div className="flex-1 flex flex-col gap-2">
                     {currentQAs.map((qa, index) => {
@@ -836,96 +847,138 @@ export default function StudyHub() {
           </div>
         </main>
 
-        <aside className="hidden lg:flex w-[24rem] xl:w-[27rem] h-full bg-white/95 backdrop-blur-xl border-l border-slate-200/70 shrink-0">
-          <div className="w-full h-full p-4 xl:p-5 flex flex-col">
-            <div className="mb-4 pb-4 border-b border-slate-200/80">
-              <h3 className="text-sm font-black uppercase tracking-widest text-[#077d8a]/70">AI Chat</h3>
-              <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                Tap ✨ Send to AI on any question card to get Burmese explanation.
-              </p>
-            </div>
-
-            {isDocument ? (
-              <div className="flex-1 rounded-2xl border border-slate-200 bg-slate-50 text-slate-500 text-sm p-4 leading-relaxed">
-                AI explanation is available in question tabs only.
-              </div>
-            ) : (
-              <>
-                <label className="text-xs font-bold text-slate-500 mt-4 mb-2">Your Message (Optional)</label>
-                <textarea
-                  rows={3}
-                  value={aiPrompt}
-                  onChange={(event) => setAiPrompt(event.target.value)}
-                  placeholder="e.g. exam style answer format နဲ့ရှင်းပြပါ"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-700 resize-none focus:outline-none focus:ring-2 focus:ring-[#077d8a]/30 focus:border-[#077d8a]"
-                />
-
+        {/* --- DESKTOP AI SIDEBAR --- */}
+        {isAiSidebarOpen && (
+          <aside className="hidden lg:flex w-[24rem] xl:w-[27rem] h-full bg-white/95 backdrop-blur-xl border-l border-slate-200/70 shrink-0 shadow-[0_0_40px_-15px_rgba(0,0,0,0.1)]">
+            <div className="w-full h-full p-4 xl:p-5 flex flex-col">
+              <div className="mb-4 pb-4 border-b border-slate-200/80 flex justify-between items-start">
+                <div>
+                  <h3 className="text-sm font-black uppercase tracking-widest text-[#077d8a]/70">AI Chat</h3>
+                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                    Tap ✨ Send to AI on any question card to get Burmese explanation.
+                  </p>
+                  
+                  {/* NEW: VPN Warning Banner */}
+                  <div className="mt-3 flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg p-2.5">
+                    <span className="text-amber-500 text-sm leading-none">⚠️</span>
+                    <p className="text-[11px] text-amber-700 leading-snug font-medium">
+                      <strong>VPN Required:</strong> Please turn on your VPN to use the AI Coach. 
+                      <span className="block mt-0.5 opacity-80">(Note: US locations will NOT work)</span>
+                    </p>
+                  </div>
+                </div>
                 <button
                   type="button"
-                  onClick={sendOptionalMessageToAi}
-                  disabled={!canSendOptionalMessage}
-                  className={`mt-3 w-full py-2.5 rounded-xl font-bold text-sm transition-all ${
-                    canSendOptionalMessage
-                      ? 'bg-[#077d8a] text-white hover:bg-[#066d79] active:scale-[0.99]'
-                      : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                  }`}
+                  onClick={() => setIsAiSidebarOpen(false)}
+                  className="p-1.5 rounded-lg text-slate-400 hover:bg-rose-50 hover:text-rose-500 transition-colors"
+                  title="Close AI Chat"
                 >
-                  {isAiLoading ? 'Sending...' : 'Send Optional Msg to AI'}
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                 </button>
+              </div>
 
-                <p className="mt-2 text-[11px] text-slate-400 leading-relaxed">
-                  Card ✨ Send to AI and Optional Msg send are separate actions.
-                </p>
-
-                <div className="mt-4 flex-1 rounded-2xl border border-slate-200 bg-slate-50 p-3 overflow-y-auto hide-scroll">
-                  {!aiResponse && !aiError && !isAiLoading && (
-                    <p className="text-xs text-slate-500 leading-relaxed">
-                      AI response will appear here. This panel keeps only the latest response.
-                    </p>
-                  )}
-
-                  {isAiLoading && (
-                    <p className="text-xs text-[#077d8a] leading-relaxed font-semibold">
-                      Gemini is thinking...
-                    </p>
-                  )}
-
-                  {lastAiPrompt && (
-                    <div className="mb-3 p-2.5 rounded-lg bg-white border border-slate-200">
-                      <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-1">You</p>
-                      <p className="text-sm text-slate-700 whitespace-pre-wrap">{lastAiPrompt}</p>
-                    </div>
-                  )}
-
-                  {aiError && (
-                    <div className="mb-3 p-2.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-600 text-xs whitespace-pre-wrap">
-                      {aiError}
-                    </div>
-                  )}
-
-                  {aiResponse && (
-                    <div className="p-3 rounded-xl bg-gradient-to-b from-white to-slate-50 border border-[#077d8a]/20 shadow-sm">
-                      <p className="text-[11px] font-black uppercase tracking-wide text-[#077d8a] mb-2">Gemini Study Coach</p>
-                      {renderAiResponseForStudy(aiResponse)}
-                    </div>
-                  )}
+              {isDocument ? (
+                <div className="flex-1 rounded-2xl border border-slate-200 bg-slate-50 text-slate-500 text-sm p-4 leading-relaxed">
+                  AI explanation is available in question tabs only.
                 </div>
-              </>
-            )}
-          </div>
-        </aside>
+              ) : (
+                <>
+                  <label className="text-xs font-bold text-slate-500 mb-2">Your Message (Optional)</label>
+                  <textarea
+                    rows={3}
+                    value={aiPrompt}
+                    onChange={(event) => setAiPrompt(event.target.value)}
+                    placeholder="e.g. exam style answer format နဲ့ရှင်းပြပါ"
+                    className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-700 resize-none focus:outline-none focus:ring-2 focus:ring-[#077d8a]/30 focus:border-[#077d8a]"
+                  />
+
+                  <button
+                    type="button"
+                    onClick={sendOptionalMessageToAi}
+                    disabled={!canSendOptionalMessage}
+                    className={`mt-3 w-full py-2.5 rounded-xl font-bold text-sm transition-all ${
+                      canSendOptionalMessage
+                        ? 'bg-[#077d8a] text-white hover:bg-[#066d79] active:scale-[0.99]'
+                        : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                    }`}
+                  >
+                    {isAiLoading ? 'Sending...' : 'Send Optional Msg to AI'}
+                  </button>
+
+                  <p className="mt-2 text-[11px] text-slate-400 leading-relaxed">
+                    Card ✨ Send to AI and Optional Msg send are separate actions.
+                  </p>
+
+                  <div className="mt-4 flex-1 rounded-2xl border border-slate-200 bg-slate-50 p-3 overflow-y-auto hide-scroll relative">
+                    {!aiResponse && !aiError && !isAiLoading && (
+                      <p className="text-xs text-slate-500 leading-relaxed">
+                        AI response will appear here. This panel keeps only the latest response.
+                      </p>
+                    )}
+
+                    {isAiLoading && (
+                      <p className="text-xs text-[#077d8a] leading-relaxed font-semibold">
+                        Gemini is thinking...
+                      </p>
+                    )}
+
+                    {lastAiPrompt && (
+                      <div className="mb-3 p-2.5 rounded-lg bg-white border border-slate-200">
+                        <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400 mb-1">You</p>
+                        <p className="text-sm text-slate-700 whitespace-pre-wrap">{lastAiPrompt}</p>
+                      </div>
+                    )}
+
+                    {aiError && (
+                      <div className="mb-3 p-2.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-600 text-xs whitespace-pre-wrap">
+                        {aiError}
+                      </div>
+                    )}
+
+                    {aiResponse && (
+                      <div className="p-3 rounded-xl bg-gradient-to-b from-white to-slate-50 border border-[#077d8a]/20 shadow-sm mb-6">
+                        <p className="text-[11px] font-black uppercase tracking-wide text-[#077d8a] mb-2">Gemini Study Coach</p>
+                        {renderAiResponseForStudy(aiResponse)}
+                      </div>
+                    )}
+                    
+                  </div>
+                  
+                  {/* Footer Attribution */}
+                  <div className="mt-3 text-center text-[10px] text-slate-400">
+                    <a href="https://www.flaticon.com/free-icons/robot" title="robot icons" target="_blank" rel="noreferrer" className="hover:text-[#077d8a] transition-colors">
+                      Robot icons created by edt.im - Flaticon
+                    </a>
+                  </div>
+                </>
+              )}
+            </div>
+          </aside>
+        )}
 
       </div>
 
+      {/* --- GLOBAL FLOATING AI BUTTON --- */}
       <button
         type="button"
-        className="lg:hidden fixed bottom-5 right-4 z-40 w-14 h-14 rounded-full bg-[#077d8a] text-white shadow-lg border border-[#06606a] active:scale-95 transition-all flex items-center justify-center"
-        onClick={() => setIsMobileAiModalOpen((prev) => !prev)}
-        title={isMobileAiModalOpen ? "Hide AI Chat" : "Show AI Chat"}
+        className={`fixed bottom-6 right-6 z-40 w-16 h-16 rounded-full bg-white shadow-2xl border-[3px] border-[#077d8a] hover:scale-105 active:scale-95 transition-all flex items-center justify-center ${
+          (isAiSidebarOpen || isMobileAiModalOpen) ? 'opacity-0 scale-50 pointer-events-none' : 'opacity-100 scale-100'
+        }`}
+        onClick={() => {
+          if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+            setIsAiSidebarOpen(true);
+          } else {
+            setIsMobileAiModalOpen(true);
+          }
+        }}
+        title="Open AI Study Coach"
       >
-        <span className="text-2xl leading-none" aria-hidden="true">🤖</span>
+        <img src="/robot.png" alt="AI Chat" className="w-9 h-9 object-contain" />
       </button>
 
+      {/* Mobile AI Modal */}
       <div
         className={`lg:hidden fixed inset-0 z-[85] transition-all duration-200 ${
           isMobileAiModalOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
@@ -947,11 +1000,20 @@ export default function StudyHub() {
                 <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                   Tap ✨ Send to AI on any question card to get Burmese explanation.
                 </p>
+                
+                {/* NEW: VPN Warning Banner */}
+                <div className="mt-2 flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg p-2">
+                  <span className="text-amber-500 text-xs leading-none">⚠️</span>
+                  <p className="text-[10px] text-amber-700 leading-snug font-medium">
+                    <strong>VPN Required:</strong> Please turn on your VPN. 
+                    <span className="block mt-0.5 opacity-80">(US locations will NOT work)</span>
+                  </p>
+                </div>
               </div>
 
               <button
                 type="button"
-                className="w-9 h-9 rounded-full bg-rose-500 text-white border border-rose-600 shadow-sm hover:bg-rose-600 active:scale-95 transition-all flex items-center justify-center"
+                className="w-9 h-9 rounded-full bg-rose-500 text-white border border-rose-600 shadow-sm hover:bg-rose-600 active:scale-95 transition-all flex items-center justify-center shrink-0 ml-3"
                 onClick={() => setIsMobileAiModalOpen(false)}
                 title="Close AI Chat"
               >
@@ -961,7 +1023,7 @@ export default function StudyHub() {
               </button>
             </div>
 
-            <div className="p-4 overflow-y-auto hide-scroll">
+            <div className="p-4 overflow-y-auto hide-scroll flex flex-col h-full">
               {isDocument ? (
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 text-slate-500 text-sm p-4 leading-relaxed">
                   AI explanation is available in question tabs only.
@@ -994,7 +1056,7 @@ export default function StudyHub() {
                     Card ✨ Send to AI and Optional Msg send are separate actions.
                   </p>
 
-                  <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3 max-h-[52vh] overflow-y-auto hide-scroll">
+                  <div className="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-3 max-h-[48vh] overflow-y-auto hide-scroll">
                     {!aiResponse && !aiError && !isAiLoading && (
                       <p className="text-xs text-slate-500 leading-relaxed">
                         AI response will appear here. This panel keeps only the latest response.
@@ -1021,11 +1083,18 @@ export default function StudyHub() {
                     )}
 
                     {aiResponse && (
-                      <div className="p-3 rounded-xl bg-gradient-to-b from-white to-slate-50 border border-[#077d8a]/20 shadow-sm">
+                      <div className="p-3 rounded-xl bg-gradient-to-b from-white to-slate-50 border border-[#077d8a]/20 shadow-sm mb-2">
                         <p className="text-[11px] font-black uppercase tracking-wide text-[#077d8a] mb-2">Gemini Study Coach</p>
                         {renderAiResponseForStudy(aiResponse)}
                       </div>
                     )}
+                  </div>
+                  
+                  {/* Footer Attribution */}
+                  <div className="mt-auto pt-4 pb-2 text-center text-[10px] text-slate-400 shrink-0">
+                    <a href="https://www.flaticon.com/free-icons/robot" title="robot icons" target="_blank" rel="noreferrer" className="hover:text-[#077d8a] transition-colors">
+                      Robot icons created by edt.im - Flaticon
+                    </a>
                   </div>
                 </>
               )}
