@@ -1,16 +1,34 @@
-# React + Vite
+# Final Exam Prep (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Study app for exam Q&A practice with subject tabs, progress tracking, and AI explanation support.
 
-Currently, two official plugins are available:
+## Run Locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies
+	```bash
+	npm install
+	```
+2. Start development server
+	```bash
+	npm run dev
+	```
 
-## React Compiler
+## Gemini AI Sidebar Setup
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The right sidebar uses Gemini directly from the frontend (no backend required).
 
-## Expanding the ESLint configuration
+1. Copy `.env.example` to `.env`
+2. Add your Gemini API key:
+	```bash
+	VITE_GEMINI_API_KEY=your_primary_gemini_api_key_here
+	VITE_GEMINI_API_KEY_2=your_backup_gemini_api_key_here
+	```
+3. Restart the dev server if it is already running
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+When the primary key hits rate/quota limits, the app automatically tries the backup key.
+
+## AI Sidebar Behavior
+
+- Click **✨ Send to AI** button on any question card
+- Optional: add a custom prompt in the right sidebar first
+- Only the latest request/response is shown (no chat memory/history)

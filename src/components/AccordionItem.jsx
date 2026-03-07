@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function AccordionItem({ question, answer, type, headers, images, pdfLink, isOpen, onClick, isMemorized, onToggleMemorized }) {
+export default function AccordionItem({ question, answer, type, headers, images, pdfLink, isOpen, onClick, isMemorized, onToggleMemorized, onSendToAi, isAiSelected, isSendingToAi }) {
   return (
     // NEW: Outer Flex Container that puts the checkbox and the card side-by-side
     <div className="flex gap-3 md:gap-4 items-start w-full mb-4">
@@ -32,10 +32,10 @@ export default function AccordionItem({ question, answer, type, headers, images,
       >
         {/* Header Container */}
         <div
-          className="w-full text-left p-5 md:p-6 flex justify-between items-start md:items-center bg-transparent cursor-pointer select-none group"
+          className="w-full text-left p-4 md:p-6 flex flex-col gap-3 md:flex-row md:justify-between md:items-center bg-transparent cursor-pointer select-none group"
           onClick={onClick}
         >
-          <div className="flex items-start md:items-center pr-4">
+          <div className="flex items-start md:items-center md:pr-4 min-w-0">
             {/* Question Text */}
             <span className={`font-bold text-base md:text-lg leading-snug transition-colors duration-200 ${
               isOpen 
@@ -46,12 +46,42 @@ export default function AccordionItem({ question, answer, type, headers, images,
             </span>
           </div>
 
-          {/* Dropdown Caret */}
-          <span className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 mt-0.5 md:mt-0 ${
-            isOpen ? 'bg-[#077d8a]/10 text-[#077d8a] rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-[#077d8a]/10 group-hover:text-[#077d8a]'
-          }`}>
-            ▼
-          </span>
+          <div className="flex items-center gap-2 shrink-0 self-end md:self-auto">
+            {isAiSelected && !isSendingToAi && (
+              <span
+                className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#077d8a]/10 text-[#077d8a] border border-[#077d8a]/20 shadow-sm"
+                title="Selected for AI"
+              >
+                🤖
+              </span>
+            )}
+
+            {onSendToAi && (
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onSendToAi();
+                }}
+                disabled={isSendingToAi}
+                className={`px-3 py-1.5 rounded-full text-xs font-black border transition-all shadow-sm ${
+                  isSendingToAi
+                    ? 'bg-[#077d8a]/10 text-[#077d8a] border-[#077d8a]/30 cursor-wait'
+                    : isAiSelected
+                      ? 'bg-[#077d8a]/10 text-[#077d8a] border-[#077d8a]/30 hover:bg-[#077d8a]/20'
+                      : 'bg-rose-50 text-rose-500 border-rose-200 hover:bg-rose-100 hover:text-rose-600'
+                }`}
+              >
+                {isSendingToAi ? 'Sending...' : '✨ Send to AI'}
+              </button>
+            )}
+
+            <span className={`w-8 h-8 flex items-center justify-center rounded-full transition-all duration-300 ${
+              isOpen ? 'bg-[#077d8a]/10 text-[#077d8a] rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-[#077d8a]/10 group-hover:text-[#077d8a]'
+            }`}>
+              ▼
+            </span>
+          </div>
         </div>
         
         {/* Animated Body */}
@@ -94,7 +124,7 @@ export default function AccordionItem({ question, answer, type, headers, images,
 
               {/* Render Table or Text */}
               {type === "comparison" ? (
-                <div className="min-w-max md:min-w-0 overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                <div className="min-w-max md:min-w-0 overflow-hidden rounded-xl border border-slate-200 shadow-sm bg-slate-50/40">
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="bg-[#077d8a]/10">
@@ -109,7 +139,7 @@ export default function AccordionItem({ question, answer, type, headers, images,
                       {answer.map((row, rowIdx) => (
                         <tr key={rowIdx} className="hover:bg-slate-50 transition-colors">
                           {row.map((cell, cellIdx) => (
-                            <td key={cellIdx} className={`p-4 text-slate-600 text-[14px] md:text-[15px] align-top whitespace-pre-line ${cellIdx < row.length - 1 ? 'border-r border-slate-100' : ''}`}>
+                            <td key={cellIdx} className={`p-4 text-slate-700 text-[15px] md:text-base font-semibold leading-relaxed align-top whitespace-pre-line ${cellIdx < row.length - 1 ? 'border-r border-slate-100' : ''}`}>
                               {cell}
                             </td>
                           ))}
@@ -119,11 +149,11 @@ export default function AccordionItem({ question, answer, type, headers, images,
                   </table>
                 </div>
               ) : (
-                <div className="prose prose-slate max-w-none">
+                <div className="max-w-none rounded-xl border border-slate-200/80 bg-slate-50/40 p-4 md:p-5">
                   {answer.map((paragraph, index) => (
                     <p 
                       key={index} 
-                      className="mb-4 text-slate-600 text-[15px] md:text-base leading-relaxed text-justify hyphens-auto last:mb-0"
+                      className="mb-4 text-slate-700 text-base md:text-[17px] font-semibold leading-8 text-justify hyphens-auto last:mb-0"
                     >
                       {paragraph}
                     </p>
