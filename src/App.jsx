@@ -727,10 +727,10 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
   const currentMockQuestion = mockExamQuestions[mockCurrentIndex] || null;
   const mockTimeLabel = `${String(Math.floor(mockTimeLeftSeconds / 60)).padStart(2, '0')}:${String(mockTimeLeftSeconds % 60).padStart(2, '0')}`;
   const topActionButtonClass =
-    "inline-flex items-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all backdrop-blur-sm text-xs md:text-sm border border-white/15 shadow-sm focus:outline-none";
+    "inline-flex items-center gap-2 px-3 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-all backdrop-blur-sm text-xs md:text-sm border border-white/15 shadow-sm focus:outline-none shrink-0 whitespace-nowrap";
 
   return (
-    <div className="h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans flex flex-col overflow-hidden relative">
+    <div className="h-dvh min-h-dvh bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-sans flex flex-col overflow-hidden relative">
       
       <style>{`
         .hide-scroll::-webkit-scrollbar { display: none; }
@@ -773,9 +773,9 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
         <div className="px-4 md:px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
           
           {/* Logo & Toggles Wrapper */}
-          <div className="flex items-center justify-between shrink-0 w-full md:w-auto">
-            <div className="flex items-center gap-3">
-              <h1 className="text-2xl md:text-3xl font-black tracking-tighter flex items-center gap-2 drop-shadow-sm mr-2">
+          <div className="flex items-center justify-between shrink-0 w-full md:w-auto gap-2">
+            <div className="flex items-center gap-2 md:gap-3 min-w-0 overflow-x-auto hide-scroll pr-2">
+              <h1 className="text-xl md:text-3xl font-black tracking-tighter flex items-center gap-2 drop-shadow-sm mr-1 md:mr-2 shrink-0">
                 S.T.U.D.Y
               </h1>
               
@@ -819,7 +819,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
             
             {/* Mobile Subject Menu Hamburger */}
             <button 
-              className="md:hidden p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all backdrop-blur-sm ml-auto"
+              className="md:hidden p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all backdrop-blur-sm shrink-0"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               title={isSidebarOpen ? "Hide Subjects Menu" : "Show Subjects Menu"}
             >
@@ -1172,7 +1172,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                 ) : (
                 <>
                 {totalQs > 0 && (
-                  <div className="flex justify-between items-center mb-4 px-1">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-4 px-1">
                     <div className="text-sm font-bold flex items-center gap-2">
                       <span className={`px-2 py-1 rounded-md transition-colors ${
                         memorizedCount === totalQs ? 'text-emerald-600 dark:text-emerald-300 bg-emerald-500/10 dark:bg-emerald-500/20' : 'text-slate-400 dark:text-slate-300'
@@ -1180,16 +1180,16 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                         {memorizedCount}/{totalQs} Completed
                       </span>
                     </div>
-                    <div className="flex gap-4">
+                    <div className="flex gap-3 flex-wrap">
                       <button 
                         onClick={handleSelectAll}
-                        className="text-sm font-bold text-[#077d8a] hover:text-[#055c66] transition-colors"
+                        className="text-xs sm:text-sm font-bold text-[#077d8a] hover:text-[#055c66] transition-colors"
                       >
                         ✓ Select All
                       </button>
                       <button 
                         onClick={handleUnselectAll}
-                        className="text-sm font-bold text-slate-400 dark:text-slate-300 hover:text-rose-500 dark:hover:text-rose-300 transition-colors"
+                        className="text-xs sm:text-sm font-bold text-slate-400 dark:text-slate-300 hover:text-rose-500 dark:hover:text-rose-300 transition-colors"
                       >
                         ✕ Unselect All
                       </button>
@@ -1224,7 +1224,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                   </div>
 
                   {totalQs > 0 && (
-                    <div className="w-1.5 md:w-5 flex-shrink-0 flex flex-col items-center">
+                    <div className="hidden sm:flex sm:w-1.5 md:w-5 flex-shrink-0 flex-col items-center">
                       <div className="sticky top-6 h-[35vh] md:h-[calc(100vh-20rem)] min-h-[150px] md:min-h-[300px] flex flex-col items-center">
                         <div className="flex-1 w-full bg-slate-200/80 dark:bg-slate-800/90 rounded-full overflow-hidden flex flex-col justify-end shadow-inner border border-slate-300/50 dark:border-slate-700/70">
                           <div 
