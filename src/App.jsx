@@ -12,7 +12,6 @@ const examSchedule = {
 };
 
 const geminiModel = "gemini-3-flash-preview";
-const BMIS_ALL_TAB = "All BMIS Data";
 const MOCK_EXAM_DEFAULT_COUNT = 10;
 const MOCK_EXAM_DEFAULT_MINUTES = 20;
 
@@ -240,11 +239,7 @@ export default function StudyHub() {
   const subjectData = studyData[activeSubject];
   const isDocument = subjectData?.type === "document";
   
-  const tabs = isDocument
-    ? []
-    : activeSubject === "BMIS"
-      ? [BMIS_ALL_TAB, ...Object.keys(subjectData || {})]
-      : Object.keys(subjectData || {});
+  const tabs = isDocument ? [] : Object.keys(subjectData || {});
   const [activeTab, setActiveTab] = useState(tabs[0] || "");
   const [openQuestionIndex, setOpenQuestionIndex] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
@@ -316,10 +311,6 @@ export default function StudyHub() {
   }, [isDarkMode]);
 
   useEffect(() => {
-    // You can add any logic here if needed, or remove this empty useEffect.
-  }, []);
-
-  useEffect(() => {
     if (typeof Audio !== "undefined") {
       checkAudios.current = [1, 2, 3, 4, 5, 6, 7, 8].map(num => {
         const audio = new Audio(`/${num}.mp3`);
@@ -340,9 +331,7 @@ export default function StudyHub() {
 
   useEffect(() => {
     if (!isDocument) {
-      const subjectTabs = Object.keys(studyData[activeSubject] || {});
-      const newTabs =
-        activeSubject === "BMIS" ? [BMIS_ALL_TAB, ...subjectTabs] : subjectTabs;
+      const newTabs = Object.keys(studyData[activeSubject] || {});
       setActiveTab(newTabs.length > 0 ? newTabs[0] : "");
     }
     setOpenQuestionIndex(null);
@@ -405,32 +394,13 @@ export default function StudyHub() {
     }
   };
 
-  const currentQAs = (() => {
-    if (isDocument) return [];
+  const currentQAs = isDocument ? [] : (subjectData?.[activeTab] || []);
 
-    if (activeSubject === "BMIS" && activeTab === BMIS_ALL_TAB) {
-      return Object.entries(subjectData || {}).flatMap(([sectionName, qaList]) => {
-        if (!Array.isArray(qaList)) return [];
-        return qaList.map((qa, index) => ({
-          ...qa,
-          question: `[${sectionName}] ${qa.question}`,
-          _sourceTab: sectionName,
-          _sourceIndex: index
-        }));
-      });
-    }
-
-    return subjectData?.[activeTab] || [];
-  })();
-
-  const getQaStorageId = (qa, index) => {
-    if (activeSubject === "BMIS" && activeTab === BMIS_ALL_TAB) {
-      return `${activeSubject}-${qa?._sourceTab || activeTab}-${qa?._sourceIndex ?? index}`;
-    }
+  const getQaStorageId = (index) => {
     return `${activeSubject}-${activeTab}-${index}`;
   };
 
-  const currentQaIds = currentQAs.map((qa, index) => getQaStorageId(qa, index));
+  const currentQaIds = currentQAs.map((_, index) => getQaStorageId(index));
   
   const askAiForExplanation = async (qaIndex, includeOptionalMessage = false) => {
     if (isDocument) {
@@ -452,10 +422,7 @@ export default function StudyHub() {
       return;
     }
 
-    const topicForPrompt =
-      activeSubject === "BMIS" && activeTab === BMIS_ALL_TAB
-        ? targetQa._sourceTab || activeTab
-        : activeTab;
+    const topicForPrompt = activeTab;
 
     const prompt = [
       "You are a patient exam tutor.",
@@ -586,8 +553,8 @@ export default function StudyHub() {
 
   const handleSelectAll = () => {
     const next = { ...memorizedQs };
-    currentQAs.forEach((qa, index) => {
-      const id = getQaStorageId(qa, index);
+    currentQAs.forEach((_, index) => {
+      const id = getQaStorageId(index);
       next[id] = true;
     });
 
@@ -597,8 +564,8 @@ export default function StudyHub() {
 
   const handleUnselectAll = () => {
     const next = { ...memorizedQs };
-    currentQAs.forEach((qa, index) => {
-      next[getQaStorageId(qa, index)] = false;
+    currentQAs.forEach((_, index) => {
+      next[getQaStorageId(index)] = false;
     });
     setMemorizedQs(next);
     localStorage.setItem('memorizedFinalsData', JSON.stringify(next));
@@ -615,7 +582,7 @@ export default function StudyHub() {
   };
 
   const startMockExam = () => {
-    const pool = currentQAs.map((qa, index) => ({ ...qa, _mockId: getQaStorageId(qa, index) }));
+    const pool = currentQAs.map((qa, index) => ({ ...qa, _mockId: getQaStorageId(index) }));
     if (pool.length === 0) return;
 
     const desiredCount = Number(mockQuestionCount);
@@ -1256,7 +1223,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                   
                   <div className="flex-1 flex flex-col gap-2">
                     {currentQAs.map((qa, index) => {
-                      const qaId = getQaStorageId(qa, index);
+                      const qaId = getQaStorageId(index);
                       return (
                         <AccordionItem
                           key={index}
@@ -1546,12 +1513,7 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                     )}
                   </div>
                   
-                  {/* Footer Attribution */}
-                  <div className="mt-auto pt-4 pb-2 text-center text-[10px] text-slate-400 dark:text-slate-300 shrink-0">
-                    <a href="https://www.flaticon.com/free-icons/robot" title="robot icons" target="_blank" rel="noreferrer" className="hover:text-[#077d8a] dark:hover:text-[#58b8c1] transition-colors">
-                      Robot icons created by edt.im - Flaticon
-                    </a>
-                  </div>
+                  
                 </>
               )}
             </div>
@@ -1561,4 +1523,3 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
     </div>
   );
 }
-
