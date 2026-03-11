@@ -75,12 +75,13 @@ export const bmis = {
       question: "Four main strategies of Conversion",
       answer: [
         "Process of changing from old system to new system.",
+        "• Requires end-user training.",
+        "• Finalization of detailed documentation showing how system works from technical and end-user standpoint.",
         "1. Parallel strategy: The old system and the new system run at the same time for a period. This is the safest method because the old system can be used if the new one fails. However, it is expensive and may need extra staff and resources.",
         "2. Direct cutover: The old system is completely replaced by the new system on a specific day. This method is very risky because there is no backup system. If problems occur, disruptions and costs can be very high.",
         "3. Pilot study: The new system is first introduced in one small area, such as one department. If it works well, it is then implemented in the rest of the organization, either all at once or step by step.",
-        "4. Phased approach: The phased approach strategy introduces the new system in stages, either by functions or by organizational units.",
-        "• Requires end-user training.",
-        "• Finalization of detailed documentation showing how system works from technical and end-user standpoint."
+        "4. Phased approach: The phased approach strategy introduces the new system in stages, either by functions or by organizational units."
+        
       ]
     },
     {
@@ -120,6 +121,7 @@ export const bmis = {
     {
       question: "Different types of convergence",
       answer: [
+        "Mougayer (1998) identifies different types of convergence:",
         "• Infrastructure convergence - this is the increase in the number of delivery media channels for the Internet such as phone lines, microwave (mobile phones), cable and satellite. These are now often being used in combination.",
         "• Information appliance (technology) convergence - the use of different hardware devices to access and deliver the content of the Internet.",
         "• Supplier convergence - the overlap between suppliers such as Internet service providers, online access providers and more traditional media suppliers such as the telecommunications and cable companies."
@@ -158,7 +160,7 @@ export const bmis = {
         "• If the cost savings are to be achieved it may be necessary to redeploy staff, or in the worst case make them redundant.",
         "• The threat of redundancy or redeployment is likely to lead to resistance to the introduction of the system and this needs to be managed.",
         "• The purchasing manager will have to carefully explain the reasons for introducing the new system.",
-        "• Through empowerment of originators throughout the business to directly purchase their own items rather than through a purchasing department, there is a risk that some originators may take advantage of this. This is known as 'maverick or off-contract purchasing'.",
+        "• Through empowerment of originators throughout the business to directly purchase their own items rather than through a purchasing department, there is a risk that some originators may take advantage of this. This is known as 'maverick or off-contract purchasing', and it has always happened when items are ordered that are unnecessary or too expensive.",
         "2. Failure to achieve real cost reductions:",
         "• There is a risk that the return on investment (ROI) from introducing e-procurement may be lower than that forecast and the introduction of the e-procurement system may not pay for itself.",
         "3. Technology risks:",
@@ -220,12 +222,8 @@ export const bmis = {
         "5. Value chain and marketplace positioning",
         "6. Representation in the physical and virtual world",
         "7. Organizational structure",
-        "8. Management"
-      ]
-    },
-    {
-      question: "Online marketplace analysis",
-      answer: [
+        "8. Management",
+        "Online marketplace analysis",
         "Analysis of the online marketplace or 'marketspace' is a key part of developing a long-term e-business plan or creating a shorter-term digital marketing campaign. It involves the relative importance of different online intermediaries in the marketplace and the flow of clicks between your different customer segments, your company site(s) and different competitors via the intermediaries.",
         "• Customer segments: Marketplace analysis identifies different customer groups for an online business. It helps understand what media they use, how they buy products, and what type of content and website experience they expect.",
         "• Search intermediaries: These are the main search engines in each country. Typically they are Google, Yahoo!",
@@ -233,6 +231,7 @@ export const bmis = {
         "• Destination sites: These are the sites that the marketer is trying to generate visitors to, whether these are transactional sites, like retailers, financial services or travel companies or manufacturers or brands."
       ]
     },
+    
     {
       question: "SLEPT framework",
       answer: [
