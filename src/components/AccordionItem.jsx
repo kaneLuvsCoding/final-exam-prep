@@ -13,7 +13,8 @@ export default function AccordionItem({
   onToggleMemorized,
   onSendToAi,
   isAiSelected,
-  isSendingToAi
+  isSendingToAi,
+  adminActions
 }) {
   return (
     <div className="font-sans flex gap-3 md:gap-4 items-start w-full mb-4">
@@ -86,6 +87,12 @@ export default function AccordionItem({
               >
                 {isSendingToAi ? 'Sending...' : 'Send to AI'}
               </button>
+            )}
+
+            {adminActions && (
+              <div className="flex items-center gap-1.5 md:gap-2 mr-1">
+                {adminActions}
+              </div>
             )}
 
             <span
@@ -168,6 +175,11 @@ export default function AccordionItem({
                     </tbody>
                   </table>
                 </div>
+              ) : typeof answer === 'string' ? (
+                <div 
+                   className="max-w-none text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-medium leading-relaxed prose prose-slate dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-li:my-0.5"
+                   dangerouslySetInnerHTML={{ __html: answer }}
+                />
               ) : (
                 <div className="max-w-none">
                   {answer.map((paragraph, index) => (

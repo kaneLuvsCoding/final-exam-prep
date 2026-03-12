@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { DefaultEditor } from 'react-simple-wysiwyg';
 import { supabase } from '../lib/supabase';
 
 export default function QuestionFormModal({ questionData, onClose }) {
@@ -221,18 +222,15 @@ export default function QuestionFormModal({ questionData, onClose }) {
 
             <div>
               <div className="flex justify-between items-end mb-1">
-                <label className="block text-sm font-semibold text-slate-700">Answer</label>
-                <span className="text-xs text-slate-500">Each new line becomes a separate list item/bullet point.</span>
+                <label className="block text-sm font-semibold text-slate-700">Answer (Rich Text)</label>
               </div>
-              <textarea 
-                name="answer"
-                value={formData.answer}
-                onChange={handleChange}
-                rows={8}
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a] resize-y font-mono text-sm"
-                placeholder="Line 1: Main concept&#10;Line 2: Supporting detail&#10;Line 3: Example"
-                required
-              />
+              <div className="border border-slate-300 rounded-lg overflow-hidden bg-white text-slate-800 focus-within:ring-2 focus-within:ring-[#077d8a]">
+                <DefaultEditor 
+                  value={formData.answer} 
+                  onChange={(e) => setFormData(prev => ({ ...prev, answer: e.target.value }))}
+                  style={{ minHeight: '150px' }}
+                />
+              </div>
             </div>
 
             <div>

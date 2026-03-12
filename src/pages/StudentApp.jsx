@@ -259,7 +259,11 @@ export default function StudyHub() {
               console.error("Failed to parse JSON answer for student view", e);
             }
           } else if (typeof q.answer === 'string') {
-             parsedAnswer = q.answer.split('\n').filter(l => l.trim() !== '');
+             if (q.answer.includes('<') && q.answer.includes('>')) {
+                 parsedAnswer = q.answer;
+             } else {
+                 parsedAnswer = q.answer.split('\n').filter(l => l.trim() !== '');
+             }
           }
 
           let parsedImages = undefined;
