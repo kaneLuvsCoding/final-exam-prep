@@ -287,12 +287,7 @@ export default function QuestionsManager() {
                 )}
               </button>
 
-              <a
-                href="/"
-                className={topActionButtonClass + " hidden md:flex w-auto px-4 font-bold text-sm ml-2 bg-white/20"}
-              >
-                &larr; Exit Admin
-              </a>
+              
             </div>
             
             <button 
@@ -382,9 +377,6 @@ export default function QuestionsManager() {
           <div className="p-6 h-full flex flex-col overflow-y-auto hide-scroll">
             <div className="mb-6 flex justify-between items-center shrink-0">
               <div className="flex flex-col gap-1">
-                <Link to="/" className="text-[10px] font-black uppercase text-[#077d8a] hover:underline flex items-center gap-1 mb-2 tracking-widest">
-                  &larr; Back to App
-                </Link>
                 <h2 className="text-xs font-black uppercase tracking-widest text-[#077d8a]/60">
                   Subjects Library
                 </h2>
@@ -436,11 +428,17 @@ export default function QuestionsManager() {
               ) : (
                 <button
                   onClick={handleAddSubjectClick}
-                  className="w-full py-2.5 rounded-xl border border-dashed border-slate-300 dark:border-slate-600 hover:border-[#077d8a] hover:bg-[#077d8a]/5 text-sm font-semibold text-slate-500 hover:text-[#077d8a] transition-colors"
+                  className="w-full py-2.5 rounded-xl border border-dashed border-slate-300 dark:border-slate-600 hover:border-[#077d8a] hover:bg-[#077d8a]/5 text-sm font-semibold text-slate-500 hover:text-[#077d8a] transition-colors mb-4"
                 >
                   + Add Subject
                 </button>
               )}
+              <Link 
+                to="/" 
+                className="w-full py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 dark:bg-rose-900/20 dark:hover:bg-rose-900/40 dark:text-rose-400 text-center text-sm font-bold flex flex-col items-center justify-center transition-colors shadow-sm"
+              >
+                Exit Admin Panel
+              </Link>
             </div>
 
           </div>

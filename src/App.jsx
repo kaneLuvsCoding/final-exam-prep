@@ -2,7 +2,14 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import StudentApp from './pages/StudentApp';
 import QuestionsManager from './admin/QuestionsManager';
+import AdminLogin from './admin/AdminLogin';
 import './App.css';
+
+// Protected Route Component
+const ProtectedAdminRoute = ({ children }) => {
+  const isAuthenticated = sessionStorage.getItem('isAdminAuthenticated') === 'true';
+  return isAuthenticated ? children : <Navigate to="/admin/login" replace />;
+};
 
 function App() {
   return (
@@ -12,7 +19,12 @@ function App() {
         <Route path="/" element={<StudentApp />} />
         
         {/* Admin Routes */}
-        <Route path="/admin" element={<QuestionsManager />} />
+        <Route path="/admin" element={
+          <ProtectedAdminRoute>
+            <QuestionsManager />
+          </ProtectedAdminRoute>
+        } />
+        <Route path="/admin/login" element={<AdminLogin />} />
         
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />

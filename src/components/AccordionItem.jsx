@@ -18,21 +18,23 @@ export default function AccordionItem({
 }) {
   return (
     <div className="font-sans flex gap-3 md:gap-4 items-start w-full mb-4">
-      <div
-        onClick={onToggleMemorized}
-        className={`mt-5 md:mt-6 flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-110 active:scale-95 ${
-          isMemorized
-            ? 'bg-emerald-500 border-emerald-500 text-white'
-            : 'bg-white dark:bg-[#171717] border-slate-300 dark:border-slate-600 hover:border-[#077d8a]'
-        }`}
-        title={isMemorized ? 'Mark as unmemorized' : 'Mark as memorized'}
-      >
-        {isMemorized && (
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-          </svg>
-        )}
-      </div>
+      {onToggleMemorized !== undefined && (
+        <div
+          onClick={onToggleMemorized}
+          className={`mt-5 md:mt-6 flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-110 active:scale-95 ${
+            isMemorized
+              ? 'bg-emerald-500 border-emerald-500 text-white'
+              : 'bg-white dark:bg-[#171717] border-slate-300 dark:border-slate-600 hover:border-[#077d8a]'
+          }`}
+          title={isMemorized ? 'Mark as unmemorized' : 'Mark as memorized'}
+        >
+          {isMemorized && (
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+            </svg>
+          )}
+        </div>
+      )}
 
       <div
         className={`flex-1 transition-all duration-300 ease-out rounded-2xl bg-white dark:bg-[#171717] overflow-hidden ${

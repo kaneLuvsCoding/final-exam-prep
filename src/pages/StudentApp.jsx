@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import AccordionItem from '../components/AccordionItem';
 
@@ -1012,6 +1013,18 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
                 </button>
               ))}
             </nav>
+            
+            <div className="mt-auto pt-6">
+              <Link 
+                to="/admin" 
+                className="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-[#077d8a] transition-all group border border-dashed border-slate-200 dark:border-slate-800 hover:border-[#077d8a]/50"
+              >
+                <svg className="w-5 h-5 opacity-70 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <span className="text-sm font-bold opacity-70 group-hover:opacity-100">Admin Access</span>
+              </Link>
+            </div>
           </div>
         </aside>
 

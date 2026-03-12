@@ -1,0 +1,4 @@
+{
+  "message": "Access to schema is forbidden",
+  "hint": "Accessing the schema via the Data API is only allowed using a secret API key."
+}
