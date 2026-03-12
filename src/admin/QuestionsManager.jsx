@@ -538,6 +538,7 @@ export default function QuestionsManager() {
                         type={q.type}
                         headers={q.headers}
                         images={parsedImages}
+                        pdfLink={q.pdfLink}
                         isOpen={openQuestionIndex === index}
                         onClick={() => handleToggleQuestion(index)}
                         adminActions={adminActions}

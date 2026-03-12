@@ -277,7 +277,8 @@ export default function StudyHub() {
             answer: parsedAnswer,
             type: q.type,
             headers: q.headers,
-            images: parsedImages
+            images: parsedImages,
+            pdfLink: q.pdfLink
           });
         });
         

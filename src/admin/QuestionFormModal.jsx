@@ -21,13 +21,76 @@ export default function QuestionFormModal({ questionData, onClose }) {
     topic_id: questionData?.topic_id || '',
     question: questionData?.question || '',
     answer: resolveInitialAnswer(questionData),
-    images: questionData ? (Array.isArray(questionData.images) ? questionData.images.join(',') : (questionData.images || '')) : ''
+    images: questionData ? (Array.isArray(questionData.images) ? questionData.images.join(',') : (questionData.images || '')) : '',
+    pdfLink: questionData?.pdfLink || ''
   });
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [availableSubjects, setAvailableSubjects] = useState([]);
   const [availableTopics, setAvailableTopics] = useState([]);
+  
+  const uploadFile = async (file, folder) => {
+    try {
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${folder}/${Math.random().toString(36).substring(2, 15)}_${Date.now()}.${fileExt}`;
+      
+      const { error: uploadError, data } = await supabase.storage
+        .from('study-materials')
+        .upload(fileName, file, { cacheControl: '3600', upsert: false });
+        
+      if (uploadError) throw uploadError;
+      
+      const { data: publicUrlData } = supabase.storage
+        .from('study-materials')
+        .getPublicUrl(fileName);
+        
+      return publicUrlData.publicUrl;
+    } catch (err) {
+      console.error('Upload Error:', err);
+      throw new Error(`Failed to upload ${file.name}: ${err.message}`);
+    }
+  };
+
+  const handleImageUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    if (!files.length) return;
+    
+    setLoading(true);
+    setError(null);
+    try {
+      const uploadedUrls = [];
+      for (const file of files) {
+        const url = await uploadFile(file, 'images');
+        uploadedUrls.push(url);
+      }
+      
+      const currentImages = formData.images ? formData.images.split(',').map(s=>s.trim()).filter(Boolean) : [];
+      const newImagesString = [...currentImages, ...uploadedUrls].join(',');
+      
+      setFormData(prev => ({ ...prev, images: newImagesString }));
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePdfUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    setLoading(true);
+    setError(null);
+    try {
+      const url = await uploadFile(file, 'pdfs');
+      setFormData(prev => ({ ...prev, pdfLink: url }));
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Fetch all subjects on mount
   useEffect(() => {
@@ -75,7 +138,8 @@ export default function QuestionFormModal({ questionData, onClose }) {
         topic_id: questionData.topic_id || '',
         question: questionData.question || '',
         answer: resolveInitialAnswer(questionData),
-        images: imagesText
+        images: imagesText,
+        pdfLink: questionData.pdfLink || ''
       });
     }
   }, [questionData]);
@@ -100,6 +164,8 @@ export default function QuestionFormModal({ questionData, onClose }) {
         // The error log earlier: "The DB 'answer' column is of type 'text'".
         // Then answerArray will fail? Let's just fix the field to what I had, or use formData.answer directly as string.
         answer: formData.answer,
+        images: formData.images,
+        pdfLink: formData.pdfLink,
       };
 
       if (isEditing) {
@@ -233,19 +299,59 @@ export default function QuestionFormModal({ questionData, onClose }) {
               </div>
             </div>
 
-            <div>
-              <div className="flex justify-between items-end mb-1">
-                <label className="block text-sm font-semibold text-slate-700">Images (Optional)</label>
-                <span className="text-xs text-slate-500">Comma-separated paths (e.g. /img1.png, /img2.png)</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <div className="flex justify-between items-end mb-1">
+                  <label className="block text-sm font-semibold text-slate-700">Images (Optional)</label>
+                  <span className="text-xs text-slate-500">Auto-uploads to storage</span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <input 
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    onChange={handleImageUpload}
+                    className="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-[#077d8a]/10 file:text-[#077d8a] hover:file:bg-[#077d8a]/20"
+                    disabled={loading}
+                  />
+                  {formData.images && (
+                    <input 
+                      type="text"
+                      name="images"
+                      value={formData.images}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a] text-xs"
+                      placeholder="Comma-separated image URLs"
+                    />
+                  )}
+                </div>
               </div>
-              <input 
-                type="text"
-                name="images"
-                value={formData.images}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a]"
-                placeholder="/relationship.png, /marketplace.png"
-              />
+
+              <div>
+                <div className="flex justify-between items-end mb-1">
+                  <label className="block text-sm font-semibold text-slate-700">PDF File (Optional)</label>
+                  <span className="text-xs text-slate-500">Auto-uploads to storage</span>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <input 
+                    type="file"
+                    accept="application/pdf"
+                    onChange={handlePdfUpload}
+                    className="w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-rose-50 file:text-rose-600 hover:file:bg-rose-100"
+                    disabled={loading}
+                  />
+                  {formData.pdfLink && (
+                    <input 
+                      type="text"
+                      name="pdfLink"
+                      value={formData.pdfLink}
+                      onChange={handleChange}
+                      className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a] text-xs"
+                      placeholder="PDF URL"
+                    />
+                  )}
+                </div>
+              </div>
             </div>
           </form>
         </div>
