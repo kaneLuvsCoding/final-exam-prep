@@ -27,8 +27,8 @@ export default function AdminLogin() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
             </div>
-            <h1 className="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight">Admin Access</h1>
-            <p className="text-slate-500 dark:text-slate-400 mt-2">Please enter the administrator password</p>
+            <h1 className="text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight">Sayargyi Access</h1>
+            <p className="text-slate-500 dark:text-slate-400 mt-2">Please enter the sayargyi password</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -50,7 +50,7 @@ export default function AdminLogin() {
               type="submit"
               className="w-full py-4 bg-[#077d8a] hover:bg-[#066d79] text-white rounded-xl font-black shadow-lg shadow-[#077d8a]/20 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all"
             >
-              Login to Admin Panel
+              Login to Sayargyi Panel
             </button>
           </form>
 
@@ -58,7 +58,7 @@ export default function AdminLogin() {
             onClick={() => navigate('/')}
             className="w-full mt-4 py-3 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 text-sm font-bold transition-colors"
           >
-            &larr; Back to Student Hub
+            &larr; Back to Normal
           </button>
         </div>
       </div>

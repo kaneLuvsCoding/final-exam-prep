@@ -1,0 +1,5 @@
+Testing operations...
+✅ Table 'semesters' select OK. Row count: 1
+✅ Table 'majors' select OK. Row count: 1
+❌ Table 'semester_majors' select failed: Could not find the table 'public.semester_majors' in the schema cache (PGRST205)
+✅ Table 'major_subjects' select OK. Row count: 1

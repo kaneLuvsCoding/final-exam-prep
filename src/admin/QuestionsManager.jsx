@@ -42,6 +42,10 @@ export default function QuestionsManager() {
   const [activeSubjectId, setActiveSubjectId] = useState(null);
   const [activeTopicId, setActiveTopicId] = useState(null);
 
+  // Semesters & Majors states
+  const [availableSemesters, setAvailableSemesters] = useState([]);
+  const [availableMajors, setAvailableMajors] = useState([]);
+
   // Inline Editing States for Subjects
   const [isAddingSubject, setIsAddingSubject] = useState(false);
   const [isEditingSubject, setIsEditingSubject] = useState(false);
@@ -51,6 +55,19 @@ export default function QuestionsManager() {
   const [isAddingTopic, setIsAddingTopic] = useState(false);
   const [isEditingTopic, setIsEditingTopic] = useState(false);
   const [inlineTopicName, setInlineTopicName] = useState('');
+
+  // Inline Editing States for Semesters
+  const [isAddingSemester, setIsAddingSemester] = useState(false);
+  const [isEditingSemester, setIsEditingSemester] = useState(false);
+  const [inlineSemesterName, setInlineSemesterName] = useState('');
+  const [activeSemesterId, setActiveSemesterId] = useState(null);
+
+  // Inline Editing States for Majors
+  const [isAddingMajor, setIsAddingMajor] = useState(false);
+  const [isEditingMajor, setIsEditingMajor] = useState(false);
+  const [inlineMajorName, setInlineMajorName] = useState('');
+  const [selectedSemesterIdsForMajor, setSelectedSemesterIdsForMajor] = useState([]);
+  const [editingMajorId, setEditingMajorId] = useState(null);
 
   useEffect(() => {
     localStorage.setItem('darkMode', isDarkMode);
@@ -62,7 +79,17 @@ export default function QuestionsManager() {
   }, [isDarkMode]);
 
   const fetchSubjects = async () => {
-    const { data } = await supabase.from('subjects').select('id, name').order('id');
+    // Fetch subjects with their associated majors through the junction table
+    const { data, error } = await supabase
+      .from('subjects')
+      .select('id, name, major_subjects(major_id)')
+      .order('id');
+    
+    if (error) {
+      console.error("Error fetching subjects:", error);
+      return;
+    }
+
     if (data) {
       setAvailableSubjects(data);
       if (!activeSubjectId && data.length > 0) {
@@ -77,15 +104,32 @@ export default function QuestionsManager() {
     }
   };
 
+  const fetchSemesters = async () => {
+    const { data } = await supabase.from('semesters').select('id, name').order('id');
+    if (data) setAvailableSemesters(data);
+  };
+
+  const fetchMajors = async () => {
+    const { data } = await supabase.from('majors').select('id, name').order('id');
+    if (data) setAvailableMajors(data);
+  };
+
   useEffect(() => {
     fetchSubjects();
+    fetchSemesters();
+    fetchMajors();
   }, []);
 
   const fetchTopics = async (subjectId) => {
     if (!subjectId) {
       setAvailableTopics([]);
+      setActiveTopicId(null);
       return;
     }
+    // Clear current topics to prevent stale headings
+    setAvailableTopics([]);
+    setActiveTopicId(null);
+
     const { data } = await supabase
       .from('topics')
       .select('id, name')
@@ -93,11 +137,9 @@ export default function QuestionsManager() {
       .order('id');
     if (data) {
       setAvailableTopics(data);
-      // Auto-select first topic if topics exist and none selected
+      // Auto-select first topic if topics exist
       if (data.length > 0) {
           setActiveTopicId(data[0].id);
-      } else {
-          setActiveTopicId(null);
       }
     }
   };
@@ -151,8 +193,8 @@ export default function QuestionsManager() {
   const activeSubjectObj = availableSubjects.find(s => s.id === activeSubjectId) || subjectsSorted[0];
   const activeSubjectName = activeSubjectObj ? activeSubjectObj.name : "Select a Subject";
   
-  const activeTopicObj = availableTopics.find(t => t.id === activeTopicId) || availableTopics[0];
-  const activeTopicName = activeTopicObj ? activeTopicObj.name : "General/No Topic";
+  const activeTopicObj = availableTopics.find(t => t.id === activeTopicId);
+  const activeTopicName = activeTopicObj ? activeTopicObj.name : (loading ? "Loading..." : "Select a Topic");
 
   const topActionButtonClass = "inline-flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/15 shadow-sm focus:outline-none focus:ring-2 focus:ring-white/40";
 
@@ -186,9 +228,33 @@ export default function QuestionsManager() {
   };
 
   // Inline Subject Actions
-  const handleAddSubjectClick = () => { setInlineSubjectName(''); setIsAddingSubject(true); setIsEditingSubject(false); };
-  const handleEditSubjectClick = (s) => { setInlineSubjectName(s.name); setIsEditingSubject(true); setIsAddingSubject(false); setActiveSubjectId(s.id); };
-  const cancelInlineAction = () => { setIsAddingSubject(false); setIsEditingSubject(false); setInlineSubjectName(''); };
+  const [selectedMajorIdsForSubject, setSelectedMajorIdsForSubject] = useState([]);
+
+  const handleAddSubjectClick = () => { 
+    setInlineSubjectName(''); 
+    setSelectedMajorIdsForSubject([]);
+    setIsAddingSubject(true); 
+    setIsEditingSubject(false); 
+  };
+  const handleEditSubjectClick = (s) => { 
+    setInlineSubjectName(s.name); 
+    setSelectedMajorIdsForSubject(s.major_subjects?.map(ms => ms.major_id) || []);
+    setIsEditingSubject(true); 
+    setIsAddingSubject(false); 
+    setActiveSubjectId(s.id); 
+  };
+  const cancelInlineAction = () => { 
+    setIsAddingSubject(false); 
+    setIsEditingSubject(false); 
+    setInlineSubjectName(''); 
+    setSelectedMajorIdsForSubject([]);
+  };
+
+  const toggleMajorForSubject = (majorId) => {
+    setSelectedMajorIdsForSubject(prev => 
+      prev.includes(majorId) ? prev.filter(id => id !== majorId) : [...prev, majorId]
+    );
+  };
   
   const handleDeleteSubjectClick = async (s) => {
     if (window.confirm(`Delete the subject "${s.name}"? This action cannot be undone.`)) {
@@ -204,18 +270,37 @@ export default function QuestionsManager() {
     const trimmed = inlineSubjectName.trim();
     if (!trimmed) { cancelInlineAction(); return; }
 
-    if (isAddingSubject) {
-      const { data, error } = await supabase.from('subjects').insert([{ name: trimmed }]).select();
-      if (!error && data && data[0]) {
-        await fetchSubjects();
-        setActiveSubjectId(data[0].id);
-      } else alert("Failed to add subject: " + error.message);
-    } else if (isEditingSubject && activeSubjectId) {
-      const { error } = await supabase.from('subjects').update({ name: trimmed }).eq('id', activeSubjectId);
-      if (!error) await fetchSubjects();
-      else alert("Failed to edit subject: " + error.message);
+    try {
+      let subjectId = activeSubjectId;
+      if (isAddingSubject) {
+        const { data, error } = await supabase.from('subjects').insert([{ name: trimmed }]).select();
+        if (error) throw error;
+        if (data && data[0]) {
+          subjectId = data[0].id;
+        }
+      } else if (isEditingSubject && activeSubjectId) {
+        const { error } = await supabase.from('subjects').update({ name: trimmed }).eq('id', activeSubjectId);
+        if (error) throw error;
+      }
+
+      // Update Major Associations
+      if (subjectId) {
+        // 1. Delete existing associations
+        await supabase.from('major_subjects').delete().eq('subject_id', subjectId);
+        // 2. Insert new associations
+        if (selectedMajorIdsForSubject.length > 0) {
+          const associations = selectedMajorIdsForSubject.map(mId => ({ subject_id: subjectId, major_id: mId }));
+          const { error: assocError } = await supabase.from('major_subjects').insert(associations);
+          if (assocError) throw assocError;
+        }
+      }
+
+      await fetchSubjects();
+      if (isAddingSubject && subjectId) setActiveSubjectId(subjectId);
+      cancelInlineAction();
+    } catch (err) {
+      alert("Failed to save subject: " + err.message);
     }
-    cancelInlineAction();
   };
 
   // Inline Topic Actions
@@ -252,6 +337,119 @@ export default function QuestionsManager() {
     cancelInlineTopicAction();
   };
 
+  // Inline Semester Actions
+  const handleAddSemesterClick = () => { setInlineSemesterName(''); setIsAddingSemester(true); setIsEditingSemester(false); };
+  const handleEditSemesterClick = (s) => { setInlineSemesterName(s.name); setIsEditingSemester(true); setIsAddingSemester(false); setActiveSemesterId(s.id); };
+  const cancelInlineSemesterAction = () => { setIsAddingSemester(false); setIsEditingSemester(false); setInlineSemesterName(''); };
+
+  const handleDeleteSemesterClick = async (s) => {
+    if (window.confirm(`Delete the semester "${s.name}"? This action cannot be undone.`)) {
+      const { error } = await supabase.from('semesters').delete().eq('id', s.id);
+      if (!error) await fetchSemesters();
+      else alert("Failed to delete semester: " + error.message);
+    }
+  };
+
+  const saveInlineSemester = async () => {
+    const trimmed = inlineSemesterName.trim();
+    if (!trimmed) { cancelInlineSemesterAction(); return; }
+    if (isAddingSemester) {
+      const { error } = await supabase.from('semesters').insert([{ name: trimmed }]);
+      if (!error) await fetchSemesters();
+      else alert("Failed to add semester: " + error.message);
+    } else if (isEditingSemester && activeSemesterId) {
+      const { error } = await supabase.from('semesters').update({ name: trimmed }).eq('id', activeSemesterId);
+      if (!error) await fetchSemesters();
+      else alert("Failed to edit semester: " + error.message);
+    }
+    cancelInlineSemesterAction();
+  };
+
+  // Inline Major Actions
+  const handleAddMajorClick = () => { 
+    setInlineMajorName(''); 
+    setIsAddingMajor(true); 
+    setIsEditingMajor(false); 
+    setSelectedSemesterIdsForMajor([]);
+    setEditingMajorId(null);
+  };
+  const handleEditMajorClick = async (major) => {
+    setIsEditingMajor(true);
+    setEditingMajorId(major.id);
+    setInlineMajorName(major.name);
+    
+    // Fetch currently associated semesters
+    const { data, error } = await supabase
+      .from('semester_majors')
+      .select('semester_id')
+      .eq('major_id', major.id);
+    
+    if (!error && data) {
+      setSelectedSemesterIdsForMajor(data.map(item => item.semester_id));
+    }
+  };
+
+  const toggleSemesterForMajor = (semesterId) => {
+    setSelectedSemesterIdsForMajor(prev => 
+      prev.includes(semesterId) 
+        ? prev.filter(id => id !== semesterId) 
+        : [...prev, semesterId]
+    );
+  };
+
+  const cancelInlineMajorAction = () => { 
+    setIsAddingMajor(false); 
+    setIsEditingMajor(false); 
+    setInlineMajorName(''); 
+    setSelectedSemesterIdsForMajor([]);
+    setEditingMajorId(null);
+  };
+
+  const handleDeleteMajorClick = async (m) => {
+    if (window.confirm(`Delete the major "${m.name}"? This action cannot be undone.`)) {
+      const { error } = await supabase.from('majors').delete().eq('id', m.id);
+      if (!error) await fetchMajors();
+      else alert("Failed to delete major: " + error.message);
+    }
+  };
+
+  const saveInlineMajor = async () => {
+    if (!inlineMajorName.trim()) {
+      cancelInlineMajorAction();
+      return;
+    }
+    try {
+      let majorId = editingMajorId;
+      if (isEditingMajor) {
+        const { error } = await supabase.from('majors').update({ name: inlineMajorName }).eq('id', editingMajorId);
+        if (error) throw error;
+      } else {
+        const { data, error } = await supabase.from('majors').insert([{ name: inlineMajorName }]).select();
+        if (error) throw error;
+        majorId = data[0].id;
+      }
+
+      // Handle semester-major associations
+      const { error: delError } = await supabase.from('semester_majors').delete().eq('major_id', majorId);
+      if (delError) throw delError;
+
+      if (selectedSemesterIdsForMajor.length > 0) {
+        const associations = selectedSemesterIdsForMajor.map(semId => ({
+          major_id: majorId,
+          semester_id: semId
+        }));
+        const { error: insError } = await supabase.from('semester_majors').insert(associations);
+        if (insError) throw insError;
+      }
+
+      cancelInlineMajorAction();
+      await fetchMajors();
+    } catch (err) {
+      console.error("Failed to save major:", err);
+      alert("Failed to save major association: " + err.message);
+    }
+  };
+
   return (
     <div className="h-screen bg-slate-50 dark:bg-[#171717] text-slate-900 dark:text-slate-100 flex flex-col overflow-hidden relative font-sans w-full">
       <style>{`
@@ -266,7 +464,7 @@ export default function QuestionsManager() {
           <div className="flex items-center justify-between shrink-0 w-full md:w-auto">
             <div className="flex items-center gap-3">
               <h1 className="text-2xl md:text-3xl font-black tracking-tighter flex items-center gap-2 drop-shadow-sm mr-2">
-                 Admin
+                 Sayargyi Panel
               </h1>
               
               {/* Dark Mode Toggle */}
@@ -412,19 +610,43 @@ export default function QuestionsManager() {
 
             <div className="mt-8 pt-4 border-t border-slate-200/60 dark:border-slate-700/60 shrink-0">
               {(isAddingSubject || isEditingSubject) ? (
-                 <div className="flex flex-col gap-2 bg-slate-50 dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700">
-                 <input
-                   type="text" autoFocus
-                   className="px-3 py-2 border border-[#077d8a] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#077d8a]/30 w-full"
-                   value={inlineSubjectName} onChange={(e) => setInlineSubjectName(e.target.value)}
-                   onKeyDown={(e) => { if (e.key === 'Enter') saveInlineSubject(); if (e.key === 'Escape') cancelInlineAction(); }}
-                   placeholder={isAddingSubject ? "New Subject" : "Edit Subject"}
-                 />
-                 <div className="flex justify-end gap-2">
-                   <button onClick={cancelInlineAction} className="text-xs text-slate-500 font-bold">Cancel</button>
-                   <button onClick={saveInlineSubject} className="text-xs bg-[#077d8a] text-white rounded-lg px-3 py-1 font-semibold">{isAddingSubject ? 'Save' : 'Update'}</button>
+                 <div className="flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                   <div className="flex flex-col gap-1">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-[#077d8a]/70">Subject Name</label>
+                     <input
+                       type="text" autoFocus
+                       className="px-3 py-2 border border-slate-200 dark:border-slate-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#077d8a]/30 focus:border-[#077d8a] w-full dark:bg-slate-900"
+                       value={inlineSubjectName} onChange={(e) => setInlineSubjectName(e.target.value)}
+                       onKeyDown={(e) => { if (e.key === 'Enter') saveInlineSubject(); if (e.key === 'Escape') cancelInlineAction(); }}
+                       placeholder={isAddingSubject ? "New Subject" : "Edit Subject"}
+                     />
+                   </div>
+
+                   <div className="flex flex-col gap-1">
+                     <label className="text-[10px] font-black uppercase tracking-widest text-[#077d8a]/70">Assign to Majors</label>
+                     <div className="flex flex-wrap gap-1.5 mt-1">
+                       {availableMajors.map(m => (
+                         <button
+                           key={m.id}
+                           type="button"
+                           onClick={() => toggleMajorForSubject(m.id)}
+                           className={`px-2 py-1 rounded-md text-[10px] font-bold border transition-all ${
+                             selectedMajorIdsForSubject.includes(m.id)
+                               ? 'bg-[#077d8a] text-white border-[#077d8a]'
+                               : 'bg-white dark:bg-slate-900 text-slate-400 dark:text-slate-500 border-slate-200 dark:border-slate-700 hover:border-[#077d8a]/50'
+                           }`}
+                         >
+                           {m.name}
+                         </button>
+                       ))}
+                     </div>
+                   </div>
+
+                   <div className="flex justify-end gap-2 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
+                     <button onClick={cancelInlineAction} className="text-xs text-slate-500 font-bold hover:text-slate-700 transition-colors">Cancel</button>
+                     <button onClick={saveInlineSubject} className="text-xs bg-[#077d8a] text-white rounded-lg px-4 py-1.5 font-bold shadow-sm hover:shadow-md transition-all active:scale-95">{isAddingSubject ? 'Save Subject' : 'Update Subject'}</button>
+                   </div>
                  </div>
-               </div>
               ) : (
                 <button
                   onClick={handleAddSubjectClick}
@@ -433,11 +655,101 @@ export default function QuestionsManager() {
                   + Add Subject
                 </button>
               )}
+
+              {/* Semesters Section */}
+              <div className="mt-8 mb-4">
+                <h2 className="text-xs font-black uppercase tracking-widest text-[#077d8a]/60 mb-3">
+                  Semesters
+                </h2>
+                <nav className="flex flex-col gap-2">
+                  {availableSemesters.map((s) => (
+                    <div key={s.id} className="relative group flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+                      <span className="text-sm font-semibold">{s.name}</span>
+                      <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onClick={() => handleEditSemesterClick(s)}><svg className="w-3.5 h-3.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
+                        <button onClick={() => handleDeleteSemesterClick(s)}><svg className="w-3.5 h-3.5 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
+                      </div>
+                    </div>
+                  ))}
+                  {(isAddingSemester || isEditingSemester) ? (
+                    <div className="flex flex-col gap-2 bg-slate-50 dark:bg-slate-800 p-2 rounded-lg border border-slate-200 dark:border-slate-700">
+                      <input
+                        type="text" autoFocus
+                        className="px-2 py-1 border border-[#077d8a] rounded text-xs focus:outline-none w-full"
+                        value={inlineSemesterName} onChange={(e) => setInlineSemesterName(e.target.value)}
+                        placeholder={isAddingSemester ? "New Semester" : "Edit Semester"}
+                      />
+                      <div className="flex justify-end gap-2">
+                        <button onClick={cancelInlineSemesterAction} className="text-[10px] text-slate-500 font-bold">Cancel</button>
+                        <button onClick={saveInlineSemester} className="text-[10px] bg-[#077d8a] text-white rounded px-2 py-0.5 font-semibold">Save</button>
+                      </div>
+                    </div>
+                  ) : (
+                    <button onClick={handleAddSemesterClick} className="w-full py-1.5 rounded-lg border border-dashed border-slate-300 dark:border-slate-600 text-[11px] font-bold text-slate-500 hover:text-[#077d8a] hover:border-[#077d8a] transition-all">+ Add Semester</button>
+                  )}
+                </nav>
+              </div>
+
+              {/* Majors Section */}
+              <div className="mt-4 mb-4">
+                <h2 className="text-xs font-black uppercase tracking-widest text-[#077d8a]/60 mb-3">
+                  Majors
+                </h2>
+                <nav className="flex flex-col gap-2">
+                  {availableMajors.map((m) => (
+                    <div key={m.id} className="relative group flex items-center justify-between px-4 py-2 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+                      <span className="text-sm font-semibold">{m.name}</span>
+                      <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onClick={() => handleEditMajorClick(m)}><svg className="w-3.5 h-3.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
+                        <button onClick={() => handleDeleteMajorClick(m)}><svg className="w-3.5 h-3.5 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
+                      </div>
+                    </div>
+                  ))}
+                  {(isAddingMajor || isEditingMajor) ? (
+                    <div className="flex flex-col gap-2 bg-slate-50 dark:bg-slate-800 p-2 rounded-lg border border-slate-200 dark:border-slate-700">
+                      <input
+                        type="text" autoFocus
+                        className="px-2 py-1 border border-[#077d8a] rounded text-xs focus:outline-none w-full"
+                        value={inlineMajorName} onChange={(e) => setInlineMajorName(e.target.value)}
+                        placeholder={isAddingMajor ? "New Major" : "Edit Major"}
+                      />
+                      
+                      <div className="flex flex-col gap-1 mt-1">
+                        <label className="text-[9px] font-black uppercase tracking-widest text-[#077d8a]/70">Link Semesters</label>
+                        <div className="flex flex-wrap gap-1">
+                          {availableSemesters.map(s => (
+                            <button
+                              key={s.id}
+                              type="button"
+                              onClick={() => toggleSemesterForMajor(s.id)}
+                              className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all ${
+                                selectedSemesterIdsForMajor.includes(s.id)
+                                  ? 'bg-[#077d8a] text-white border-[#077d8a]'
+                                  : 'bg-white dark:bg-slate-900 text-slate-400 dark:text-slate-500 border-slate-200 dark:border-slate-700'
+                              }`}
+                            >
+                              {s.name}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex justify-end gap-2 mt-1">
+                        <button onClick={cancelInlineMajorAction} className="text-[10px] text-slate-500 font-bold hover:text-slate-700">Cancel</button>
+                        <button onClick={saveInlineMajor} className="text-[10px] bg-[#077d8a] text-white rounded px-3 py-1 font-semibold hover:bg-[#045c66] transition-colors shadow-sm">Save</button>
+                      </div>
+                    </div>
+                  ) : (
+                    <button onClick={handleAddMajorClick} className="w-full py-1.5 rounded-lg border border-dashed border-slate-300 dark:border-slate-600 text-[11px] font-bold text-slate-500 hover:text-[#077d8a] hover:border-[#077d8a] transition-all">+ Add Major</button>
+                  )}
+                </nav>
+              </div>
+
               <Link 
                 to="/" 
                 className="w-full py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 dark:bg-rose-900/20 dark:hover:bg-rose-900/40 dark:text-rose-400 text-center text-sm font-bold flex flex-col items-center justify-center transition-colors shadow-sm"
               >
-                Exit Admin Panel
+                Exit Sayargyi Panel
               </Link>
             </div>
 
@@ -457,7 +769,7 @@ export default function QuestionsManager() {
                   <span className="bg-slate-200/70 dark:bg-slate-800 text-slate-600 dark:text-slate-200 px-2.5 py-0.5 rounded-md text-sm font-bold shadow-sm">
                     {activeSubjectName}
                   </span> 
-                  Admin specific question management
+                  Sayargyi specific question management
                 </p>
               </div>
 

@@ -19,6 +19,8 @@ export default function QuestionFormModal({ questionData, onClose }) {
   const [formData, setFormData] = useState({
     subject_id: questionData?.subject_id || 1,
     topic_id: questionData?.topic_id || '',
+    semester_id: questionData?.semester_id || '',
+    major_id: questionData?.major_id || '',
     question: questionData?.question || '',
     answer: resolveInitialAnswer(questionData),
     images: questionData ? (Array.isArray(questionData.images) ? questionData.images.join(',') : (questionData.images || '')) : '',
@@ -29,6 +31,8 @@ export default function QuestionFormModal({ questionData, onClose }) {
   const [error, setError] = useState(null);
   const [availableSubjects, setAvailableSubjects] = useState([]);
   const [availableTopics, setAvailableTopics] = useState([]);
+  const [availableSemesters, setAvailableSemesters] = useState([]);
+  const [availableMajors, setAvailableMajors] = useState([]);
   
   const uploadFile = async (file, folder) => {
     try {
@@ -92,13 +96,20 @@ export default function QuestionFormModal({ questionData, onClose }) {
     }
   };
 
-  // Fetch all subjects on mount
+  // Fetch all subjects, semesters, and majors on mount
   useEffect(() => {
-    const fetchSubjects = async () => {
-      const { data } = await supabase.from('subjects').select('id, name').order('id');
-      if (data) setAvailableSubjects(data);
+    const fetchData = async () => {
+      const [subjectsRes, semestersRes, majorsRes] = await Promise.all([
+        supabase.from('subjects').select('id, name').order('id'),
+        supabase.from('semesters').select('id, name').order('id'),
+        supabase.from('majors').select('id, name').order('id')
+      ]);
+
+      if (subjectsRes.data) setAvailableSubjects(subjectsRes.data);
+      if (semestersRes.data) setAvailableSemesters(semestersRes.data);
+      if (majorsRes.data) setAvailableMajors(majorsRes.data);
     };
-    fetchSubjects();
+    fetchData();
   }, []);
 
   // Fetch topics when subject changes
@@ -136,6 +147,8 @@ export default function QuestionFormModal({ questionData, onClose }) {
       setFormData({
         subject_id: questionData.subject_id || 1,
         topic_id: questionData.topic_id || '',
+        semester_id: questionData.semester_id || '',
+        major_id: questionData.major_id || '',
         question: questionData.question || '',
         answer: resolveInitialAnswer(questionData),
         images: imagesText,
@@ -158,6 +171,8 @@ export default function QuestionFormModal({ questionData, onClose }) {
       const payload = {
         subject_id: parseInt(formData.subject_id),
         topic_id: parseInt(formData.topic_id),
+        semester_id: formData.semester_id ? parseInt(formData.semester_id) : null,
+        major_id: formData.major_id ? parseInt(formData.major_id) : null,
         question: formData.question,
         // Using original format or just a string if DB prefers text. DB schema for answer is 'text' or jsonb?
         // Wait, if it's text, array might be rejected or automatically mapped to JSON.
@@ -186,6 +201,8 @@ export default function QuestionFormModal({ questionData, onClose }) {
             .update({
               subject_id: parseInt(formData.subject_id),
               topic_id: parseInt(formData.topic_id),
+              semester_id: formData.semester_id ? parseInt(formData.semester_id) : null,
+              major_id: formData.major_id ? parseInt(formData.major_id) : null,
               question: formData.question
             })
             .eq('id', questionData.id);
@@ -269,6 +286,34 @@ export default function QuestionFormModal({ questionData, onClose }) {
                   required
                 >
                   {availableTopics.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
+                </select>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-1">Semester (Optional)</label>
+                <select
+                  name="semester_id"
+                  value={formData.semester_id}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a]"
+                >
+                  <option value="">Select Semester</option>
+                  {availableSemesters.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-slate-700 mb-1">Major (Optional)</label>
+                <select
+                  name="major_id"
+                  value={formData.major_id}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a]"
+                >
+                  <option value="">Select Major</option>
+                  {availableMajors.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}
                 </select>
               </div>
             </div>
