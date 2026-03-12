@@ -16,13 +16,13 @@ export default function AccordionItem({
   isSendingToAi
 }) {
   return (
-    <div className="flex gap-3 md:gap-4 items-start w-full mb-4">
+    <div className="font-sans flex gap-3 md:gap-4 items-start w-full mb-4">
       <div
         onClick={onToggleMemorized}
         className={`mt-5 md:mt-6 flex-shrink-0 w-6 h-6 rounded-md border-2 flex items-center justify-center transition-all cursor-pointer shadow-sm hover:scale-110 active:scale-95 ${
           isMemorized
             ? 'bg-emerald-500 border-emerald-500 text-white'
-            : 'bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 hover:border-[#077d8a]'
+            : 'bg-white dark:bg-[#171717] border-slate-300 dark:border-slate-600 hover:border-[#077d8a]'
         }`}
         title={isMemorized ? 'Mark as unmemorized' : 'Mark as memorized'}
       >
@@ -34,10 +34,10 @@ export default function AccordionItem({
       </div>
 
       <div
-        className={`flex-1 border transition-all duration-300 ease-out rounded-2xl bg-white dark:bg-slate-900 overflow-hidden ${
+        className={`flex-1 transition-all duration-300 ease-out rounded-2xl bg-white dark:bg-[#171717] overflow-hidden ${
           isOpen
-            ? 'border-[#077d8a]/40 shadow-md ring-4 ring-[#077d8a]/10'
-            : 'border-slate-200/80 dark:border-slate-700/80 shadow-sm hover:shadow-md hover:border-[#077d8a]/30'
+            ? 'shadow-md ring-4 ring-[#077d8a]/10'
+            : 'shadow-sm hover:shadow-md'
         } ${isMemorized && !isOpen ? 'opacity-60 bg-slate-50/50 dark:bg-slate-800/40' : ''}`}
       >
         <div
@@ -46,12 +46,12 @@ export default function AccordionItem({
         >
           <div className="flex items-start md:items-center md:pr-4 min-w-0">
             <span
-              className={`font-bold text-base md:text-lg leading-snug transition-colors duration-200 ${
+              className={`font-medium text-slate-900 dark:text-slate-100 md:text-lg leading-snug transition-colors duration-200 ${
                 isOpen
                   ? 'text-[#077d8a]'
                   : isMemorized
                     ? 'text-slate-400 dark:text-slate-500 line-through decoration-slate-300 dark:decoration-slate-600'
-                    : 'text-slate-800 dark:text-slate-100 group-hover:text-[#077d8a]/80'
+                    : 'text-slate-900 dark:text-slate-100 group-hover:text-[#077d8a]/80'
               }`}
             >
               {question}
@@ -108,7 +108,7 @@ export default function AccordionItem({
           }`}
         >
           <div className="overflow-hidden">
-            <div className="p-5 md:p-6 pt-0 bg-white dark:bg-slate-900 overflow-x-auto">
+            <div className="p-6 md:p-12 pt-0 bg-white dark:bg-[#171717] overflow-x-auto">
               <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-700 to-transparent mb-5"></div>
 
               {images && images.length > 0 && (
@@ -138,7 +138,7 @@ export default function AccordionItem({
               )}
 
               {type === 'comparison' ? (
-                <div className="min-w-max md:min-w-0 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm bg-slate-50/40 dark:bg-slate-800/60">
+                <div className="min-w-max md:min-w-0 overflow-hidden">
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="bg-[#077d8a]/10">
@@ -169,11 +169,11 @@ export default function AccordionItem({
                   </table>
                 </div>
               ) : (
-                <div className="max-w-none rounded-xl border border-slate-200/80 dark:border-slate-700 bg-slate-50/40 dark:bg-slate-800/60 p-4 md:p-5">
+                <div className="max-w-none">
                   {answer.map((paragraph, index) => (
                     <p
                       key={index}
-                      className="mb-4 text-slate-700 dark:text-slate-200 text-base md:text-[17px] font-semibold leading-8 text-justify hyphens-auto last:mb-0"
+                      className="mb-4 text-slate-700 dark:text-slate-200 text-base md:text-[17px] font-medium leading-6 text-justify last:mb-0"
                     >
                       {paragraph}
                     </p>

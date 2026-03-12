@@ -290,15 +290,17 @@ export const erp = {
     },
     {
       question: "List the major differences between the ERP life cycle and SDLC.",
+      type: "comparison",
+      headers: ["", "SDLC", "ERP Life Cycle"],
       answer: [
-        "Goal: SDLC develops a new system to support requirements; ERP Life Cycle implements a packaged system to support requirements.",
-        "Analysis: SDLC evaluates user needs through observations/interviews and creates specs; ERP Life Cycle does vendor analysis and evaluates business process changes due to implementation.",
-        "Design: SDLC develops new system architecture, UI, and reporting tools; ERP Life Cycle does installation and Customization plan of ERP software, data conversion, and change management strategies.",
-        "Implementation: SDLC acquires hardware/software, develops apps, installs, tests, trains, and converts; ERP Life Cycle does “Go-Live” conversion or releasing the system to the users, training, and support.",
-        "Consultant Role: SDLC offers technical support mainly during design and implementation; ERP Life Cycle offers change management, process change, and technical support from beginning to end.",
-        "Management Role: SDLC has some oversight and support; ERP Life Cycle has significant oversight and involvement especially in change management.",
-        "End-User Role: SDLC focuses on focus groups providing input with most involvement during Implementation; ERP Life Cycle includes multiple groups such as SMEs, advance users, and self-service users as part of the implementation team with continuous involvement.",
-        "Operations: SDLC maintains, updates, and provides technical support; ERP Life Cycle maintains, updates, upgrades, monitors change management strategy.",
+        ["Goal", "Develop a new system to support the organization requirements", "Implement a packaged system to support the organization requirements"],
+        ["Analysis", "Evaluate user needs through observations and interviews and create system specifications", "Vendor analysis and evaluation of business process changes due to the implementation"],
+        ["Design", "Develop new system architecture, user interface, and reporting tools", "Installation and Customization plan of ERP software, data conversion, and change management strategies"],
+        ["Implementation", "Acquire hardware, software, develop applications, installation, testing, training, and conversion", "“Go-Live” conversion or releasing the system to the users, training, and support"],
+        ["Consultant Role", "Technical support mainly during design and implementation", "Change management, process change, and technical support from beginning to end"],
+        ["Management Role", "Some oversight and support", "Significant oversight and involvement especially in change management"],
+        ["End-User Role", "Focus group providing input during various stages with most involvement during Implementation stage", "Multiple groups such as SMEs, advance users, and self-service users are part of implementation team with continuous involvement"],
+        ["Operations", "Maintains, updates, and provides technical support", "Maintains, updates, upgrades, monitors change management strategy"]
       ],
     },
     {
