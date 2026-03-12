@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import StudentApp from './pages/StudentApp';
-import AdminLayout from './admin/AdminLayout';
-import AdminDashboard from './admin/AdminDashboard';
+import QuestionsManager from './admin/QuestionsManager';
 import './App.css';
 
 function App() {
@@ -13,10 +12,7 @@ function App() {
         <Route path="/" element={<StudentApp />} />
         
         {/* Admin Routes */}
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<AdminDashboard />} />
-          <Route path="*" element={<Navigate to="/admin" replace />} />
-        </Route>
+        <Route path="/admin" element={<QuestionsManager />} />
         
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />

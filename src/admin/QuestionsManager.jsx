@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import QuestionFormModal from './QuestionFormModal';
 import AccordionItem from '../components/AccordionItem';
@@ -380,9 +381,14 @@ export default function QuestionsManager() {
         }`}>
           <div className="p-6 h-full flex flex-col overflow-y-auto hide-scroll">
             <div className="mb-6 flex justify-between items-center shrink-0">
-              <h2 className="text-xs font-black uppercase tracking-widest text-[#077d8a]/60">
-                Subjects Library
-              </h2>
+              <div className="flex flex-col gap-1">
+                <Link to="/" className="text-[10px] font-black uppercase text-[#077d8a] hover:underline flex items-center gap-1 mb-2 tracking-widest">
+                  &larr; Back to App
+                </Link>
+                <h2 className="text-xs font-black uppercase tracking-widest text-[#077d8a]/60">
+                  Subjects Library
+                </h2>
+              </div>
             </div>
             
             <nav className="flex flex-col gap-2.5">
