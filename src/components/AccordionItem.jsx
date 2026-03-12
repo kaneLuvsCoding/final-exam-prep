@@ -13,7 +13,8 @@ export default function AccordionItem({
   onToggleMemorized,
   onSendToAi,
   isAiSelected,
-  isSendingToAi
+  isSendingToAi,
+  adminActions
 }) {
   return (
     <div className="font-sans flex gap-3 md:gap-4 items-start w-full mb-4">
@@ -86,6 +87,15 @@ export default function AccordionItem({
               >
                 {isSendingToAi ? 'Sending...' : 'Send to AI'}
               </button>
+            )}
+
+            {adminActions && (
+              <div 
+                className="flex items-center gap-1.5" 
+                onClick={(e) => e.stopPropagation()}
+              >
+                {adminActions}
+              </div>
             )}
 
             <span
