@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { studyData } from '../data/index';
+import { supabase } from '../lib/supabase';
 import AccordionItem from '../components/AccordionItem';
 
 const examSchedule = {
@@ -229,16 +229,72 @@ const renderAiResponseForStudy = (text) => {
 };
 
 export default function StudyHub() {
-  const subjects = Object.keys(studyData).sort((a, b) => {
+  const [studyData, setStudyData] = useState(null);
+  const [activeSubject, setActiveSubject] = useState("Technical Writing");
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        const { data, error } = await supabase
+          .from('questions')
+          .select('*, subjects!inner(name), topics!inner(name), answers(*)')
+          .order('id', { ascending: true });
+          
+        if (error) throw error;
+        
+        const grouped = {};
+        data.forEach(q => {
+          const sName = q.subjects?.name;
+          const tName = q.topics?.name;
+          if (!sName || !tName) return;
+
+          if (!grouped[sName]) grouped[sName] = {};
+          if (!grouped[sName][tName]) grouped[sName][tName] = [];
+          
+          let parsedAnswer = q.answer;
+          if ((q.type === 'comparison' || !q.answer) && q.answers && q.answers.length > 0) {
+            try {
+              parsedAnswer = JSON.parse(q.answers[0].answer);
+            } catch(e) {
+              console.error("Failed to parse JSON answer for student view", e);
+            }
+          } else if (typeof q.answer === 'string') {
+             parsedAnswer = q.answer.split('\n').filter(l => l.trim() !== '');
+          }
+
+          let parsedImages = undefined;
+          if (q.images) {
+            parsedImages = q.images.split(',').map(s => s.trim()).filter(s => s !== '');
+          }
+          
+          grouped[sName][tName].push({
+            id: q.id,
+            question: q.question,
+            answer: parsedAnswer,
+            type: q.type,
+            headers: q.headers,
+            images: parsedImages
+          });
+        });
+        
+        setStudyData(grouped);
+      } catch (err) {
+        console.error("DB Fetch Error:", err);
+      }
+    }
+    loadData();
+  }, []);
+
+  const subjects = Object.keys(studyData || {}).sort((a, b) => {
     const dateA = new Date(examSchedule[a] || "2099-01-01").getTime();
     const dateB = new Date(examSchedule[b] || "2099-01-01").getTime();
     return dateA - dateB;
   });
 
-  const [activeSubject, setActiveSubject] = useState("Technical Writing");
-  const subjectData = studyData[activeSubject];
+  const currentSubject = (studyData && studyData[activeSubject]) ? activeSubject : (subjects[0] || "");
+  const subjectData = (studyData && studyData[currentSubject]) ? studyData[currentSubject] : {};
   const isDocument = subjectData?.type === "document";
-  
+
   const tabs = isDocument ? [] : Object.keys(subjectData || {});
   const [activeTab, setActiveTab] = useState(tabs[0] || "");
   const [openQuestionIndex, setOpenQuestionIndex] = useState(null);
@@ -331,7 +387,7 @@ export default function StudyHub() {
 
   useEffect(() => {
     if (!isDocument) {
-      const newTabs = Object.keys(studyData[activeSubject] || {});
+      const newTabs = Object.keys(subjectData || {});
       setActiveTab(newTabs.length > 0 ? newTabs[0] : "");
     }
     setOpenQuestionIndex(null);
@@ -352,7 +408,7 @@ export default function StudyHub() {
     if (typeof window !== "undefined" && window.innerWidth < 768) {
       setIsSidebarOpen(false);
     }
-  }, [activeSubject, isDocument]);
+  }, [currentSubject, isDocument, studyData]);
 
   useEffect(() => {
     setActiveAiQuestionIndex(null);
@@ -705,6 +761,15 @@ Subjects Studied: ${Object.keys(memorizedQs).join(', ') || 'None'}
   const mockTimeLabel = `${String(Math.floor(mockTimeLeftSeconds / 60)).padStart(2, '0')}:${String(mockTimeLeftSeconds % 60).padStart(2, '0')}`;
   const topActionButtonClass =
     "inline-flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg bg-white/10 hover:bg-white/20 transition-all backdrop-blur-sm border border-white/15 shadow-sm focus:outline-none focus:ring-2 focus:ring-white/40";
+
+  if (!studyData) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-[#171717] flex flex-col items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#077d8a] mb-4"></div>
+        <p className="text-slate-500 font-medium">Loading Study Materials...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="h-screen bg-slate-50 dark:bg-[#171717] text-slate-900 dark:text-slate-100 flex flex-col overflow-hidden relative">

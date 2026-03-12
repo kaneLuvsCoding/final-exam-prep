@@ -4,36 +4,76 @@ import { supabase } from '../lib/supabase';
 export default function QuestionFormModal({ questionData, onClose }) {
   const isEditing = !!questionData;
   
+  const resolveInitialAnswer = (qData) => {
+    if (!qData) return '';
+    
+    // If it has table data from answers table
+    if (!qData.answer && qData.answers && qData.answers.length > 0) {
+      return qData.answers[0].answer;
+    }
+    
+    return Array.isArray(qData.answer) ? qData.answer.join('\n') : (qData.answer || '');
+  };
+
   const [formData, setFormData] = useState({
-    subject: 'Technical Writing',
-    category: 'Short Questions',
-    question: '',
-    answer: '',
-    images: ''
+    subject_id: questionData?.subject_id || 1,
+    topic_id: questionData?.topic_id || '',
+    question: questionData?.question || '',
+    answer: resolveInitialAnswer(questionData),
+    images: questionData ? (Array.isArray(questionData.images) ? questionData.images.join(',') : (questionData.images || '')) : ''
   });
-  
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [availableSubjects, setAvailableSubjects] = useState([]);
+  const [availableTopics, setAvailableTopics] = useState([]);
 
-  const subjects = ['Technical Writing', 'Analysis of Algorithm', 'BMIS', 'ERP', 'Advanced DBMS', 'SQM'];
-  const categories = ['Short Questions', 'Long Questions'];
+  // Fetch all subjects on mount
+  useEffect(() => {
+    const fetchSubjects = async () => {
+      const { data } = await supabase.from('subjects').select('id, name').order('id');
+      if (data) setAvailableSubjects(data);
+    };
+    fetchSubjects();
+  }, []);
+
+  // Fetch topics when subject changes
+  useEffect(() => {
+    let ignore = false;
+    const fetchTopics = async () => {
+      if (!formData.subject_id) return;
+      const { data } = await supabase
+        .from('topics')
+        .select('id, name')
+        .eq('subject_id', formData.subject_id)
+        .order('id');
+
+      if (!ignore && data) {
+        setAvailableTopics(data);
+        // Use an updater function to ensure we're checking against the most recent topic_id
+        setFormData(prev => {
+          if (!data.find(t => t.id == prev.topic_id)) {
+            return { ...prev, topic_id: data[0]?.id || '' };
+          }
+          return prev;
+        });
+      }
+    };
+    fetchTopics();
+    return () => { ignore = true; };
+  }, [formData.subject_id]);
 
   useEffect(() => {
     if (questionData) {
-      // Parse array answers back into newline-separated string for editing
-      const answerText = Array.isArray(questionData.answer) 
-        ? questionData.answer.join('\n') 
-        : (questionData.answer || '');
-        
       const imagesText = Array.isArray(questionData.images)
         ? questionData.images.join(',')
         : (questionData.images || '');
 
       setFormData({
-        subject: questionData.subject || subjects[0],
-        category: questionData.category || categories[0],
+        subject_id: questionData.subject_id || 1,
+        topic_id: questionData.topic_id || '',
         question: questionData.question || '',
-        answer: answerText,
+        answer: resolveInitialAnswer(questionData),
         images: imagesText
       });
     }
@@ -50,33 +90,49 @@ export default function QuestionFormModal({ questionData, onClose }) {
     setError(null);
 
     try {
-      // Convert answer text block into JSON array of strings
-      const answerArray = formData.answer
-        .split('\n')
-        .map(line => line.trim())
-        .filter(line => line.length > 0);
-        
-      // Convert images CSV into array
-      const imagesArray = formData.images
-        .split(',')
-        .map(img => img.trim())
-        .filter(img => img.length > 0);
-
       const payload = {
-        subject: formData.subject,
-        category: formData.category,
+        subject_id: parseInt(formData.subject_id),
+        topic_id: parseInt(formData.topic_id),
         question: formData.question,
-        answer: answerArray,
-        images: imagesArray.length > 0 ? imagesArray : null
+        // Using original format or just a string if DB prefers text. DB schema for answer is 'text' or jsonb?
+        // Wait, if it's text, array might be rejected or automatically mapped to JSON.
+        // The error log earlier: "The DB 'answer' column is of type 'text'".
+        // Then answerArray will fail? Let's just fix the field to what I had, or use formData.answer directly as string.
+        answer: formData.answer,
       };
 
       if (isEditing) {
-        const { error: updateError } = await supabase
-          .from('questions')
-          .update(payload)
-          .eq('id', questionData.id);
-          
-        if (updateError) throw updateError;
+        const hasLinkedAnswer = questionData?.answers && questionData.answers.length > 0;
+
+        if (hasLinkedAnswer) {
+          // 1. Update the linked answers table
+          const { error: ansError } = await supabase
+            .from('answers')
+            .update({ answer: formData.answer })
+            .eq('id', questionData.answers[0].id);
+            
+          if (ansError) throw ansError;
+
+          // 2. Update questions table without overwriting the null answer
+          const { error: updateError } = await supabase
+            .from('questions')
+            .update({
+              subject_id: parseInt(formData.subject_id),
+              topic_id: parseInt(formData.topic_id),
+              question: formData.question
+            })
+            .eq('id', questionData.id);
+            
+          if (updateError) throw updateError;
+        } else {
+          // Update questions table normally
+          const { error: updateError } = await supabase
+            .from('questions')
+            .update(payload)
+            .eq('id', questionData.id);
+
+          if (updateError) throw updateError;
+        }
       } else {
         const { error: insertError } = await supabase
           .from('questions')
@@ -125,27 +181,27 @@ export default function QuestionFormModal({ questionData, onClose }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-semibold text-slate-700 mb-1">Subject</label>
-                <select 
-                  name="subject"
-                  value={formData.subject}
+                <select
+                  name="subject_id"
+                  value={formData.subject_id}
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a]"
                   required
                 >
-                  {subjects.map(s => <option key={s} value={s}>{s}</option>)}
+                  {availableSubjects.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
                 </select>
               </div>
-              
+
               <div>
-                <label className="block text-sm font-semibold text-slate-700 mb-1">Category</label>
-                <select 
-                  name="category"
-                  value={formData.category}
+                <label className="block text-sm font-semibold text-slate-700 mb-1">Topic</label>
+                <select
+                  name="topic_id"
+                  value={formData.topic_id}
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#077d8a]"
                   required
                 >
-                  {categories.map(c => <option key={c} value={c}>{c}</option>)}
+                  {availableTopics.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}
                 </select>
               </div>
             </div>
