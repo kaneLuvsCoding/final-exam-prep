@@ -176,7 +176,9 @@ export default function AccordionItem({
               ) : typeof answer === 'string' ? (
                 <div
                   className="max-w-none text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-medium leading-relaxed prose prose-slate dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 text-justify prose-p:text-justify prose-li:text-justify"
-                  dangerouslySetInnerHTML={{ __html: answer }}
+                  dangerouslySetInnerHTML={{ 
+                    __html: answer.replace(/\sstyle="[^"]*"/gi, '') 
+                  }}
                 />
               ) : (
                 <div className="max-w-none">

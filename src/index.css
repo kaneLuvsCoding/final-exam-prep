@@ -6,3 +6,12 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+
+/* Ensure consistent font and size for rich text answers */
+.prose {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.prose * {
+  font-family: 'Poppins', sans-serif !important;
+}
