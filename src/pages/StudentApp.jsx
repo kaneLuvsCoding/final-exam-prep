@@ -198,7 +198,7 @@ const renderAiResponseForStudy = (text) => {
               <span className="mt-0.5 inline-flex min-w-6 h-6 items-center justify-center rounded-full bg-[#077d8a]/10 text-[#077d8a] text-xs font-black">
                 {numbered[1]}
               </span>
-              <p className="text-sm md:text-[15px] font-semibold text-slate-700 leading-relaxed">
+              <p className="text-sm md:text-[15px] font-semibold text-slate-700 leading-relaxed text-justify">
                 {renderAiInline(numbered[2])}
               </p>
             </div>
@@ -210,7 +210,7 @@ const renderAiResponseForStudy = (text) => {
           return (
             <div key={`bullet-${index}`} className="flex items-start gap-2.5">
               <span className="mt-1.5 text-[#077d8a] font-black">•</span>
-              <p className="text-sm md:text-[15px] font-semibold text-slate-700 leading-relaxed">
+              <p className="text-sm md:text-[15px] font-semibold text-slate-700 leading-relaxed text-justify">
                 {renderAiInline(bullet[1])}
               </p>
             </div>
@@ -218,7 +218,7 @@ const renderAiResponseForStudy = (text) => {
         }
 
         return (
-          <p key={`para-${index}`} className="text-sm md:text-[15px] font-semibold text-slate-700 leading-relaxed">
+          <p key={`para-${index}`} className="text-sm md:text-[15px] font-semibold text-slate-700 leading-relaxed text-justify">
             {renderAiInline(line)}
           </p>
         );

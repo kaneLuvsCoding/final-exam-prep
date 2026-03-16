@@ -42,7 +42,7 @@ export default function AccordionItem({
           } ${isMemorized && !isOpen ? 'opacity-60 bg-slate-50/50 dark:bg-slate-800/40' : ''}`}
       >
         <div
-          className={`w-full text-left p-4 md:px-6 flex flex-col gap-3 md:flex-row md:justify-between md:items-center bg-transparent cursor-pointer select-none group transition-all duration-300 ${
+          className={`w-full text-justify p-4 md:px-6 flex flex-col gap-3 md:flex-row md:justify-between md:items-center bg-transparent cursor-pointer select-none group transition-all duration-300 ${
             isOpen ? 'md:pt-5 md:pb-2' : 'md:py-5'
           }`}
           onClick={onClick}
@@ -163,7 +163,7 @@ export default function AccordionItem({
                           {row.map((cell, cellIdx) => (
                             <td
                               key={cellIdx}
-                              className={`p-4 text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-semibold leading-relaxed align-top whitespace-pre-line ${cellIdx < row.length - 1 ? 'border-r border-slate-100 dark:border-slate-700' : ''}`}
+                              className={`p-4 text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-semibold leading-relaxed align-top whitespace-pre-line text-justify ${cellIdx < row.length - 1 ? 'border-r border-slate-100 dark:border-slate-700' : ''}`}
                             >
                               {cell}
                             </td>
@@ -175,7 +175,7 @@ export default function AccordionItem({
                 </div>
               ) : typeof answer === 'string' ? (
                 <div
-                  className="max-w-none text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-medium leading-relaxed prose prose-slate dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-li:my-0.5"
+                  className="max-w-none text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-medium leading-relaxed prose prose-slate dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 text-justify prose-p:text-justify prose-li:text-justify"
                   dangerouslySetInnerHTML={{ __html: answer }}
                 />
               ) : (
