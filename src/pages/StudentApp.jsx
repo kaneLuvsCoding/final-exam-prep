@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import AccordionItem from '../components/AccordionItem';
 
@@ -228,6 +228,7 @@ const renderAiResponseForStudy = (text) => {
 };
 
 export default function StudyHub() {
+  const navigate = useNavigate();
   const [studyData, setStudyData] = useState(null);
   const [activeSubject, setActiveSubject] = useState("");
 
@@ -1037,6 +1038,18 @@ export default function StudyHub() {
                   <span className="bg-slate-200/70 dark:bg-slate-800 text-slate-600 dark:text-slate-200 px-2.5 py-0.5 rounded-md text-sm font-bold shadow-sm">
                     {activeSubject}
                   </span>
+
+                  {activeSubject === "Technical Writing" && (
+                    <button 
+                      onClick={() => navigate('/practice/technical-writing')}
+                      className="bg-[#077d8a] hover:bg-[#066d79] text-white px-3 py-1 rounded-lg text-sm font-bold shadow-sm transition-all flex items-center gap-1.5"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                      </svg>
+                      Practice Keywords
+                    </button>
+                  )}
 
                   {isDocument ? subjectData.message : "Click to reveal the notes."}
                 </p>

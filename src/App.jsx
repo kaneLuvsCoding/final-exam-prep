@@ -5,6 +5,8 @@ import QuestionsManager from './admin/QuestionsManager';
 import AdminLogin from './admin/AdminLogin';
 import './App.css';
 
+import TechWritingPractice from './pages/TechWritingPractice';
+
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
   const isAuthenticated = sessionStorage.getItem('isAdminAuthenticated') === 'true';
@@ -18,6 +20,9 @@ function App() {
         {/* Student App Route */}
         <Route path="/" element={<StudentApp />} />
         
+        {/* Practice Routes */}
+        <Route path="/practice/technical-writing" element={<TechWritingPractice onBack={() => window.history.back()} />} />
+
         {/* Admin Routes */}
         <Route path="/admin" element={
           <ProtectedAdminRoute>
