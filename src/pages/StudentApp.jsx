@@ -4,12 +4,12 @@ import { supabase } from '../lib/supabase';
 import AccordionItem from '../components/AccordionItem';
 
 const examSchedule = {
-  "Technical Writing": "2026-03-17T00:00:00",
-  "Analysis of Algorithm": "2026-03-18T00:00:00",
-  "BMIS": "2026-03-19T00:00:00",
-  "ERP": "2026-03-20T00:00:00",
-  "Advanced DBMS": "2026-03-23T00:00:00",
-  "SQM": "2026-03-24T00:00:00"
+  "Technical Writing": "2026-03-17T09:00:00",
+  "Analysis of Algorithm": "2026-03-18T09:00:00",
+  "BMIS": "2026-03-19T09:00:00",
+  "ERP": "2026-03-20T09:00:00",
+  "Advanced DBMS": "2026-03-23T09:00:00",
+  "SQM": "2026-03-24T09:00:00"
 };
 
 const geminiModel = "gemini-3-flash-preview";
