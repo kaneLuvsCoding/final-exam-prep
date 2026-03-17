@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import AccordionItem from '../components/AccordionItem';
 
@@ -229,6 +229,7 @@ const renderAiResponseForStudy = (text) => {
 
 export default function StudyHub() {
   const navigate = useNavigate();
+  const { subjectSlug } = useParams();
   const [studyData, setStudyData] = useState(null);
   const [activeSubject, setActiveSubject] = useState("");
 
@@ -379,7 +380,14 @@ export default function StudyHub() {
         });
 
         if (keys.length > 0) {
-          if (!activeSubject || !keys.includes(activeSubject)) {
+          if (subjectSlug) {
+            const matchedSubject = keys.find(k => k.toLowerCase().replace(/ /g, '-') === subjectSlug);
+            if (matchedSubject) {
+              setActiveSubject(matchedSubject);
+            } else if (!activeSubject || !keys.includes(activeSubject)) {
+              setActiveSubject(keys[0]);
+            }
+          } else if (!activeSubject || !keys.includes(activeSubject)) {
             setActiveSubject(keys[0]);
           }
         } else {
@@ -390,7 +398,7 @@ export default function StudyHub() {
       }
     }
     loadData();
-  }, [activeSemesterId, activeMajorId]);
+  }, [activeSemesterId, activeMajorId, subjectSlug]);
 
   const subjects = Object.keys(studyData || {}).sort((a, b) => {
     const dateA = new Date(examSchedule[a] || "2099-01-01").getTime();
@@ -1040,7 +1048,7 @@ export default function StudyHub() {
                   </span>
 
                   {activeSubject === "Technical Writing" && (
-                    <button 
+                    <button
                       onClick={() => navigate('/practice/technical-writing')}
                       className="bg-[#077d8a] hover:bg-[#066d79] text-white px-3 py-1 rounded-lg text-sm font-bold shadow-sm transition-all flex items-center gap-1.5"
                     >

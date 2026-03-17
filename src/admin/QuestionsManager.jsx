@@ -8,7 +8,7 @@ const examSchedule = {
   "Technical Writing": "2026-03-17T00:00:00",
   "Analysis of Algorithm": "2026-03-18T00:00:00",
   "BMIS": "2026-03-19T00:00:00",
-  "ERP": "2026-03-20T00:00:00", 
+  "ERP": "2026-03-20T00:00:00",
   "Advanced DBMS": "2026-03-23T00:00:00",
   "SQM": "2026-03-24T00:00:00"
 };
@@ -17,10 +17,10 @@ export default function QuestionsManager() {
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingQuestion, setEditingQuestion] = useState(null);
-  
+
   // Layout states from StudentApp
   const [isSidebarOpen, setIsSidebarOpen] = useState(() => {
     if (typeof window === "undefined") return false;
@@ -37,7 +37,7 @@ export default function QuestionsManager() {
   // Data states
   const [availableSubjects, setAvailableSubjects] = useState([]);
   const [availableTopics, setAvailableTopics] = useState([]);
-  
+
   // Selection
   const [activeSubjectId, setActiveSubjectId] = useState(null);
   const [activeTopicId, setActiveTopicId] = useState(null);
@@ -84,7 +84,7 @@ export default function QuestionsManager() {
       .from('subjects')
       .select('id, name, major_subjects(major_id)')
       .order('id');
-    
+
     if (error) {
       console.error("Error fetching subjects:", error);
       return;
@@ -139,7 +139,7 @@ export default function QuestionsManager() {
       setAvailableTopics(data);
       // Auto-select first topic if topics exist
       if (data.length > 0) {
-          setActiveTopicId(data[0].id);
+        setActiveTopicId(data[0].id);
       }
     }
   };
@@ -192,7 +192,7 @@ export default function QuestionsManager() {
 
   const activeSubjectObj = availableSubjects.find(s => s.id === activeSubjectId) || subjectsSorted[0];
   const activeSubjectName = activeSubjectObj ? activeSubjectObj.name : "Select a Subject";
-  
+
   const activeTopicObj = availableTopics.find(t => t.id === activeTopicId);
   const activeTopicName = activeTopicObj ? activeTopicObj.name : (loading ? "Loading..." : "Select a Topic");
 
@@ -230,32 +230,32 @@ export default function QuestionsManager() {
   // Inline Subject Actions
   const [selectedMajorIdsForSubject, setSelectedMajorIdsForSubject] = useState([]);
 
-  const handleAddSubjectClick = () => { 
-    setInlineSubjectName(''); 
+  const handleAddSubjectClick = () => {
+    setInlineSubjectName('');
     setSelectedMajorIdsForSubject([]);
-    setIsAddingSubject(true); 
-    setIsEditingSubject(false); 
+    setIsAddingSubject(true);
+    setIsEditingSubject(false);
   };
-  const handleEditSubjectClick = (s) => { 
-    setInlineSubjectName(s.name); 
+  const handleEditSubjectClick = (s) => {
+    setInlineSubjectName(s.name);
     setSelectedMajorIdsForSubject(s.major_subjects?.map(ms => ms.major_id) || []);
-    setIsEditingSubject(true); 
-    setIsAddingSubject(false); 
-    setActiveSubjectId(s.id); 
+    setIsEditingSubject(true);
+    setIsAddingSubject(false);
+    setActiveSubjectId(s.id);
   };
-  const cancelInlineAction = () => { 
-    setIsAddingSubject(false); 
-    setIsEditingSubject(false); 
-    setInlineSubjectName(''); 
+  const cancelInlineAction = () => {
+    setIsAddingSubject(false);
+    setIsEditingSubject(false);
+    setInlineSubjectName('');
     setSelectedMajorIdsForSubject([]);
   };
 
   const toggleMajorForSubject = (majorId) => {
-    setSelectedMajorIdsForSubject(prev => 
+    setSelectedMajorIdsForSubject(prev =>
       prev.includes(majorId) ? prev.filter(id => id !== majorId) : [...prev, majorId]
     );
   };
-  
+
   const handleDeleteSubjectClick = async (s) => {
     if (window.confirm(`Delete the subject "${s.name}"? This action cannot be undone.`)) {
       const { error } = await supabase.from('subjects').delete().eq('id', s.id);
@@ -366,10 +366,10 @@ export default function QuestionsManager() {
   };
 
   // Inline Major Actions
-  const handleAddMajorClick = () => { 
-    setInlineMajorName(''); 
-    setIsAddingMajor(true); 
-    setIsEditingMajor(false); 
+  const handleAddMajorClick = () => {
+    setInlineMajorName('');
+    setIsAddingMajor(true);
+    setIsEditingMajor(false);
     setSelectedSemesterIdsForMajor([]);
     setEditingMajorId(null);
   };
@@ -377,30 +377,30 @@ export default function QuestionsManager() {
     setIsEditingMajor(true);
     setEditingMajorId(major.id);
     setInlineMajorName(major.name);
-    
+
     // Fetch currently associated semesters
     const { data, error } = await supabase
       .from('semester_majors')
       .select('semester_id')
       .eq('major_id', major.id);
-    
+
     if (!error && data) {
       setSelectedSemesterIdsForMajor(data.map(item => item.semester_id));
     }
   };
 
   const toggleSemesterForMajor = (semesterId) => {
-    setSelectedSemesterIdsForMajor(prev => 
-      prev.includes(semesterId) 
-        ? prev.filter(id => id !== semesterId) 
+    setSelectedSemesterIdsForMajor(prev =>
+      prev.includes(semesterId)
+        ? prev.filter(id => id !== semesterId)
         : [...prev, semesterId]
     );
   };
 
-  const cancelInlineMajorAction = () => { 
-    setIsAddingMajor(false); 
-    setIsEditingMajor(false); 
-    setInlineMajorName(''); 
+  const cancelInlineMajorAction = () => {
+    setIsAddingMajor(false);
+    setIsEditingMajor(false);
+    setInlineMajorName('');
     setSelectedSemesterIdsForMajor([]);
     setEditingMajorId(null);
   };
@@ -456,17 +456,17 @@ export default function QuestionsManager() {
         .hide-scroll::-webkit-scrollbar { display: none; }
         .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
-      
+
       {/* HEADER exactly like StudentApp */}
       <header className="bg-gradient-to-r from-[#045c66] via-[#077d8a] to-[#0996a6] text-white shadow-lg z-40 shrink-0 border-b border-[#045c66]/30">
         <div className="px-4 md:px-8 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          
+
           <div className="flex items-center justify-between shrink-0 w-full md:w-auto">
             <div className="flex items-center gap-3">
               <h1 className="text-2xl md:text-3xl font-black tracking-tighter flex items-center gap-2 drop-shadow-sm mr-2">
-                 Sayargyi Panel
+                Sayargyi Panel
               </h1>
-              
+
               {/* Dark Mode Toggle */}
               <button
                 type="button"
@@ -485,10 +485,10 @@ export default function QuestionsManager() {
                 )}
               </button>
 
-              
+
             </div>
-            
-            <button 
+
+            <button
               className="md:hidden p-2 bg-white/10 hover:bg-white/20 rounded-xl transition-all backdrop-blur-sm ml-auto"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             >
@@ -497,9 +497,9 @@ export default function QuestionsManager() {
               </svg>
             </button>
           </div>
-          
+
           <div className="overflow-x-auto py-2 px-1 snap-x w-full justify-end">
-             <nav className="flex gap-3 min-w-max md:justify-end items-center">
+            <nav className="flex gap-3 min-w-max md:justify-end items-center">
               {availableTopics.map((topic) => (
                 <button
                   key={topic.id}
@@ -507,11 +507,10 @@ export default function QuestionsManager() {
                     setActiveTopicId(topic.id);
                     setOpenQuestionIndex(null);
                   }}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 whitespace-nowrap snap-start shrink-0 group ${
-                    activeTopicId === topic.id 
-                      ? 'bg-white text-[#077d8a] shadow-md scale-105 transform' 
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm transition-all duration-300 whitespace-nowrap snap-start shrink-0 group ${activeTopicId === topic.id
+                      ? 'bg-white text-[#077d8a] shadow-md scale-105 transform'
                       : 'bg-[#045c66]/50 text-[#c7f0f4] hover:bg-[#045c66]/80 hover:text-white'
-                  }`}
+                    }`}
                 >
                   {topic.name}
                   {activeTopicId === topic.id && (
@@ -522,20 +521,20 @@ export default function QuestionsManager() {
                   )}
                 </button>
               ))}
-              
+
               {activeSubjectId && (
                 isAddingTopic || isEditingTopic ? (
-                   <div className="flex items-center gap-1 ml-2 bg-white/20 px-2 py-0.5 rounded-full backdrop-blur-sm shrink-0">
-                      <input
-                        type="text" autoFocus
-                        className="px-2 py-1 rounded-md text-sm text-slate-800 focus:outline-none min-w-[120px] bg-white border border-transparent focus:border-white shadow-inner"
-                        value={inlineTopicName} onChange={(e) => setInlineTopicName(e.target.value)}
-                        onKeyDown={(e) => { if (e.key === 'Enter') saveInlineTopic(); if (e.key === 'Escape') cancelInlineTopicAction(); }}
-                        placeholder={isAddingTopic ? "New Topic" : "Edit Topic"}
-                      />
-                      <button onClick={saveInlineTopic} className="text-white hover:text-emerald-300 p-1 group"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg></button>
-                      <button onClick={cancelInlineTopicAction} className="text-white hover:text-rose-300 p-1 group"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg></button>
-                   </div>
+                  <div className="flex items-center gap-1 ml-2 bg-white/20 px-2 py-0.5 rounded-full backdrop-blur-sm shrink-0">
+                    <input
+                      type="text" autoFocus
+                      className="px-2 py-1 rounded-md text-sm text-slate-800 focus:outline-none min-w-[120px] bg-white border border-transparent focus:border-white shadow-inner"
+                      value={inlineTopicName} onChange={(e) => setInlineTopicName(e.target.value)}
+                      onKeyDown={(e) => { if (e.key === 'Enter') saveInlineTopic(); if (e.key === 'Escape') cancelInlineTopicAction(); }}
+                      placeholder={isAddingTopic ? "New Topic" : "Edit Topic"}
+                    />
+                    <button onClick={saveInlineTopic} className="text-white hover:text-emerald-300 p-1 group"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg></button>
+                    <button onClick={cancelInlineTopicAction} className="text-white hover:text-rose-300 p-1 group"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" /></svg></button>
+                  </div>
                 ) : (
                   <button
                     onClick={handleAddTopicClick}
@@ -564,14 +563,13 @@ export default function QuestionsManager() {
             </button>
           </div>
         </div>
-        
+
         {isSidebarOpen && (
           <div className="absolute inset-0 bg-[#171717]/40 z-20 md:hidden backdrop-blur-md transition-opacity" onClick={() => setIsSidebarOpen(false)} />
         )}
 
-        <aside className={`absolute md:relative w-[85%] h-full bg-white/90 dark:bg-[#171717]/90 backdrop-blur-xl border-r border-slate-200/60 dark:border-slate-700/60 flex flex-col shadow-2xl md:shadow-none z-30 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shrink-0 ${
-          isSidebarOpen ? 'translate-x-0 md:w-72 md:opacity-100' : '-translate-x-full md:translate-x-0 md:w-0 md:opacity-0 md:border-r-0 md:pointer-events-none'
-        }`}>
+        <aside className={`absolute md:relative w-[85%] h-full bg-white/90 dark:bg-[#171717]/90 backdrop-blur-xl border-r border-slate-200/60 dark:border-slate-700/60 flex flex-col shadow-2xl md:shadow-none z-30 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] shrink-0 ${isSidebarOpen ? 'translate-x-0 md:w-72 md:opacity-100' : '-translate-x-full md:translate-x-0 md:w-0 md:opacity-0 md:border-r-0 md:pointer-events-none'
+          }`}>
           <div className="p-6 h-full flex flex-col overflow-y-auto hide-scroll">
             <div className="mb-6 flex justify-between items-center shrink-0">
               <div className="flex flex-col gap-1">
@@ -580,7 +578,7 @@ export default function QuestionsManager() {
                 </h2>
               </div>
             </div>
-            
+
             <nav className="flex flex-col gap-2.5">
               {subjectsSorted.map((subject) => (
                 <div key={subject.id} className="relative group flex flex-col">
@@ -590,19 +588,18 @@ export default function QuestionsManager() {
                       setOpenQuestionIndex(null);
                       if (window.innerWidth < 768) setIsSidebarOpen(false);
                     }}
-                    className={`text-left px-4 py-3.5 rounded-xl font-semibold transition-all duration-200 ${
-                      activeSubjectId === subject.id 
-                        ? 'bg-[#077d8a]/10 text-[#077d8a] shadow-sm ring-1 ring-[#077d8a]/30 translate-x-1' 
+                    className={`text-left px-4 py-3.5 rounded-xl font-semibold transition-all duration-200 ${activeSubjectId === subject.id
+                        ? 'bg-[#077d8a]/10 text-[#077d8a] shadow-sm ring-1 ring-[#077d8a]/30 translate-x-1'
                         : 'text-slate-500 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:text-slate-800 dark:hover:text-slate-100 hover:translate-x-1'
-                    }`}
+                      }`}
                   >
                     {subject.name}
                   </button>
                   {activeSubjectId === subject.id && (
-                     <div className="flex gap-2 p-2 justify-end right-2 absolute right-0 top-2 opacity-50 hover:opacity-100">
-                       <button onClick={(e) => { e.stopPropagation(); handleEditSubjectClick(subject); }}><svg className="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
-                       <button onClick={(e) => { e.stopPropagation(); handleDeleteSubjectClick(subject); }}><svg className="w-4 h-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
-                     </div>
+                    <div className="flex gap-2 p-2 justify-end right-2 absolute right-0 top-2 opacity-50 hover:opacity-100">
+                      <button onClick={(e) => { e.stopPropagation(); handleEditSubjectClick(subject); }}><svg className="w-4 h-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg></button>
+                      <button onClick={(e) => { e.stopPropagation(); handleDeleteSubjectClick(subject); }}><svg className="w-4 h-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></button>
+                    </div>
                   )}
                 </div>
               ))}
@@ -610,43 +607,42 @@ export default function QuestionsManager() {
 
             <div className="mt-8 pt-4 border-t border-slate-200/60 dark:border-slate-700/60 shrink-0">
               {(isAddingSubject || isEditingSubject) ? (
-                 <div className="flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                   <div className="flex flex-col gap-1">
-                     <label className="text-[10px] font-black uppercase tracking-widest text-[#077d8a]/70">Subject Name</label>
-                     <input
-                       type="text" autoFocus
-                       className="px-3 py-2 border border-slate-200 dark:border-slate-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#077d8a]/30 focus:border-[#077d8a] w-full dark:bg-slate-900"
-                       value={inlineSubjectName} onChange={(e) => setInlineSubjectName(e.target.value)}
-                       onKeyDown={(e) => { if (e.key === 'Enter') saveInlineSubject(); if (e.key === 'Escape') cancelInlineAction(); }}
-                       placeholder={isAddingSubject ? "New Subject" : "Edit Subject"}
-                     />
-                   </div>
+                <div className="flex flex-col gap-3 bg-slate-50 dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                  <div className="flex flex-col gap-1">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#077d8a]/70">Subject Name</label>
+                    <input
+                      type="text" autoFocus
+                      className="px-3 py-2 border border-slate-200 dark:border-slate-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#077d8a]/30 focus:border-[#077d8a] w-full dark:bg-slate-900"
+                      value={inlineSubjectName} onChange={(e) => setInlineSubjectName(e.target.value)}
+                      onKeyDown={(e) => { if (e.key === 'Enter') saveInlineSubject(); if (e.key === 'Escape') cancelInlineAction(); }}
+                      placeholder={isAddingSubject ? "New Subject" : "Edit Subject"}
+                    />
+                  </div>
 
-                   <div className="flex flex-col gap-1">
-                     <label className="text-[10px] font-black uppercase tracking-widest text-[#077d8a]/70">Assign to Majors</label>
-                     <div className="flex flex-wrap gap-1.5 mt-1">
-                       {availableMajors.map(m => (
-                         <button
-                           key={m.id}
-                           type="button"
-                           onClick={() => toggleMajorForSubject(m.id)}
-                           className={`px-2 py-1 rounded-md text-[10px] font-bold border transition-all ${
-                             selectedMajorIdsForSubject.includes(m.id)
-                               ? 'bg-[#077d8a] text-white border-[#077d8a]'
-                               : 'bg-white dark:bg-slate-900 text-slate-400 dark:text-slate-500 border-slate-200 dark:border-slate-700 hover:border-[#077d8a]/50'
-                           }`}
-                         >
-                           {m.name}
-                         </button>
-                       ))}
-                     </div>
-                   </div>
+                  <div className="flex flex-col gap-1">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-[#077d8a]/70">Assign to Majors</label>
+                    <div className="flex flex-wrap gap-1.5 mt-1">
+                      {availableMajors.map(m => (
+                        <button
+                          key={m.id}
+                          type="button"
+                          onClick={() => toggleMajorForSubject(m.id)}
+                          className={`px-2 py-1 rounded-md text-[10px] font-bold border transition-all ${selectedMajorIdsForSubject.includes(m.id)
+                              ? 'bg-[#077d8a] text-white border-[#077d8a]'
+                              : 'bg-white dark:bg-slate-900 text-slate-400 dark:text-slate-500 border-slate-200 dark:border-slate-700 hover:border-[#077d8a]/50'
+                            }`}
+                        >
+                          {m.name}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
 
-                   <div className="flex justify-end gap-2 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
-                     <button onClick={cancelInlineAction} className="text-xs text-slate-500 font-bold hover:text-slate-700 transition-colors">Cancel</button>
-                     <button onClick={saveInlineSubject} className="text-xs bg-[#077d8a] text-white rounded-lg px-4 py-1.5 font-bold shadow-sm hover:shadow-md transition-all active:scale-95">{isAddingSubject ? 'Save Subject' : 'Update Subject'}</button>
-                   </div>
-                 </div>
+                  <div className="flex justify-end gap-2 mt-2 pt-2 border-t border-slate-100 dark:border-slate-700">
+                    <button onClick={cancelInlineAction} className="text-xs text-slate-500 font-bold hover:text-slate-700 transition-colors">Cancel</button>
+                    <button onClick={saveInlineSubject} className="text-xs bg-[#077d8a] text-white rounded-lg px-4 py-1.5 font-bold shadow-sm hover:shadow-md transition-all active:scale-95">{isAddingSubject ? 'Save Subject' : 'Update Subject'}</button>
+                  </div>
+                </div>
               ) : (
                 <button
                   onClick={handleAddSubjectClick}
@@ -713,7 +709,7 @@ export default function QuestionsManager() {
                         value={inlineMajorName} onChange={(e) => setInlineMajorName(e.target.value)}
                         placeholder={isAddingMajor ? "New Major" : "Edit Major"}
                       />
-                      
+
                       <div className="flex flex-col gap-1 mt-1">
                         <label className="text-[9px] font-black uppercase tracking-widest text-[#077d8a]/70">Link Semesters</label>
                         <div className="flex flex-wrap gap-1">
@@ -722,11 +718,10 @@ export default function QuestionsManager() {
                               key={s.id}
                               type="button"
                               onClick={() => toggleSemesterForMajor(s.id)}
-                              className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all ${
-                                selectedSemesterIdsForMajor.includes(s.id)
+                              className={`px-1.5 py-0.5 rounded text-[9px] font-bold border transition-all ${selectedSemesterIdsForMajor.includes(s.id)
                                   ? 'bg-[#077d8a] text-white border-[#077d8a]'
                                   : 'bg-white dark:bg-slate-900 text-slate-400 dark:text-slate-500 border-slate-200 dark:border-slate-700'
-                              }`}
+                                }`}
                             >
                               {s.name}
                             </button>
@@ -745,8 +740,8 @@ export default function QuestionsManager() {
                 </nav>
               </div>
 
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="w-full py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-600 dark:bg-rose-900/20 dark:hover:bg-rose-900/40 dark:text-rose-400 text-center text-sm font-bold flex flex-col items-center justify-center transition-colors shadow-sm"
               >
                 Exit Sayargyi Panel
@@ -759,16 +754,16 @@ export default function QuestionsManager() {
         <main className="flex-1 overflow-y-auto w-full bg-slate-50/50 dark:bg-slate-950/60 relative hide-scroll">
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#077d8a 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
           <div className={`mx-auto p-4 md:p-10 lg:p-12 relative z-10 max-w-5xl`}>
-            
+
             <header className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 shrink-0 border-b border-slate-200/60 dark:border-slate-700/60 pb-8">
               <div className="flex-1">
-                 <h2 className="text-3xl md:text-5xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight leading-tight">
+                <h2 className="text-3xl md:text-5xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight leading-tight">
                   {activeTopicName}
                 </h2>
                 <p className="text-slate-500 dark:text-slate-300 mt-3 text-base md:text-lg font-medium flex items-center flex-wrap gap-3">
                   <span className="bg-slate-200/70 dark:bg-slate-800 text-slate-600 dark:text-slate-200 px-2.5 py-0.5 rounded-md text-sm font-bold shadow-sm">
                     {activeSubjectName}
-                  </span> 
+                  </span>
                   Sayargyi specific question management
                 </p>
               </div>
@@ -786,76 +781,76 @@ export default function QuestionsManager() {
 
             {!activeTopicId ? (
               <div className="text-center py-20 bg-white/50 dark:bg-[#171717]/50 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm backdrop-blur-sm">
-                 <div className="text-5xl mb-4 opacity-50">📂</div>
-                 <h3 className="text-xl font-bold text-slate-700 dark:text-slate-300">No active topic</h3>
-                 <p className="text-slate-500 mt-2">Select or create a subject and topic to view or add questions.</p>
+                <div className="text-5xl mb-4 opacity-50">📂</div>
+                <h3 className="text-xl font-bold text-slate-700 dark:text-slate-300">No active topic</h3>
+                <p className="text-slate-500 mt-2">Select or create a subject and topic to view or add questions.</p>
               </div>
             ) : loading && questions.length === 0 ? (
-               <div className="flex justify-center p-12">
-                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#077d8a]"></div>
-               </div>
+              <div className="flex justify-center p-12">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#077d8a]"></div>
+              </div>
             ) : questions.length === 0 ? (
-               <div className="text-center p-12 bg-white/80 dark:bg-[#171717]/80 backdrop-blur-sm rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                 <div className="text-6xl mb-6 opacity-80">📝</div>
-                 <h3 className="text-xl font-bold text-slate-700 dark:text-slate-200 mb-2">No questions found</h3>
-                 <p className="text-slate-500 dark:text-slate-400 text-base">Create a new question in this topic.</p>
-               </div>
+              <div className="text-center p-12 bg-white/80 dark:bg-[#171717]/80 backdrop-blur-sm rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <div className="text-6xl mb-6 opacity-80">📝</div>
+                <h3 className="text-xl font-bold text-slate-700 dark:text-slate-200 mb-2">No questions found</h3>
+                <p className="text-slate-500 dark:text-slate-400 text-base">Create a new question in this topic.</p>
+              </div>
             ) : (
-               <div className="flex flex-col pt-2 pb-16 gap-4">
-                 {questions.map((q, index) => {
-                    let parsedAnswer = q.answer;
-                    if ((q.type === 'comparison' || !q.answer) && q.answers && q.answers.length > 0) {
-                      try { parsedAnswer = JSON.parse(q.answers[0].answer); } catch(e) {}
-                    } else if (typeof q.answer === 'string') {
-                       if (q.answer.includes('<') && q.answer.includes('>')) {
-                           parsedAnswer = q.answer;
-                       } else {
-                           parsedAnswer = q.answer.split('\n').filter(l => l.trim() !== '');
-                       }
+              <div className="flex flex-col pt-2 pb-16 gap-4">
+                {questions.map((q, index) => {
+                  let parsedAnswer = q.answer;
+                  if ((q.type === 'comparison' || !q.answer) && q.answers && q.answers.length > 0) {
+                    try { parsedAnswer = JSON.parse(q.answers[0].answer); } catch (e) { }
+                  } else if (typeof q.answer === 'string') {
+                    if (q.answer.includes('<') && q.answer.includes('>')) {
+                      parsedAnswer = q.answer;
+                    } else {
+                      parsedAnswer = q.answer.split('\n').filter(l => l.trim() !== '');
                     }
+                  }
 
-                    let parsedImages = undefined;
-                    if (q.images) parsedImages = q.images.split(',').map(s => s.trim()).filter(s => s !== '');
+                  let parsedImages = undefined;
+                  if (q.images) parsedImages = q.images.split(',').map(s => s.trim()).filter(s => s !== '');
 
-                    const adminActions = (
-                      <>
-                         <button 
-                           onClick={() => openEditModal(q)}
-                           className="p-1.5 md:p-2 bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 text-blue-600 dark:text-blue-400 rounded-lg transition-colors shadow-sm focus:ring-2 focus:ring-blue-500/30 font-semibold"
-                           title="Edit"
-                         >
-                           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                           </svg>
-                         </button>
-                         <button 
-                           onClick={() => handleDelete(q.id)}
-                           className="p-1.5 md:p-2 bg-rose-50 dark:bg-rose-900/20 hover:bg-rose-100 dark:hover:bg-rose-900/40 text-rose-600 dark:text-rose-400 rounded-lg transition-colors shadow-sm focus:ring-2 focus:ring-rose-500/30 font-semibold"
-                           title="Delete"
-                         >
-                           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                           </svg>
-                         </button>
-                      </>
-                    );
+                  const adminActions = (
+                    <>
+                      <button
+                        onClick={() => openEditModal(q)}
+                        className="p-1.5 md:p-2 bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/40 text-blue-600 dark:text-blue-400 rounded-lg transition-colors shadow-sm focus:ring-2 focus:ring-blue-500/30 font-semibold"
+                        title="Edit"
+                      >
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() => handleDelete(q.id)}
+                        className="p-1.5 md:p-2 bg-rose-50 dark:bg-rose-900/20 hover:bg-rose-100 dark:hover:bg-rose-900/40 text-rose-600 dark:text-rose-400 rounded-lg transition-colors shadow-sm focus:ring-2 focus:ring-rose-500/30 font-semibold"
+                        title="Delete"
+                      >
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
+                    </>
+                  );
 
-                    return (
-                      <AccordionItem
-                        key={q.id}
-                        question={q.question}
-                        answer={parsedAnswer}
-                        type={q.type}
-                        headers={q.headers}
-                        images={parsedImages}
-                        pdfLink={q.pdfLink}
-                        isOpen={openQuestionIndex === index}
-                        onClick={() => handleToggleQuestion(index)}
-                        adminActions={adminActions}
-                      />
-                    );
-                 })}
-               </div>
+                  return (
+                    <AccordionItem
+                      key={q.id}
+                      question={q.question}
+                      answer={parsedAnswer}
+                      type={q.type}
+                      headers={q.headers}
+                      images={parsedImages}
+                      pdfLink={q.pdfLink}
+                      isOpen={openQuestionIndex === index}
+                      onClick={() => handleToggleQuestion(index)}
+                      adminActions={adminActions}
+                    />
+                  );
+                })}
+              </div>
             )}
           </div>
         </main>

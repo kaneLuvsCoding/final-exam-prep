@@ -18,8 +18,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* Student App Route */}
-        <Route path="/" element={<StudentApp />} />
-        
+        <Route path="/:subjectSlug" element={<StudentApp />} />
+        <Route path="/" element={<Navigate to="/analysis-of-algorithm" replace />} />
+
         {/* Practice Routes */}
         <Route path="/practice/technical-writing" element={<TechWritingPractice onBack={() => window.history.back()} />} />
 
@@ -30,7 +31,7 @@ function App() {
           </ProtectedAdminRoute>
         } />
         <Route path="/admin/login" element={<AdminLogin />} />
-        
+
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
