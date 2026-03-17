@@ -1,0 +1,582 @@
+[
+  {
+    "question": "Which of the following growth rates is the most expensive time requirement?",
+    "options": [
+      "a. O(n)",
+      "b. O(n!)",
+      "c. O(2^n)",
+      "d. O(n^2)"
+    ],
+    "answer": "O(n!)"
+  },
+  {
+    "question": "Register r+i of the _______ corresponds to register i of the _______ to simulate a RAM program P by a RASP program.",
+    "options": [
+      "a. RASP, RAM",
+      "b. RASP, RASP",
+      "c. RAM, RAM",
+      "d. RAM, RASP"
+    ],
+    "answer": "RASP, RAM"
+  },
+  {
+    "question": "Uniform Cost Space Complexity for RAM program is _______.",
+    "options": [
+      "a. the maximum number of loop for main instruction",
+      "b. the largest integer stored in memory register",
+      "c. the number of variables used",
+      "d. the number of registers used"
+    ],
+    "answer": "the number of registers used"
+  },
+  {
+    "question": "The RASP cost of executing the instruction SUB =i, stored in registers j and j+1 is_______.",
+    "options": [
+      "a. l(j+1) + l(c(0)) + l(i)",
+      "b. l(j) + l(j+1) + l(c(0))",
+      "c. l(c(0)) + l(i)",
+      "d. l(j) + l(c(0)) + l(i)"
+    ],
+    "answer": "l(j) + l(c(0)) + l(i)"
+  },
+  {
+    "question": "The RAM cost of executing the instruction JUMP b, denotes a label, is _______.",
+    "options": [
+      "a. l(c(0)) + l(b) + l(c(b))",
+      "b. 1",
+      "c. l(c(0))",
+      "d. l(c(0)) + l(b)"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": "An algorithm takes 15 seconds for an input size of 500. What will the largest size of input be that can be executed in 120 seconds if the running time is cubic?",
+    "options": [
+      "a. 2000",
+      "b. 4000",
+      "c. 6000",
+      "d. 1000"
+    ],
+    "answer": "1000"
+  },
+  {
+    "question": "Each RASP instruction requires at most _______ RAM instructions.",
+    "options": [
+      "a. 6",
+      "b. 12",
+      "c. 13",
+      "d. 2"
+    ],
+    "answer": "13"
+  },
+  {
+    "question": "An algorithm takes 3 seconds for an input size of 9. How long will it take for an input size of 12 if the running time is O(2^n )?",
+    "options": [
+      "a. 36 sec",
+      "b. 24 sec",
+      "c. 64 sec",
+      "d. 16 sec"
+    ],
+    "answer": "24 sec"
+  },
+  {
+    "question": "Encoding for RASP instruction MULT =i is_______.",
+    "options": [
+      "a. 10",
+      "b. 9",
+      "c. 8",
+      "d. 7"
+    ],
+    "answer": "9"
+  },
+  {
+    "question": "Encoding for RASP instruction JGTZ b, denotes a label, is_______.",
+    "options": [
+      "a. 16",
+      "b. 17",
+      "c. 15",
+      "d. 18"
+    ],
+    "answer": "16"
+  },
+  {
+    "question": "The RASP cost of executing the instruction DIV i, stored in registers j and j+1 is _______.",
+    "options": [
+      "a. l(c(0)) + l(i) + l(c(i))",
+      "b. l(j) + l(c(0)) + l(i) + l(c(i))",
+      "c. l(j) + l(j+1) + l(c(0)) + l(c(i))",
+      "d. l(j+1) + l(c(0)) + l(i) + l(c(i))"
+    ],
+    "answer": "l(j) + l(c(0)) + l(i) + l(c(i))"
+  },
+  {
+    "question": "Which of the following functions is ordered by growth rate from smallest to largest?",
+    "options": [
+      "a. n log n, 2n^2, 10 log n",
+      "b. 10 log n, n log n, 2n^2",
+      "c. 2n^2, n log n, 10 log n",
+      "d. n log n, 10 log n, 2n^2"
+    ],
+    "answer": "10 log n, n log n, 2n^2"
+  },
+  {
+    "question": "Which of the following growth rates of a function T is 9 times the run time when we triple the input size (i.e., if T(n) = x, then T(3n) = 9x)?",
+    "options": [
+      "a. 2^n",
+      "b. 3n^2",
+      "c. n^3",
+      "d. n^2"
+    ],
+    "answer": "n^2"
+  },
+  {
+    "question": "Which of the following growth rates is the slowest function in all?",
+    "options": [
+      "a. log5 n",
+      "b. 20n",
+      "c. 7",
+      "d. n^2/3"
+    ],
+    "answer": "7"
+  },
+  {
+    "question": "When the upper and lower bounds are the same within a constant factor, indicate this by using which of the following asymptotic notation.",
+    "options": [
+      "a. None of them",
+      "b. Big-Omega",
+      "c. Big-Oh",
+      "d. Big-Theta"
+    ],
+    "answer": "Big-Theta"
+  },
+  {
+    "question": "An algorithm takes 9 seconds for an input size of 200. How large a problem can be solved in 36 seconds if the running time is O(n^2)?",
+    "options": [
+      "a. input size of 400",
+      "b. input size of 800",
+      "c. input size of 360",
+      "d. input size of 720"
+    ],
+    "answer": "input size of 400"
+  },
+  {
+    "question": "A RAM consists of a read-only input tape, a write-only output tape, another two are_______.",
+    "options": [
+      "a. a register and a location counter",
+      "b. a program and a memory",
+      "c. a location counter and an accumulator",
+      "d. none of them"
+    ],
+    "answer": "a program and a memory"
+  },
+  {
+    "question": "An algorithm consists of two modules: g1(n) and g2(n). The first module g1(n) is in O(f1(n)) and the second module g2(n) is in O(f2(n)), then g1(n) g2(n) is in _______.",
+    "options": [
+      "a. O(max(f1(n), f2(n)))",
+      "b. O(f1(n) f2(n))",
+      "c. O(k f2(n))",
+      "d. none of them"
+    ],
+    "answer": "O(f1(n) f2(n))"
+  },
+  {
+    "question": "Register i+3 of the _______ corresponds to register i of the _______ to simulate a RASP program P by a RAM program.",
+    "options": [
+      "a. RAM, RAM",
+      "b. RAM, RASP",
+      "c. RASP, RAM",
+      "d. RASP, RASP"
+    ],
+    "answer": "RAM, RASP"
+  },
+  {
+    "question": "An algorithm takes 8 seconds for an input size of 32. What will the largest size of input be that can be executed in 64 seconds if the running time is O(log n)?",
+    "options": [
+      "a. 2^40",
+      "b. 2^8",
+      "c. 2^13",
+      "d. 2^5"
+    ],
+    "answer": "2^40"
+  },
+  {
+    "question": "An algorithm takes 10 seconds for an input size of 10. How long will it take for an input size of 100 if the running time is O(n log n)?",
+    "options": [
+      "a. 20 sec",
+      "b. 80 sec",
+      "c. 200 sec",
+      "d. 100 sec"
+    ],
+    "answer": "200 sec"
+  },
+  {
+    "question": "The RAM cost of executing the instruction STORE *i is _______.",
+    "options": [
+      "a. l(c(0)) + l(i) + l(c(i)) + l(c(c(i)))",
+      "b. l(j+1) + l(c(0)) + l(i) + l(c(i))",
+      "c. l(c(0)) + l(i)",
+      "d. l(c(0)) + l(i) + l(c(i))"
+    ],
+    "answer": "l(c(0)) + l(i) + l(c(i))"
+  },
+  {
+    "question": "Which of the following growth rates of a function T that cubes the run time when we triple the input size (i.e., if T(n) = x, then T(3n) = x^3)?",
+    "options": [
+      "a. n^3",
+      "b. 2^n^log 3 2",
+      "c. 2^n",
+      "d. 2^n^log 3"
+    ],
+    "answer": "2^n"
+  },
+  {
+    "question": "Logarithmic Cost Space Complexity for RAM program is _______.",
+    "options": [
+      "a. the number of variables used",
+      "b. the largest integer stored in memory register",
+      "c. the maximum number of loop for main instruction",
+      "d. the number of registers used"
+    ],
+    "answer": "the largest integer stored in memory register"
+  },
+  {
+    "question": "Which of the following growth rates of a function T is 8 times the run time when we double the input size (i.e., if T(n) = x, then T(2n) = 8x)?",
+    "options": [
+      "a. n^3",
+      "b. 8n",
+      "c. n^2",
+      "d. 2n^3"
+    ],
+    "answer": "n^3"
+  },
+  {
+    "question": "The RAM cost of executing the instruction READ i is _______.",
+    "options": [
+      "a. l(c(0)) + l(i)",
+      "b. l(c(0)) + l(i) + l(c(i))",
+      "c. l(input) + l(i) + l(c(i))",
+      "d. l(input) + l(i)"
+    ],
+    "answer": "l(input) + l(i)"
+  },
+  {
+    "question": "Each RAM instruction requires at most _______ RASP instructions.",
+    "options": [
+      "a. six",
+      "b. seven",
+      "c. two",
+      "d. three"
+    ],
+    "answer": "six"
+  },
+  {
+    "question": "Each RAM instruction consists of two parts: _______.",
+    "options": [
+      "a. value and address",
+      "b. Operation code and address",
+      "c. operand and address",
+      "d. operand and operator"
+    ],
+    "answer": "Operation code and address"
+  },
+  {
+    "question": "Which of the following functions is ordered by growth rate from largest to smallest?",
+    "options": [
+      "a. 2^4, n log n, n^3, 2^n",
+      "b. n log n, 2^n, n^3, 2^4",
+      "c. 2^n, 2^4, n^3, n log n",
+      "d. 2^n, n^3, n log n, 2^4"
+    ],
+    "answer": "2^n, n^3, n log n, 2^4"
+  },
+  {
+    "question": "The time complexity of searching on a random sequence using EREW SM SIMD computer is __________.",
+    "options": [
+      "a. O(log N)+O(n/N)",
+      "b. O(log N)",
+      "c. O(n/N)",
+      "d. O(log n)"
+    ],
+    "answer": "O(log N)+O(n/N)"
+  },
+  {
+    "question": "Suppose G ≤p H. Which must be true?",
+    "options": [
+      "a. Problem H is polynomial-time reducible to problem G.",
+      "b. Problems G and H are polynomial-time equivalent.",
+      "c. All of them",
+      "d. Problem G is polynomial-time reducible to problem H."
+    ],
+    "answer": "Problem G is polynomial-time reducible to problem H."
+  },
+  {
+    "question": "Which architecture allows multiple processors to execute different instructions on different data simultaneously?",
+    "options": [
+      "a. MIMD",
+      "b. SIMD",
+      "c. SISD",
+      "d. MISD"
+    ],
+    "answer": "MIMD"
+  },
+  {
+    "question": "Suppose problem C is NP-complete, problem D is in class NP, and C is polynomial-time reducible to D. Which must be true?",
+    "options": [
+      "a. both of them",
+      "b. none of them",
+      "c. problem D is in class P",
+      "d. problem D is NP–complete"
+    ],
+    "answer": "problem D is NP–complete"
+  },
+  {
+    "question": "Let S = {7, 14, 6, 8, 11, 12, 16, 13} and x= 9. Which of the following is TRUE for searching closet element on a tree-connected SIMD computer?",
+    "options": [
+      "a. (1,8)",
+      "b. (4,1)",
+      "c. (8,1)",
+      "d. (1,4)"
+    ],
+    "answer": "(4,1)"
+  },
+  {
+    "question": "CUBE MATRIX MULTIPLICATION of two 4×4 matrices require __________ bits for representing each processor.",
+    "options": [
+      "a. 6",
+      "b. 8",
+      "c. 9",
+      "d. 4"
+    ],
+    "answer": "6"
+  },
+  {
+    "question": "The _________ of the element on a tree is searched by adding 1 to the sum of its two inputs by root before its produce.",
+    "options": [
+      "a. Position",
+      "b. Rank",
+      "c. All of them",
+      "d. Count"
+    ],
+    "answer": "Rank"
+  },
+  {
+    "question": "Language L1 is polynomial time reducible to language L2. Language L3 is polynomial time reducible to L2, which in turn is polynomial time reducible to language L4. Which of the following is True?",
+    "options": [
+      "a. If L2 ∈ P, then L4 ∈ P",
+      "b. L1 ∈ P, if and only if L3 ∈ P",
+      "c. If L4 ∈ P, then L1 ∈ P and L3 ∈ P",
+      "d. If L1 ∈ P or L3 ∈ P, then L2 ∈ P"
+    ],
+    "answer": "If L4 ∈ P, then L1 ∈ P and L3 ∈ P"
+  },
+  {
+    "question": "Let X be a problem that belongs to the class NP. Then which one of the following is TRUE?",
+    "options": [
+      "a. There is no polynomial time algorithm for X.",
+      "b. If X is NP-hard, then it is NP-complete.",
+      "c. If X can be solved deterministically in polynomial time, then P = NP.",
+      "d. X may be undecidable."
+    ],
+    "answer": "If X is NP-hard, then it is NP-complete."
+  },
+  {
+    "question": "For problems X and Y, Y is NP-Complete and X reduces to Y in polynomial time. Which of the following is TRUE?",
+    "options": [
+      "a. If X can be solved in polynomial time, then so can Y",
+      "b. X is NP-hard",
+      "c. X is NP-complete",
+      "d. X is in NP, but not necessarily NP-complete"
+    ],
+    "answer": "X is in NP, but not necessarily NP-complete"
+  },
+  {
+    "question": "Let S= {28, 11, 6, 8, 11, 15, 17, 23} and the search key=11. Which of the following is TRUE for searching on a tree-connected SIMD computer?",
+    "options": [
+      "a. The root of the tree produces (1, 5) to give the position of search key.",
+      "b. The root produces 3 to count the number of records whose s field equal x.",
+      "c. The root produces 3 for rank.",
+      "d. None of them."
+    ],
+    "answer": "The root produces 3 for rank."
+  },
+  {
+    "question": "In MESH MATRIX MULTIPLICATION of A [m×n] and B [n×k], Elements a m1 and b 1k take __________ steps from the beginning of the computation to reach P(m, k).",
+    "options": [
+      "a. m+k+n-3",
+      "b. m+k+n-2",
+      "c. m+k+n",
+      "d. m+k+n-1"
+    ],
+    "answer": "m+k+n-2"
+  },
+  {
+    "question": "Among parallel algorithms for searching on the sorted sequence, __________ SEARCHING has a time complexity of O(log n) to search the key.",
+    "options": [
+      "a. CRCW",
+      "b. CREW",
+      "c. EREW",
+      "d. ERCW"
+    ],
+    "answer": "EREW"
+  },
+  {
+    "question": "Let S = {35, 34, 56, 28, 35, 27, 29, 27} and the search key x=27. Which of the following is false for searching on a tree-connected SIMD computer?",
+    "options": [
+      "a. The root produces 2 to count the number of records whose s field equals x.",
+      "b. All of them.",
+      "c. The root of the tree produces (1,6) to give the position of search key.",
+      "d. The root produces (3,2) to give the closest value of x."
+    ],
+    "answer": "The root produces (3,2) to give the closest value of x."
+  },
+  {
+    "question": "A problem in NP is NP-complete if __________.",
+    "options": [
+      "a. it can be reduced to the 3-SAT problem in polynomial time",
+      "b. some problem in NP can be reduced to it in polynomial time",
+      "c. the 3-SAT problem can be reduced to it in polynomial time",
+      "d. it can be reduced to any other problem in NP in polynomial time"
+    ],
+    "answer": "the 3-SAT problem can be reduced to it in polynomial time"
+  },
+  {
+    "question": "If D is NP-complete and D is in P, then __________.",
+    "options": [
+      "a. All of them",
+      "b. P = NP",
+      "c. NP-complete = NP",
+      "d. P = NP-complete"
+    ],
+    "answer": "All of them"
+  },
+  {
+    "question": "Which of the following is true about NP-Complete and NP-Hard problems.",
+    "options": [
+      "a. If we want to prove that a problem X is NP-Hard, we take a known NP-Hard problem Y and reduce Y to X",
+      "b. The first problem that was proved as NP-complete was the circuit satisfiability problem",
+      "c. NP-complete is a subset of NP Hard",
+      "d. All of them"
+    ],
+    "answer": "All of them"
+  },
+  {
+    "question": "Which of the following statements are TRUE?",
+    "options": [
+      "a. If a problem is in NP, it is solvable in polynomial time.",
+      "b. 2-SAT is NP-Complete.",
+      "c. If P=NP, then every NP problem has a polynomial-time algorithm.",
+      "d. none of them"
+    ],
+    "answer": "If P=NP, then every NP problem has a polynomial-time algorithm."
+  },
+  {
+    "question": "In n x n MESH TRANSPOSE, the longest path traversed by element a ij to P(j, i) consists of __________ steps.",
+    "options": [
+      "a. n-1",
+      "b. 2n-1",
+      "c. n-2",
+      "d. 2n-2"
+    ],
+    "answer": "2n-2"
+  },
+  {
+    "question": "Matrix-by-vector multiplication of A [m x n] by B[n x 1] requires __________ processors on a LINEAR array.",
+    "options": [
+      "a. m",
+      "b. m×n",
+      "c. n",
+      "d. n^2"
+    ],
+    "answer": "m"
+  },
+  {
+    "question": "The problem 3-SAT and 2-SAT are __________.",
+    "options": [
+      "a. both NP complete",
+      "b. undecidable and NP-complete respectively",
+      "c. NP-complete and in P respectively",
+      "d. both in P"
+    ],
+    "answer": "NP-complete and in P respectively"
+  },
+  {
+    "question": "Which of the following statements are TRUE? (1)Every problem in P is also in NP. (2)If a problem is NP-Complete, then it is NP-Hard. (3)If a problem is NP-Hard, then it must belong to NP.",
+    "options": [
+      "a. 1 and 2",
+      "b. 2 and 3",
+      "c. 1 and 3",
+      "d. 1, 2 and 3"
+    ],
+    "answer": "1 and 2"
+  },
+  {
+    "question": "In CREW searching, the value of x must be made known to all processors in __________ time.",
+    "options": [
+      "a. O(n/N)",
+      "b. O(logN)",
+      "c. O(n/N)",
+      "d. O(1)"
+    ],
+    "answer": "O(1)"
+  },
+  {
+    "question": "In LINEAR MV MULTIPLICATION of A[m×n] by U[n×1], element a 1n takes __________ steps to reach P1.",
+    "options": [
+      "a. m+k+n-3",
+      "b. n×1",
+      "c. m+n",
+      "d. m+n-1"
+    ],
+    "answer": "m+n-1"
+  },
+  {
+    "question": "Which of the following is true for a tree-connected SIMD computer which can search a file of n records?",
+    "options": [
+      "a. All of them.",
+      "b. There are n leaves in total.",
+      "c. The root is in charge of receiving input from the outside world",
+      "d. Intermediate node can receive one input from its parent and two inputs from its children."
+    ],
+    "answer": "All of them."
+  },
+  {
+    "question": "Let S be an NP-complete problem and Q and R be two other problems not known to be in NP. R is polynomial time reducible to S and S is polynomial-time reducible to Q. Which one of the following statements is true?",
+    "options": [
+      "a. Q is NP-hard",
+      "b. R is NP-hard",
+      "c. R is NP-complete",
+      "d. Q is NP-complete"
+    ],
+    "answer": "Q is NP-hard"
+  },
+  {
+    "question": "In TREE MV MULTIPLICATION of A[5×4] by U[4×1], there are __________ intermediate processors.",
+    "options": [
+      "a. 1",
+      "b. 3",
+      "c. 2",
+      "d. 4"
+    ],
+    "answer": "2"
+  },
+  {
+    "question": "In SHUFFLE TRANSPOSE of matrix A [8×8], the element a 32 is initially stored in the processor__________.",
+    "options": [
+      "a. P16",
+      "b. P18",
+      "c. P17",
+      "d. P15"
+    ],
+    "answer": "P17"
+  },
+  {
+    "question": "Let S = {25, 24, 46, 28, 26, 27, 29, 27} and the search key x=24. How many processors are needed for searching x on a mesh-connected SIMD computer?",
+    "options": [
+      "a. 15",
+      "b. 16",
+      "c. 8",
+      "d. 6"
+    ],
+    "answer": "8"
+  }
+]

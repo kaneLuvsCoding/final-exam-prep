@@ -1,0 +1,1008 @@
+An algorithm takes 3 seconds for an input size of 3. How long will it take for an input size of 6 if 
+the running time is O(n! )? 
+a.  
+6 sec 
+b.  
+120 sec 
+c.  
+360 sec 
+d.  
+240 sec 
+Feedback 
+The correct answer is: 360 sec 
+Question 2 
+Which of the following growth rates is the most expensive time requirement? 
+a.  
+O(n) 
+b.  
+O(n!) 
+c.  
+O(2^n) 
+d.  
+O(n^2) 
+Feedback 
+The correct answer is: O(n!) 
+Question 3 
+Register r+i of the _______ corresponds to register i of the _______ to simulate a RAM program 
+P by a RASP program. 
+----------------Page (0) Break----------------
+a.  
+RASP, RAM 
+b.  
+RASP, RASP 
+c.  
+RAM, RAM  
+d.  
+RAM, RASP 
+Feedback 
+The correct answer is: RASP, RAM 
+Question 4 
+Uniform Cost Space Complexity for RAM program is _______. 
+a.  
+the maximum number of loop for main instruction 
+b.  
+the largest integer stored in memory register 
+c.  
+the number of variables used 
+d.  
+the number of registers used 
+Feedback 
+The correct answer is: the number of registers used 
+Question 5 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+----------------Page (1) Break----------------
+Question text 
+The RASP cost of executing the instruction SUB =i, stored in registers j and j+1 is_______. 
+a.  
+l(j+1) + l(c(0)) + l(i) 
+b.  
+l(j) + l(j+1) + l(c(0)) 
+c.  
+l(c(0)) + l(i) 
+d.  
+l(j) + l(c(0)) + l(i) 
+Feedback 
+The correct answer is: l(j) + l(c(0)) + l(i) 
+Question 6 
+The RAM cost of executing the instruction JUMP b, denotes a label, is _______. 
+a.  
+l(c(0)) + l(b) + l(c(b)) 
+b.  
+1 
+c.  
+l(c(0)) 
+d.  
+l(c(0)) + l(b) 
+Feedback 
+The correct answer is: 1 
+Question 7 
+----------------Page (2) Break----------------
+An algorithm takes 15 seconds for an input size of 500. What will the largest size of input be that 
+can be executed in 120 seconds if the running time is cubic? 
+a.  
+2000 
+b.  
+4000 
+c.  
+6000 
+d.  
+1000 
+Feedback 
+The correct answer is: 1000 
+Question 8 
+Question text 
+Each RASP instruction requires at most _______ RAM instructions. 
+a.  
+6 
+b.  
+12 
+c.  
+13 
+d.  
+2 
+Feedback 
+The correct answer is: 13 
+Question 9 
+----------------Page (3) Break----------------
+An algorithm takes 3 seconds for an input size of 9. How long will it take for an input size of 12 if 
+the running time is O(2^n )? 
+a.  
+36 sec 
+b.  
+24 sec 
+c.  
+64 sec 
+d.  
+16 sec 
+Feedback 
+The correct answer is: 24 sec 
+Question 10 
+Encoding for RASP instruction MULT =i is_______. 
+a.  
+10 
+b.  
+9 
+c.  
+8 
+d.  
+7 
+Feedback 
+The correct answer is: 9 
+Question 11 
+Incorrect 
+----------------Page (4) Break----------------
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+Encoding for RASP instruction JGTZ b, denotes a label, is_______. 
+a.  
+16 
+b.  
+17 
+c.  
+15 
+d.  
+18 
+Feedback 
+The correct answer is: 16 
+Question 12 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+The RASP cost of executing the instruction DIV i, stored in registers j and j+1 is _______. 
+a.  
+l(c(0)) + l(i) + l(c(i)) 
+b.  
+l(j) + l(c(0)) + l(i) + l(c(i)) 
+c.  
+l(j) + l(j+1) + l(c(0)) + l(c(i)) 
+----------------Page (5) Break----------------
+d.  
+l(j+1) + l(c(0)) + l(i) + l(c(i)) 
+Feedback 
+The correct answer is: l(j) + l(c(0)) + l(i) + l(c(i)) 
+Question 13 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following functions is ordered by growth rate from smallest to largest? 
+a.  
+n log n, 2n^2, 10 log n 
+b.  
+10 log n, n log n, 2n^2 
+c.  
+2n^2, n log n, 10 log n 
+d.  
+n log n, 10 log n, 2n^2 
+Feedback 
+The correct answer is: 10 log n, n log n, 2n^2 
+Question 14 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+----------------Page (6) Break----------------
+Which of the following growth rates of a function T is 9 times the run time when we triple the 
+input size (i.e., if T(n) = x, then T(3n) = 9x)? 
+a.  
+2^n 
+b.  
+3n^2 
+c.  
+n^3 
+d.  
+n^2 
+Feedback 
+The correct answer is: n^2 
+Question 15 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following growth rates is the slowest function in all? 
+a.  
+log5 n 
+b.  
+20n 
+c.  
+7 
+d.  
+n^2/3 
+----------------Page (7) Break----------------
+Feedback 
+The correct answer is: 7 
+Question 16 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+When the upper and lower bounds are the same within a constant factor, indicate this by using 
+which of the following asymptotic notation. 
+a.  
+None of them 
+b.  
+Big-Omega 
+c.  
+Big-Oh 
+d.  
+Big-Theta 
+Feedback 
+The correct answer is: Big-Theta 
+Question 17 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+An algorithm takes 9 seconds for an input size of 200. How large a problem can be solved in 36 
+seconds if the running time is O(n^2)? 
+a.  
+----------------Page (8) Break----------------
+input size of 400 
+b.  
+input size of 800 
+c.  
+input size of 360 
+d.  
+input size of 720 
+Feedback 
+The correct answer is: input size of 400 
+Question 18 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+A RAM consists of a read-only input tape, a write-only output tape, another two are_______. 
+a.  
+a register and a location counter 
+b.  
+a program and a memory 
+c.  
+a location counter and an accumulator 
+d.  
+none of them 
+Feedback 
+The correct answer is: a program and a memory 
+Question 19 
+----------------Page (9) Break----------------
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+An algorithm consists of two modules: g1(n) and g2(n). The first module g1(n) is in O(f1(n)) and 
+the second module g2(n) is in O(f2(n)), then g1(n) g2(n) is in _______. 
+a.  
+O(max(f1(n), f2(n))) 
+b.  
+O(f1(n) f2(n)) 
+c.  
+O(k f2(n)) 
+d.  
+none of them 
+Feedback 
+The correct answer is: O(f1(n) f2(n)) 
+Question 20 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+Register i+3 of the _______ corresponds to register i of the _______ to simulate a RASP 
+program P by a RAM program. 
+a.  
+RAM, RAM  
+b.  
+RAM, RASP 
+----------------Page (10) Break----------------
+c.  
+RASP, RAM 
+d.  
+RASP, RASP 
+Feedback 
+The correct answer is: RAM, RASP 
+Question 21 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+An algorithm takes 8 seconds for an input size of 32. What will the largest size of input be that 
+can be executed in 64 seconds if the running time is O(log n)? 
+a.  
+2^40 
+b.  
+2^8 
+c.  
+2^13 
+d.  
+2^5 
+Feedback 
+The correct answer is: 2^40 
+Question 22 
+Correct 
+Mark 1.00 out of 1.00 
+----------------Page (11) Break----------------
+Flag question 
+Question text 
+An algorithm takes 10 seconds for an input size of 10. How long will it take for an input size of 
+100 if the running time is O(n log n)? 
+a.  
+20 sec 
+b.  
+80 sec 
+c.  
+200 sec 
+d.  
+100 sec 
+Feedback 
+The correct answer is: 200 sec 
+Question 23 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+The RAM cost of executing the instruction STORE *i is _______. 
+a.  
+l(c(0)) + l(i) + l(c(i)) + l(c(c(i))) 
+b.  
+l(j+1) + l(c(0)) + l(i) + l(c(i)) 
+c.  
+l(c(0)) + l(i) 
+----------------Page (12) Break----------------
+d.  
+l(c(0)) + l(i) + l(c(i)) 
+Feedback 
+The correct answer is: l(c(0)) + l(i) + l(c(i)) 
+Question 24 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following growth rates of a function T that cubes the run time when we triple the 
+input size (i.e., if T(n) = x, then T(3n) = x^3)? 
+a.  
+n^3 
+b.  
+2^n^log
+3
+ 2 
+c.  
+2^n 
+d.  
+2^n^log 3 
+Feedback 
+The correct answer is: 2^n 
+Question 25 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+----------------Page (13) Break----------------
+Logarithmic Cost Space Complexity for RAM program is _______. 
+a.  
+the number of variables used 
+b.  
+the largest integer stored in memory register 
+c.  
+the maximum number of loop for main instruction 
+d.  
+the number of registers used 
+Feedback 
+The correct answer is: the largest integer stored in memory register 
+Question 26 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following growth rates of a function T is 8 times the run time when we double the 
+input size (i.e., if T(n) = x, then T(2n) = 8x)? 
+a.  
+n^3 
+b.  
+8n 
+c.  
+n^2 
+d.  
+2n^3 
+----------------Page (14) Break----------------
+Feedback 
+The correct answer is: n^3 
+Question 27 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+The RAM cost of executing the instruction READ i is _______. 
+a.  
+l(c(0)) + l(i) 
+b.  
+l(c(0)) + l(i) + l(c(i)) 
+c.  
+l(input) + l(i) + l(c(i)) 
+d.  
+l(input) + l(i) 
+Feedback 
+The correct answer is: l(input) + l(i) 
+Question 28 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+Each RAM instruction requires at most _______ RASP instructions. 
+a.  
+six 
+----------------Page (15) Break----------------
+b.  
+seven 
+c.  
+two 
+d.  
+three 
+Feedback 
+The correct answer is: six 
+Question 29 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Each RAM instruction consists of two parts: _______. 
+a.  
+value and address 
+b.  
+Operation code and address 
+c.  
+operand and address 
+d.  
+operand and operator 
+Feedback 
+The correct answer is: Operation code and address 
+Question 30 
+Correct 
+----------------Page (16) Break----------------
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following functions is ordered by growth rate from largest to smallest? 
+a.  
+2^4, n log n, n^3, 2^n 
+b.  
+n log n, 2^n, n^3, 2^4 
+c.  
+2^n, 2^4, n^3, n log n 
+d.  
+2^n, n^3, n log n, 2^4 
+Feedback 
+The correct answer is: 2^n, n^3, n log n, 2^4 
+Consider two decision problems Q1, Q2 such that Q2 reduces in polynomial time to 3-SAT and 
+3-SAT reduces in polynomial time to Q1. Then which one of the following is consistent with the 
+above statement? 
+a.  
+Both Q1 and Q2 are in NP hard 
+b.  
+Both Q1 and Q2 are in NP 
+c.  
+Q2 is in NP, Q1 is NP hard 
+d.  
+Q1 is in NP, Q2 is NP hard 
+Feedback 
+The correct answer is: Q2 is in NP, Q1 is NP hard 
+----------------Page (17) Break----------------
+Question 2 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+The time complexity of searching on a random sequence using EREW SM SIMD computer is 
+__________. 
+a.  
+O(log N)+O(n/N) 
+b.  
+O(log N) 
+c.  
+O(n/N) 
+d.  
+O(log n) 
+Feedback 
+The correct answer is: O(log N)+O(n/N) 
+Question 3 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Suppose G ≤p H. Which must be true? 
+a.  
+Problem H is polynomial-time reducible to problem G. 
+b.  
+----------------Page (18) Break----------------
+Problems G and H are polynomial-time equivalent. 
+c.  
+All of them 
+d.  
+Problem G is polynomial-time reducible to problem H. 
+Feedback 
+The correct answer is: Problem G is polynomial-time reducible to problem H. 
+Question 4 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which architecture allows multiple processors to execute different instructions on different data 
+simultaneously? 
+a.  
+MIMD  
+b.  
+SIMD 
+c.  
+SISD 
+d.  
+MISD 
+Feedback 
+The correct answer is: MIMD 
+Question 5 
+Correct 
+----------------Page (19) Break----------------
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Suppose problem C is NP-complete, problem D is in class NP, and C is polynomial-time reducible 
+to D. Which must be true? 
+a.  
+both of them 
+b.  
+none of them 
+c.  
+problem D is in class P 
+d.  
+problem D is NP–complete 
+Feedback 
+The correct answer is: problem D is NP–complete 
+Question 6 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Let S = {7, 14, 6, 8, 11, 12, 16, 13} and x= 9. Which of the following is TRUE for searching closet 
+element on a tree-connected SIMD computer? 
+a.  
+(1,8) 
+b.  
+(4,1) 
+c.  
+----------------Page (20) Break----------------
+(8,1) 
+d.  
+(1,4) 
+Feedback 
+The correct answer is: (4,1) 
+Question 7 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+CUBE MATRIX MULTIPLICATION of two 4×4 matrices require __________ bits for representing 
+each processor. 
+a.  
+6 
+b.  
+8 
+c.  
+9 
+d.  
+4 
+Feedback 
+The correct answer is: 6 
+Question 8 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+----------------Page (21) Break----------------
+Question text 
+The _________ of the element on a tree is searched by adding 1 to the sum of its two inputs by 
+root before its produce. 
+a.  
+Position 
+b.  
+Rank 
+c.  
+All of them 
+d.  
+Count 
+Feedback 
+The correct answer is: Rank 
+Question 9 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Language L1 is polynomial time reducible to language L2. Language L3 is polynomial time 
+reducible to L2, which in turn is polynomial time reducible to language L4. Which of the 
+following is True? 
+a.  
+If L2 ∈ P, then L4 ∈ P 
+b.  
+L1 ∈ P, if and only if L3 ∈ P 
+c.  
+If L4 ∈ P, then L1 ∈ P and L3 ∈ P 
+----------------Page (22) Break----------------
+d.  
+If L1 ∈ P or L3 ∈ P, then L2 ∈ P 
+Feedback 
+The correct answer is: If L4 ∈ P, then L1 ∈ P and L3 ∈ P 
+Question 10 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Let X be a problem that belongs to the class NP. Then which one of the following is TRUE? 
+a.  
+There is no polynomial time algorithm for X. 
+b.  
+If X is NP-hard, then it is NP-complete. 
+c.  
+If X can be solved deterministically in polynomial time, then P = NP. 
+d.  
+X may be undecidable. 
+Feedback 
+The correct answer is: If X is NP-hard, then it is NP-complete. 
+Question 11 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+----------------Page (23) Break----------------
+For problems X and Y, Y is NP-Complete and X reduces to Y in polynomial time. Which of the 
+following is TRUE? 
+a.  
+If X can be solved in polynomial time, then so can Y 
+b.  
+X is NP-hard 
+c.  
+X is NP-complete 
+d.  
+X is in NP, but not necessarily NP-complete 
+Feedback 
+The correct answer is: X is in NP, but not necessarily NP-complete 
+Question 12 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+Let S= {28, 11, 6, 8, 11, 15, 17, 23} and the search key=11. Which of the following is TRUE for 
+searching on a tree-connected SIMD computer? 
+a.  
+The root of the tree produces (1, 5) to give the position of search key. 
+b.  
+The root produces 3 to count the number of records whose s field equal x. 
+c.  
+The root produces 3 for rank. 
+d.  
+None of them. 
+----------------Page (24) Break----------------
+Feedback 
+The correct answer is: The root produces 3 for rank. 
+Question 13 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+In MESH MATRIX MULTIPLICATION of A [m×n] and B [n×k], Elements a
+m1 
+and b
+1k
+ take 
+__________ steps from the beginning of the computation to reach P(m, k). 
+a.  
+m+k+n-3 
+b.  
+m+k+n-2 
+c.  
+m+k+n 
+d.  
+m+k+n-1 
+Feedback 
+The correct answer is: m+k+n-2 
+Question 14 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Among parallel algorithms for searching on the sorted sequence, __________ SEARCHING has a 
+time complexity of O(log n) to search the key. 
+a.  
+----------------Page (25) Break----------------
+CRCW  
+b.  
+CREW  
+c.  
+EREW  
+d.  
+ERCW  
+Feedback 
+The correct answer is: EREW 
+Question 15 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+Let S = {35, 34, 56, 28, 35, 27, 29, 27} and the search key x=27. Which of the following is false for 
+searching on a tree-connected SIMD computer? 
+a.  
+The root produces 2 to count the number of records whose s field equals x. 
+b.  
+All of them. 
+c.  
+The root of the tree produces (1,6) to give the position of search key. 
+d.  
+The root produces (3,2) to give the closest value of x. 
+Feedback 
+The correct answer is: The root produces (3,2) to give the closest value of x. 
+----------------Page (26) Break----------------
+Question 16 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+A problem in NP is NP-complete if __________. 
+a.  
+it can be reduced to the 3-SAT problem in polynomial time 
+b.  
+some problem in NP can be reduced to it in polynomial time 
+c.  
+the 3-SAT problem can be reduced to it in polynomial time 
+d.  
+it can be reduced to any other problem in NP in polynomial time 
+Feedback 
+The correct answer is: the 3-SAT problem can be reduced to it in polynomial time 
+Question 17 
+Incorrect 
+Mark 0.00 out of 1.00 
+Flag question 
+Question text 
+If D is NP-complete and D is in P, then __________. 
+a.  
+All of them 
+b.  
+P = NP 
+----------------Page (27) Break----------------
+c.  
+NP-complete = NP 
+d.  
+P = NP-complete 
+Feedback 
+The correct answer is: All of them 
+Question 18 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following is true about NP-Complete and NP-Hard problems. 
+a.  
+If we want to prove that a problem X is NP-Hard, we take a known NP-Hard problem Y and 
+reduce Y to X 
+b.  
+The first problem that was proved as NP-complete was the circuit satisfiability problem 
+c.  
+NP-complete is a subset of NP Hard 
+d.  
+All of them 
+Feedback 
+The correct answer is: All of them 
+Question 19 
+Correct 
+Mark 1.00 out of 1.00 
+----------------Page (28) Break----------------
+Flag question 
+Question text 
+Which of the following statements are TRUE? 
+a.  
+If a problem is in NP, it is solvable in polynomial time. 
+b.  
+2-SAT is NP-Complete. 
+c.  
+If P=NP, then every NP problem has a polynomial-time algorithm. 
+d.  
+none of them 
+Feedback 
+The correct answer is: If P=NP, then every NP problem has a polynomial-time algorithm. 
+Question 20 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+In n x n MESH TRANSPOSE, the longest path traversed by element a
+ij
+ to P(j, i) consists of 
+__________ steps. 
+a.  
+n-1 
+b.  
+2n-1 
+c.  
+n-2 
+----------------Page (29) Break----------------
+d.  
+2n-2 
+Feedback 
+The correct answer is: 2n-2 
+Question 21 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Matrix-by-vector multiplication of A [m x n] by B[n x 1] requires __________ processors on a 
+LINEAR array. 
+a.  
+m 
+b.  
+m×n 
+c.  
+n 
+d.  
+n^2 
+Feedback 
+The correct answer is: m 
+Question 22 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+----------------Page (30) Break----------------
+The problem 3-SAT and 2-SAT are __________. 
+a.  
+both NP complete 
+b.  
+undecidable and NP-complete respectively 
+c.  
+NP-complete and in P respectively 
+d.  
+both in P 
+Feedback 
+The correct answer is: NP-complete and in P respectively 
+Question 23 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following statements are TRUE? (1)Every problem in P is also in NP. (2)If a problem 
+is NP-Complete, then it is NP-Hard. (3)If a problem is NP-Hard, then it must belong to NP. 
+a.  
+1 and 2 
+b.  
+2 and 3 
+c.  
+1 and 3 
+d.  
+1, 2 and 3 
+----------------Page (31) Break----------------
+Feedback 
+The correct answer is: 1 and 2 
+Question 24 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+In CREW searching, the value of x must be made known to all processors in __________ time. 
+a.  
+O(n/N) 
+b.  
+O(logN) 
+c.  
+O(n/N) 
+d.  
+O(1) 
+Feedback 
+The correct answer is: O(1) 
+Question 25 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+In LINEAR MV MULTIPLICATION of A[m×n] by U[n×1], element a
+1n
+ takes __________ steps to 
+reach P1. 
+a.  
+----------------Page (32) Break----------------
+m+k+n-3 
+b.  
+n×1 
+c.  
+m+n 
+d.  
+m+n-1 
+Feedback 
+The correct answer is: m+n-1 
+Question 26 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Which of the following is true for a tree-connected SIMD computer which can search a file of n 
+records? 
+a.  
+All of them. 
+b.  
+There are n leaves in total. 
+c.  
+The root is in charge of receiving input from the outside world 
+d.  
+Intermediate node can receive one input from its parent and two inputs from its children. 
+Feedback 
+The correct answer is: All of them. 
+----------------Page (33) Break----------------
+Question 27 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Let S be an NP-complete problem and Q and R be two other problems not known to be in NP. R 
+is polynomial time reducible to S and S is polynomial-time reducible to Q. Which one of the 
+following statements is true? 
+a.  
+Q is NP-hard 
+b.  
+R is NP-hard 
+c.  
+R is NP-complete 
+d.  
+Q is NP-complete 
+Feedback 
+The correct answer is: Q is NP-hard 
+Question 28 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+In TREE MV MULTIPLICATION of A[5×4] by U[4×1], there are __________ intermediate 
+processors. 
+a.  
+1 
+----------------Page (34) Break----------------
+b.  
+3 
+c.  
+2 
+d.  
+4 
+Feedback 
+The correct answer is: 2 
+Question 29 
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+In SHUFFLE TRANSPOSE of matrix A [8×8], the element a
+32
+ is initially stored in the 
+processor__________. 
+a.  
+P16 
+b.  
+P18 
+c.  
+P17 
+d.  
+P15 
+Feedback 
+The correct answer is: P17 
+Question 30 
+----------------Page (35) Break----------------
+Correct 
+Mark 1.00 out of 1.00 
+Flag question 
+Question text 
+Let S = {25, 24, 46, 28, 26, 27, 29, 27} and the search key x=24. How many processors are 
+needed for searching x on a mesh-connected SIMD computer? 
+a.  
+15 
+b.  
+16 
+c.  
+8 
+d.  
+6 
+Feedback 
+The correct answer is: 8 
+ 
+----------------Page (36) Break----------------

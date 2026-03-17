@@ -6,6 +6,7 @@ import AdminLogin from './admin/AdminLogin';
 import './App.css';
 
 import TechWritingPractice from './pages/TechWritingPractice';
+import AnalysisPractice from './pages/AnalysisPractice';
 
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
@@ -23,6 +24,7 @@ function App() {
 
         {/* Practice Routes */}
         <Route path="/practice/technical-writing" element={<TechWritingPractice onBack={() => window.history.back()} />} />
+        <Route path="/practice/analysis-of-algorithm" element={<AnalysisPractice onBack={() => window.history.back()} />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={
