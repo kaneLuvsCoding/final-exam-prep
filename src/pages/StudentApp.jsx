@@ -7,6 +7,9 @@ const examSchedule = {
   "Technical Writing": "2026-03-17T09:00:00",
   "Analysis of Algorithm": "2026-03-18T09:00:00",
   "BMIS": "2026-03-19T09:00:00",
+  "Fundamentals of Digital Electronics": "2026-03-19T09:00:00",
+  "Fundamentals": "2026-03-19T09:00:00",
+  "Fundamental": "2026-03-19T09:00:00",
   "ERP": "2026-03-20T09:00:00",
   "Advanced DBMS": "2026-03-23T09:00:00",
   "SQM": "2026-03-24T09:00:00"
@@ -386,9 +389,15 @@ export default function StudyHub() {
               setActiveSubject(matchedSubject);
             } else if (!activeSubject || !keys.includes(activeSubject)) {
               setActiveSubject(keys[0]);
+              navigate(`/${keys[0].toLowerCase().replace(/ /g, '-')}`, { replace: true });
+            } else {
+               navigate(`/${activeSubject.toLowerCase().replace(/ /g, '-')}`, { replace: true });
             }
           } else if (!activeSubject || !keys.includes(activeSubject)) {
             setActiveSubject(keys[0]);
+            navigate(`/${keys[0].toLowerCase().replace(/ /g, '-')}`, { replace: true });
+          } else {
+            navigate(`/${activeSubject.toLowerCase().replace(/ /g, '-')}`, { replace: true });
           }
         } else {
           setActiveSubject("");
@@ -1005,6 +1014,7 @@ export default function StudyHub() {
                     setActiveSubject(subject);
                     setOpenQuestionIndex(null);
                     setIsSidebarOpen(false);
+                    navigate(`/${subject.toLowerCase().replace(/ /g, '-')}`);
                   }}
                   className={`text-left px-4 py-3.5 rounded-xl font-semibold transition-all duration-200 ${activeSubject === subject
                     ? 'bg-[#077d8a]/10 text-[#077d8a] shadow-sm ring-1 ring-[#077d8a]/30 translate-x-1'
@@ -1072,6 +1082,17 @@ export default function StudyHub() {
                   {activeSubject === "BMIS" && (
                     <button
                       onClick={() => navigate('/practice/bmis')}
+                      className="bg-[#077d8a] hover:bg-[#066d79] text-white px-3 py-1 rounded-lg text-sm font-bold shadow-sm transition-all flex items-center gap-1.5"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                      </svg>
+                      Practice MCQs
+                    </button>
+                  )}
+                  {activeSubject && activeSubject.includes("Fundamental") && (
+                    <button
+                      onClick={() => navigate('/practice/fundamentals-of-digital-electronics')}
                       className="bg-[#077d8a] hover:bg-[#066d79] text-white px-3 py-1 rounded-lg text-sm font-bold shadow-sm transition-all flex items-center gap-1.5"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

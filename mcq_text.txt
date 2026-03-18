@@ -1,0 +1,109 @@
+I.                                Choose the correct answer.    
+ 
+1.                                    The time interval on the leading edge of a pulse between 10% and 90% of the amplitude is
+the
+A.                                        rise time                                                                                                                                                                          B.                                        fall time
+C.
+pulse width
+D.                                        period
+2.                                   The binary number 10001101010001101111 can be written in hexadecimal as
+A.                                        AD467
+16
+B.                                        8C46F
+16
+C.                                        8D46F
+16
+D.                                        AE46F
+16
+3.                                   The fractional binary number 0.11 has a decimal value of
+A.                                        ¼B.                                        ½
+C.                                        ¾D.                                        none of the above
+4.                                   The binary number 101100111001010100001 can be written in octal as
+A.
+5471230
+8
+B.
+5471241
+8
+C.
+2634521
+8
+D.
+23162501
+8
+5.                                   The addition of hexadecimal A0
+16 
++
+ 
+6B
+16 
+is
+A.                                        1FB
+16
+B.                                        10B
+16
+C.                                        0B
+16
+D.
+1AB
+16
+6.                                   According to the associative law of multiplication,
+A.                                        A+ (B+C) = (A+B) + C                                                                                                                                                                                                                                                                                                                                              B.                                        A(BC) = (AB)C
+C.                                        AB = BA                                                                                                                                                                                                                                                                                                                                                                    D.
+A(B+C) = AB +AC
+7.                                   A BCD-to-7 segment decoder has 0100 on its inputs. The active outputs are
+A.                                        a, b, f, g                                                                                                                       B.                                        b, c, f, g
+C.                                        b, c, e, f                                                                                                                       D.                                        b, d, e, g
+8.                                   The logical sum of two or more logical product term is called
+A.                                        POS                                                                                                                                                                                                               B.                                        SOP
+C.                                        OR operation                                                                                                                                                                                                 D.                                        NAND operation
+9.                                   The AND operation can be produced with
+A.                                        three NAND gates                                                                                                                                                                                                                                                                       B.                                        four NAND gates
+C.                                        two NOR gates                                                                                                                                                                                                                                                                            D.                                        three                                                                                     NOR gates
+10.                                                     A full adder is characterized by
+A.                                        two inputs and two outputs                                                                                                                                                                                                                                                                                                                                                                                                              B.                                        three inputs and two outputs
+C.                                        two inputs and three outputs                                                                                                                                                                                                                                                                                                                                                                                                            D.                                        two inputs and one output
+11.                                                   If an octal-to-binary priority encoder has its 0,2,5 and 6 inputs at the active level, the
+active HIGH binary output is
+A.                                        0110                                                                           B.                                        010
+C.                                        0000                                                                           D.
+110
+12.                                                      If a 74HC85 magnitude comparator has A = 1011 and B = 1001 on its inputs, the outputs
+are
+A.                                        A > B = 0, A < B = 1, A = B = 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                 B.                                        A > B = 1, A < B = 0, A = B = 0
+C.                                        A > B = 1, A < B = 1, A = B = 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                 D.                                        A > B = 0, A < B = 0, A = B = 1
+13.                                                     Which inputs directly control the selection of the data input that is routed to the output in
+a multiplexer?
+A.                                        Data inputs                                                                                                                                                                                                                                                                                     B.                                        Output signal
+C.                                        Data select inputs                                                                                                                                                                                                                                                                          D.
+Enable line
+14.                                                     When toggle condition occurs in JK flip flop?
+A.                                        J=1, K=1                                                                                                                                             B.                                        J=0, K=0
+C.                                        J=1, K=0                                                                                                                                              D.                                        J=0, K=1
+15.                                                     How many flip-flops are required to construct a decade counter?
+A.                                        4                        B.                                        8
+C.                                        5                        D.                                        10
+----------------Page (0) Break----------------
+16.                                                     For a gated D latch, the Q output always equals the D input
+A.                                        before the enable pulse                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                B.                                        during the enable pulse
+C.                                        immediately after the enable pulse                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                D.
+both B and C
+17.                                                     The terminal count of a typical modulus-10 binary counter is
+A.                                        0000                                                                           B.                                        1010
+C.                                        1001                                                                           D.                                        1111
+18.                                                     How many different states does a 3-bit asynchronous counter have?
+A.                                        2                        B.                                        4
+C.                                        8                        D.                                        16
+19.                                                     A shift register is a digital circuit that
+A.                                        stores data.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   B.
+shifts the data from left to right
+C.                                        shifts the data from right to left                                                                                                                                                                                                                                                                                                                                                                                                                                                    D.
+all of the above
+20.                                                     To serially shift a byte of data into a shift register, there must be
+A.                                        one clock pulse                                                                                                                                                                                                                                                                           B.
+one load pulse
+C.                                        eight clock pulses                                                                                                                                                                                                                                                                       D.
+one clock pulse for each 1 in the data
+ 
+ 
+----------------Page (1) Break----------------

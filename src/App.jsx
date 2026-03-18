@@ -8,6 +8,7 @@ import './App.css';
 import TechWritingPractice from './pages/TechWritingPractice';
 import AnalysisPractice from './pages/AnalysisPractice';
 import BMISPractice from './pages/BMISPractice';
+import FundamentalPractice from './pages/FundamentalPractice';
 
 // Protected Route Component
 const ProtectedAdminRoute = ({ children }) => {
@@ -21,12 +22,13 @@ function App() {
       <Routes>
         {/* Student App Route */}
         <Route path="/:subjectSlug" element={<StudentApp />} />
-        <Route path="/" element={<Navigate to="/bmis" replace />} />
+        <Route path="/" element={<Navigate to="/student" replace />} />
 
         {/* Practice Routes */}
         <Route path="/practice/technical-writing" element={<TechWritingPractice onBack={() => window.history.back()} />} />
         <Route path="/practice/analysis-of-algorithm" element={<AnalysisPractice onBack={() => window.history.back()} />} />
         <Route path="/practice/bmis" element={<BMISPractice onBack={() => window.history.back()} />} />
+        <Route path="/practice/fundamentals-of-digital-electronics" element={<FundamentalPractice onBack={() => window.history.back()} />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={

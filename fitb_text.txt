@@ -1,0 +1,36 @@
+II. Fill in the blanks.
+1.                                                       A ----------- quantity is one having a discrete set of values.
+2.                                                         In a 3-variable Karnaugh map, a 2-variable product term is
+produced by a --------------- cell group of 1s.
+3.                                                        A 4-bit binary counter has a maximum modulus of ----------
+-
+4.                                                        If the output of a gate is OFF when the inputs are the same,
+and ON when they are different, the gate must be an --------
+-------- gate.
+5.                                                        A two-input OR gate can be produced by using --------------
+-- number of two-input NAND gates.
+6.                                                          If a 74HC85 magnitude comparator has A = 1000 and B =
+1010, the outputs are -------.
+7.                                                       Flip-flops and latches are both --------------- devices.
+8.                                                             The  handling  of  all  numerical  operations  in  a  computer  is
+done by ---------------- unit.
+9.                                                            If  an  octal-to-binary  priority  encoder  has  its  0,  2,  5,  and  6
+inputs at the active level, the active HIGH binary output is -
+--------------.
+10.                                                                                             An  encoder  essentially  performs  a  reverse  ---------------
+function.
+11.                                                                                            The  burglar  alarm  will  sound  if  either  the  door  or  the
+window or both are opened. This is an example of   ---------
+------ type of logic gate.
+12.                                                                                      Solving  –11  +  (–2)  will  yield  the  8-bit  number  in  the  2’s
+complement answer of -------.
+13.                                                                                            The  minimum  number  of  flip-flops  that  can  be  used  to
+construct a modulus-5 counter is ---------------.  
+14.                                                                                              When  both  the  J  and  K  inputs  are                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            -----------                                                                                                                                                                                                                             ,  an  edge-
+triggered J-K flip-flop changes state on each                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          clock pulse.
+15.                                                                                   Multiplication in Boolean algebra is equivalent to the -----
+---------- function.
+ 
+----------------Page (0) Break----------------
+
+----------------Page (1) Break----------------
