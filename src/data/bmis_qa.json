@@ -7,7 +7,7 @@
       "C. Reduced competitiveness",
       "D. Reduced access to global markets"
     ],
-    "answer": "B. Increased productivity and efficiency"
+    "answer": "Increased productivity and efficiency"
   },
   {
     "question": "Which of the following is a key economic impact of IT?",
@@ -17,7 +17,7 @@
       "C. IT removes the need for information",
       "D. IT eliminates labor as a factor of production"
     ],
-    "answer": "B. IT changes the relative costs of capital and information"
+    "answer": "IT changes the relative costs of capital and information"
   },
   {
     "question": "What does IT help firms reduce?",
@@ -27,7 +27,7 @@
       "C. Transaction costs",
       "D. Equipment maintenance"
     ],
-    "answer": "C. Transaction costs"
+    "answer": "Transaction costs"
   },
   {
     "question": "Which IT-enabled strategy focuses on producing goods and services at a lower cost than competitors?",
@@ -37,7 +37,7 @@
       "C. Low-cost leadership",
       "D. Customer intimacy"
     ],
-    "answer": "C. Low-cost leadership"
+    "answer": "Low-cost leadership"
   },
   {
     "question": "When a company uses IT to build strong ties with suppliers (e.g., automated ordering), it is applying which strategy?",
@@ -47,7 +47,7 @@
       "C. Product differentiation",
       "D. Cost reuse strategy"
     ],
-    "answer": "B. Supplier intimacy"
+    "answer": "Supplier intimacy"
   },
   {
     "question": "Which of the following is NOT a primary activity in Porter’s value chain?",
@@ -57,7 +57,7 @@
       "C. Human resource management",
       "D. Marketing & sales"
     ],
-    "answer": "C. Human resource management"
+    "answer": "Human resource management"
   },
   {
     "question": "Which primary activity involves transforming raw materials into finished products?",
@@ -67,7 +67,7 @@
       "C. Procurement",
       "D. Outbound logistics"
     ],
-    "answer": "B. Operations"
+    "answer": "Operations"
   },
   {
     "question": "\"Improving processes using R&D and innovation\" belongs to which support activity?",
@@ -77,7 +77,7 @@
       "C. Procurement",
       "D. Service"
     ],
-    "answer": "B. Technology development"
+    "answer": "Technology development"
   },
   {
     "question": "Which of the following is a key management issue in using IT for competitive advantage?",
@@ -87,7 +87,7 @@
       "C. Hiring temporary workers",
       "D. Monitoring employee attendance"
     ],
-    "answer": "B. Aligning IT with business strategy"
+    "answer": "Aligning IT with business strategy"
   },
   {
     "question": "Which statement best describes a Value Web?",
@@ -97,7 +97,7 @@
       "C. A model that ignores digital technologies",
       "D. A network of companies that collaborate to create value"
     ],
-    "answer": "D. A network of companies that collaborate to create value"
+    "answer": "A network of companies that collaborate to create value"
   },
   {
     "question": "Which of the following issues is associated with the traditional file environment when handling large volumes of data?",
@@ -107,7 +107,7 @@
       "C. Fast processing speeds",
       "D. High security"
     ],
-    "answer": "B. Data redundancy and inconsistency"
+    "answer": "Data redundancy and inconsistency"
   },
   {
     "question": "Which of the following is NOT a limitation of the traditional file environment?",
@@ -117,7 +117,7 @@
       "C. Data centralization",
       "D. Inconsistent data updates"
     ],
-    "answer": "C. Data centralization"
+    "answer": "Data centralization"
   },
   {
     "question": "How does using a database impact business operations?",
@@ -127,7 +127,7 @@
       "C. By creating data silos between departments",
       "D. By streamlining data management and improving efficiency"
     ],
-    "answer": "D. By streamlining data management and improving efficiency"
+    "answer": "By streamlining data management and improving efficiency"
   },
   {
     "question": "What role do databases play in business analytics?",
@@ -137,7 +137,7 @@
       "C. They slow down the analysis of business data",
       "D. They make all business decisions automatically"
     ],
-    "answer": "B. They store historical data, which is used to generate business insights"
+    "answer": "They store historical data, which is used to generate business insights"
   },
   {
     "question": "In a traditional file environment, data is organized primarily through:",
@@ -147,7 +147,7 @@
       "C. A shared relational system",
       "D. Automatic data integration tools"
     ],
-    "answer": "B. Individual application programs creating separate files"
+    "answer": "Individual application programs creating separate files"
   },
   {
     "question": "Which technique belongs to Data Mining?",
@@ -157,7 +157,7 @@
       "C. Slice",
       "D. Clustering"
     ],
-    "answer": "D. Clustering"
+    "answer": "Clustering"
   },
   {
     "question": "Which time focus is correct?",
@@ -166,7 +166,7 @@
       "B. Data Mining → Past only",
       "C. OLAP → Past and present"
     ],
-    "answer": "C. OLAP → Past and present"
+    "answer": "OLAP → Past and present"
   },
   {
     "question": "Which of the following is an example of text data?",
@@ -176,7 +176,7 @@
       "C. Inventory count",
       "D. Financial balance sheet"
     ],
-    "answer": "B. Customer reviews"
+    "answer": "Customer reviews"
   },
   {
     "question": "Which type of web mining analyzes user clicks and navigation paths?",
@@ -186,7 +186,7 @@
       "C. Web usage mining",
       "D. Text mining"
     ],
-    "answer": "C. Web usage mining"
+    "answer": "Web usage mining"
   },
   {
     "question": "Which problem is MOST likely without Data Governance?",
@@ -196,7 +196,7 @@
       "C. Better decision-making",
       "D. Reduced costs"
     ],
-    "answer": "B. Data inconsistency and security risks"
+    "answer": "Data inconsistency and security risks"
   },
   {
     "question": "Which of the following BEST describes knowledge?",
@@ -206,7 +206,7 @@
       "C. Information combined with experience",
       "D. Numbers only"
     ],
-    "answer": "C. Information combined with experience"
+    "answer": "Information combined with experience"
   },
   {
     "question": "A major benefit of Managing Knowledge is:",
@@ -216,7 +216,7 @@
       "C. Faster learning and innovation",
       "D. Increased confusion"
     ],
-    "answer": "C. Faster learning and innovation"
+    "answer": "Faster learning and innovation"
   },
   {
     "question": "Sharing best practices through intranet or training belongs to:",
@@ -226,7 +226,7 @@
       "C. Knowledge dissemination",
       "D. Knowledge creation"
     ],
-    "answer": "C. Knowledge dissemination"
+    "answer": "Knowledge dissemination"
   },
   {
     "question": "Which sequence correctly represents the KM Value Chain?",
@@ -236,7 +236,7 @@
       "C. Share → Store → Apply → Acquire",
       "D. Apply → Share → Store → Acquire"
     ],
-    "answer": "B. Acquire → Store → Share → Apply"
+    "answer": "Acquire → Store → Share → Apply"
   },
   {
     "question": "Which benefit results from effective KM Value Chain implementation?",
@@ -246,7 +246,7 @@
       "C. Competitive advantage",
       "D. Increased confusion"
     ],
-    "answer": "C. Competitive advantage"
+    "answer": "Competitive advantage"
   },
   {
     "question": "Information Technology mainly enables organizational change by:",
@@ -256,7 +256,7 @@
       "C. Improving information flow and coordination",
       "D. Reducing data availability"
     ],
-    "answer": "C. Improving information flow and coordination"
+    "answer": "Improving information flow and coordination"
   },
   {
     "question": "One major impact of IT-enabled structural change is:",
@@ -266,7 +266,7 @@
       "C. Increased hierarchy levels",
       "D. Reduced employee responsibility"
     ],
-    "answer": "B. Faster and more flexible organizations"
+    "answer": "Faster and more flexible organizations"
   },
   {
     "question": "Which activity is performed FIRST in system analysis?",
@@ -276,7 +276,7 @@
       "C. Study of existing system",
       "D. System testing"
     ],
-    "answer": "C. Study of existing system"
+    "answer": "Study of existing system"
   },
   {
     "question": "System Design mainly focuses on:",
@@ -286,7 +286,7 @@
       "C. System maintenance",
       "D. How the system will work"
     ],
-    "answer": "D. How the system will work"
+    "answer": "How the system will work"
   },
   {
     "question": "Pilot Conversion is suitable when:",
@@ -296,7 +296,7 @@
       "C. Users do not need training",
       "D. System is already perfect"
     ],
-    "answer": "A. The system is small or low risk"
+    "answer": "The system is small or low risk"
   },
   {
     "question": "Which method involves building a working model of the system first?",
@@ -306,7 +306,7 @@
       "C. SDLC",
       "D. Application package"
     ],
-    "answer": "B. Prototyping"
+    "answer": "Prototyping"
   },
   {
     "question": "A major disadvantage of end-user development is:",
@@ -316,7 +316,7 @@
       "C. Slow development",
       "D. Poor documentation and control"
     ],
-    "answer": "D. Poor documentation and control"
+    "answer": "Poor documentation and control"
   },
   {
     "question": "RAD focuses on quick development using reusable components.",
@@ -324,7 +324,7 @@
       "A. True",
       "B. False"
     ],
-    "answer": "A. True"
+    "answer": "True"
   },
   {
     "question": "The first step in Component-Based Development is:",
@@ -334,7 +334,7 @@
       "C. Component identification",
       "D. System deployment"
     ],
-    "answer": "C. Component identification"
+    "answer": "Component identification"
   },
   {
     "question": "Agile development delivers software in:",
@@ -344,7 +344,7 @@
       "C. Short iterations (sprints)",
       "D. Only after full documentation"
     ],
-    "answer": "C. Short iterations (sprints)"
+    "answer": "Short iterations (sprints)"
   },
   {
     "question": "Which technique is commonly used in JAD sessions?",
@@ -354,7 +354,7 @@
       "C. Debugging",
       "D. Deployment"
     ],
-    "answer": "B. Brainstorming"
+    "answer": "Brainstorming"
   },
   {
     "question": "Which is a positive impact of electronic communication?",
@@ -364,7 +364,7 @@
       "C. Faster information exchange",
       "D. Limited market access"
     ],
-    "answer": "C. Faster information exchange"
+    "answer": "Faster information exchange"
   },
   {
     "question": "Which is a negative impact of electronic communication?",
@@ -374,7 +374,7 @@
       "C. Faster communication",
       "D. Cost reduction"
     ],
-    "answer": "B. Cybersecurity risks"
+    "answer": "Cybersecurity risks"
   },
   {
     "question": "What is the main focus of E-Commerce?",
@@ -384,7 +384,7 @@
       "C. Employee training and development",
       "D. Managing company culture"
     ],
-    "answer": "B. Buying and selling of goods and services online"
+    "answer": "Buying and selling of goods and services online"
   },
   {
     "question": "Which statement best describes the difference between E-Commerce and E-Business?",
@@ -394,7 +394,7 @@
       "C. E-Commerce is offline, E-Business is online",
       "D. There is no difference"
     ],
-    "answer": "A. E-Commerce is only about selling, E-Business includes buying, selling, and internal operations"
+    "answer": "E-Commerce is only about selling, E-Business includes buying, selling, and internal"
   },
   {
     "question": "Which perspective emphasizes automating business transactions and workflows to improve efficiency?",
@@ -404,7 +404,7 @@
       "C. Business Process Perspective",
       "D. Service Perspective"
     ],
-    "answer": "C. Business Process Perspective"
+    "answer": "Business Process Perspective"
   },
   {
     "question": "Customer service in e-commerce mainly deals with:",
@@ -414,7 +414,7 @@
       "C. Warehouse construction",
       "D. Price fixing"
     ],
-    "answer": "B. Complaints, returns, and inquiries"
+    "answer": "Complaints, returns, and inquiries"
   },
   {
     "question": "Which of the following is a key feature of a transactional e-commerce site?",
@@ -424,7 +424,7 @@
       "C. Search engine only",
       "D. Company profile"
     ],
-    "answer": "B. Shopping cart"
+    "answer": "Shopping cart"
   },
   {
     "question": "The primary goal of a services-oriented relationship-building website is to:",
@@ -434,7 +434,7 @@
       "C. Improve customer trust and loyalty",
       "D. Eliminate customer interaction"
     ],
-    "answer": "C. Improve customer trust and loyalty"
+    "answer": "Improve customer trust and loyalty"
   },
   {
     "question": "Digital marketing helps businesses mainly to:",
@@ -444,7 +444,7 @@
       "C. Reduce internet usage",
       "D. Stop online interaction"
     ],
-    "answer": "B. Increase brand awareness and sales"
+    "answer": "Increase brand awareness and sales"
   },
   {
     "question": "The main objective of Supply Chain Management is to:",
@@ -454,7 +454,7 @@
       "C. Reduce customer satisfaction",
       "D. Deliver the right product at the right time and cost"
     ],
-    "answer": "D. Deliver the right product at the right time and cost"
+    "answer": "Deliver the right product at the right time and cost"
   },
   {
     "question": "Which driver helps businesses reduce communication and transaction expenses?",
@@ -463,7 +463,7 @@
       "B. Improved customer service",
       "C. Cost reduction"
     ],
-    "answer": "C. Cost reduction"
+    "answer": "Cost reduction"
   },
   {
     "question": "Which type of driver refers to advancements in Internet, mobile, and cloud technologies?",
@@ -473,7 +473,7 @@
       "C. Social drivers",
       "D. Government drivers"
     ],
-    "answer": "B. Technological drivers"
+    "answer": "Technological drivers"
   },
   {
     "question": "Which risk is associated with IT projects failing due to unexpected technical issues?",
@@ -483,7 +483,7 @@
       "C. Technical risk",
       "D. Legal risk"
     ],
-    "answer": "C. Technical risk"
+    "answer": "Technical risk"
   },
   {
     "question": "Which of these is considered a human barrier?",
@@ -493,7 +493,7 @@
       "C. Difficulty integrating IT systems",
       "D. Current bandwidth restrictions"
     ],
-    "answer": "B. Reluctance of staff"
+    "answer": "Reluctance of staff"
   },
   {
     "question": "Which of the following is a key driver for consumers adopting Internet services?",
@@ -503,7 +503,7 @@
       "C. Limited content",
       "D. Slow network speed"
     ],
-    "answer": "B. Perceived usefulness and convenience"
+    "answer": "Perceived usefulness and convenience"
   },
   {
     "question": "Strategic agility refers to an organization’s ability to:",
@@ -513,7 +513,7 @@
       "C. Increase profits only",
       "D. Avoid competition"
     ],
-    "answer": "B. Respond quickly and effectively to change"
+    "answer": "Respond quickly and effectively to change"
   },
   {
     "question": "Which platform is commonly analyzed in online marketplace analysis?",
@@ -523,7 +523,7 @@
       "C. Office buildings",
       "D. Online marketplaces like Amazon or Shopee"
     ],
-    "answer": "D. Online marketplaces like Amazon or Shopee"
+    "answer": "Online marketplaces like Amazon or Shopee"
   },
   {
     "question": "Market trend analysis helps businesses to:",
@@ -533,7 +533,7 @@
       "C. Eliminate competition",
       "D. Reduce customer interaction"
     ],
-    "answer": "B. Predict future opportunities and risks"
+    "answer": "Predict future opportunities and risks"
   },
   {
     "question": "Search intermediaries are best described as:",
@@ -543,7 +543,7 @@
       "C. Online platforms that help users find and compare information, products, or services",
       "D. Offline retail stores"
     ],
-    "answer": "C. Online platforms that help users find and compare information, products, or services"
+    "answer": "Online platforms that help users find and compare information, products, or services"
   },
   {
     "question": "Review and rating platforms influence online marketplaces by:",
@@ -553,7 +553,7 @@
       "C. Increasing manufacturing costs",
       "D. Limiting customer access"
     ],
-    "answer": "B. Affecting consumer trust and purchase decisions"
+    "answer": "Affecting consumer trust and purchase decisions"
   },
   {
     "question": "Which of the following is a disadvantage of Disintermediation?",
@@ -563,7 +563,7 @@
       "C. Producers must handle more responsibilities",
       "D. Improved customer relationship"
     ],
-    "answer": "C. Producers must handle more responsibilities"
+    "answer": "Producers must handle more responsibilities"
   },
   {
     "question": "Which digital service acts as a reintermediary in e-commerce?",
@@ -573,7 +573,7 @@
       "C. Payment gateway",
       "D. Offline warehouse"
     ],
-    "answer": "C. Payment gateway"
+    "answer": "Payment gateway"
   },
   {
     "question": "Which of the following is an example of an electronic marketplace?",
@@ -583,7 +583,7 @@
       "C. Online shopping website",
       "D. Wholesale store"
     ],
-    "answer": "C. Online shopping website"
+    "answer": "Online shopping website"
   },
   {
     "question": "Amazon and Shopee are examples of:",
@@ -593,7 +593,7 @@
       "C. Electronic locations",
       "D. Traditional markets"
     ],
-    "answer": "C. Electronic locations"
+    "answer": "Electronic locations"
   },
   {
     "question": "What is the main advantage of buyer-controlled sites for buyers?",
@@ -603,7 +603,7 @@
       "C. Lower prices due to competition",
       "D. Fixed product selection"
     ],
-    "answer": "C. Lower prices due to competition"
+    "answer": "Lower prices due to competition"
   },
   {
     "question": "Which element explains why customers should choose a business?",
@@ -613,7 +613,7 @@
       "C. Management team",
       "D. Target market"
     ],
-    "answer": "B. Value proposition"
+    "answer": "Value proposition"
   },
   {
     "question": "What do the key elements of a business model describe?",
@@ -623,7 +623,7 @@
       "C. Internet speed",
       "D. Office location"
     ],
-    "answer": "B. How a business creates and earns value"
+    "answer": "How a business creates and earns value"
   },
   {
     "question": "Apple’s strong brand loyalty is an example of:",
@@ -633,7 +633,7 @@
       "C. Competitive advantage",
       "D. Value proposition"
     ],
-    "answer": "C. Competitive advantage"
+    "answer": "Competitive advantage"
   },
   {
     "question": "Which element focuses on internal structure and teams?",
@@ -643,7 +643,7 @@
       "C. Organizational development",
       "D. Target market"
     ],
-    "answer": "C. Organizational development"
+    "answer": "Organizational development"
   },
   {
     "question": "Which of the following is NOT a key element of a business model?",
@@ -653,7 +653,7 @@
       "C. Value proposition",
       "D. Internet bandwidth"
     ],
-    "answer": "D. Internet bandwidth"
+    "answer": "Internet bandwidth"
   },
   {
     "question": "Which of the following best describes a Forward Auction?",
@@ -663,7 +663,7 @@
       "C. Prices decrease during bidding",
       "D. Lowest bidder wins"
     ],
-    "answer": "B. Many buyers compete by increasing prices"
+    "answer": "Many buyers compete by increasing prices"
   },
   {
     "question": "What happens to the price during a Reverse Auction?",
@@ -673,7 +673,7 @@
       "C. It decreases as sellers compete",
       "D. It depends on the buyer’s bid"
     ],
-    "answer": "C. It decreases as sellers compete"
+    "answer": "It decreases as sellers compete"
   },
   {
     "question": "Price discovery mainly depends on:",
@@ -683,7 +683,7 @@
       "C. Fixed pricing policy",
       "D. Demand and supply"
     ],
-    "answer": "D. Demand and supply"
+    "answer": "Demand and supply"
   },
   {
     "question": "Which market mechanism ensures that goods go to those who value them most?",
@@ -692,7 +692,7 @@
       "B. Coordination mechanism",
       "C. Efficient allocation mechanism"
     ],
-    "answer": "C. Efficient allocation mechanism"
+    "answer": "Efficient allocation mechanism"
   },
   {
     "question": "Online auction platforms mainly support which mechanism?",
@@ -702,7 +702,7 @@
       "C. Only distribution",
       "D. Price fixing"
     ],
-    "answer": "A. Coordination between buyers and seller"
+    "answer": "Coordination between buyers and seller"
   },
   {
     "question": "Which of the following is a main business benefit of an extranet?",
@@ -712,7 +712,7 @@
       "C. Reduced security",
       "D. Limited access to information"
     ],
-    "answer": "B. Improved communication with partners"
+    "answer": "Improved communication with partners"
   },
   {
     "question": "Online shopping carts and ERP systems belong to:",
@@ -722,7 +722,7 @@
       "C. Hardware infrastructure",
       "D. Application software infrastructure"
     ],
-    "answer": "D. Application software infrastructure"
+    "answer": "Application software infrastructure"
   },
   {
     "question": "How does an extranet improve customer service?",
@@ -732,7 +732,7 @@
       "C. By allowing customers to track orders online",
       "D. By limiting customer access"
     ],
-    "answer": "C. By allowing customers to track orders online"
+    "answer": "By allowing customers to track orders online"
   },
   {
     "question": "Cloud computing in e-business infrastructure is primarily used for:",
@@ -742,7 +742,7 @@
       "C. Printing invoices manually",
       "D. Hosting physical office servers only"
     ],
-    "answer": "B. Providing scalable resources on demand"
+    "answer": "Providing scalable resources on demand"
   },
   {
     "question": "Which of the following best describes virtualization in an e-business infrastructure?",
@@ -752,7 +752,7 @@
       "C. Advertising products online",
       "D. Hiring remote employees"
     ],
-    "answer": "B. Running multiple virtual systems on a single physical server"
+    "answer": "Running multiple virtual systems on a single physical server"
   },
   {
     "question": "Which of the following MOST increases customer trust in e-commerce?",
@@ -762,7 +762,7 @@
       "C. Secure payment systems",
       "D. Slow delivery"
     ],
-    "answer": "C. Secure payment systems"
+    "answer": "Secure payment systems"
   },
   {
     "question": "Which factor is influenced by laws and government policies?",
@@ -772,7 +772,7 @@
       "C. Cost factor",
       "D. Technological factor"
     ],
-    "answer": "B. Environmental factor"
+    "answer": "Environmental factor (Note: In the PESTEL framework commonly taught in Business"
   },
   {
     "question": "Which method ensures only authorized users can access the system?",
@@ -782,7 +782,7 @@
       "C. Advertising",
       "D. Data duplication"
     ],
-    "answer": "B. Authentication"
+    "answer": "Authentication"
   },
   {
     "question": "Developing an e-business strategy requires integration of:",
@@ -792,7 +792,7 @@
       "C. Business, marketing, supply chain and IS strategies",
       "D. Only social media tools"
     ],
-    "answer": "C. Business, marketing, supply chain and IS strategies"
+    "answer": "Business, marketing, supply chain and IS strategies"
   },
   {
     "question": "Which of the following helps achieve competitive advantage in e-business?",
@@ -802,7 +802,7 @@
       "C. Ignoring customer needs",
       "D. Applying innovative techniques"
     ],
-    "answer": "D. Applying innovative techniques"
+    "answer": "Applying innovative techniques"
   },
   {
     "question": "A poorly defined e-business strategy may cause competitive disadvantage because:",
@@ -812,7 +812,7 @@
       "C. Customers avoid online platforms",
       "D. Internal controls become stronger"
     ],
-    "answer": "B. Competitors can leverage better-aligned digital capabilities"
+    "answer": "Competitors can leverage better-aligned digital capabilities"
   },
   {
     "question": "Which is an example of using the right message in marketing?",
@@ -822,7 +822,7 @@
       "C. Sending random advertisements",
       "D. Blocking customer communication"
     ],
-    "answer": "B. Sending sports shoe ads to sports lovers"
+    "answer": "Sending sports shoe ads to sports lovers"
   },
   {
     "question": "Which of the following is part of communicating the benefits of e-channels?",
@@ -832,7 +832,7 @@
       "C. Increasing product prices randomly",
       "D. Closing online portals"
     ],
-    "answer": "A. Explaining online shopping is faster and convenient"
+    "answer": "Explaining online shopping is faster and convenient"
   },
   {
     "question": "What is the main purpose of a strategy process model?",
@@ -842,7 +842,7 @@
       "C. To reduce employee salaries",
       "D. To increase hardware cost"
     ],
-    "answer": "B. To provide a logical sequence for strategy development"
+    "answer": "To provide a logical sequence for strategy development"
   },
   {
     "question": "Which of the following is part of the macro-environment?",
@@ -852,7 +852,7 @@
       "C. Government taxation policy",
       "D. Staff training"
     ],
-    "answer": "C. Government taxation policy"
+    "answer": "Government taxation policy"
   },
   {
     "question": "Continuous environmental scanning is important because:",
@@ -862,7 +862,7 @@
       "C. Competitors disappear automatically",
       "D. It reduces employee workload"
     ],
-    "answer": "B. External factors change frequently"
+    "answer": "External factors change frequently"
   },
   {
     "question": "Analyzing the micro-environment helps a company to:",
@@ -872,7 +872,7 @@
       "C. Control economic recession",
       "D. Understand immediate competitive pressures"
     ],
-    "answer": "D. Understand immediate competitive pressures"
+    "answer": "Understand immediate competitive pressures"
   },
   {
     "question": "When performing portfolio analysis, a company should:",
@@ -882,6 +882,6 @@
       "C. Ignore weaknesses in the existing system",
       "D. Only implement new projects without analysis"
     ],
-    "answer": "B. Assess the current capability of business applications"
+    "answer": "Assess the current capability of business applications"
   }
 ]

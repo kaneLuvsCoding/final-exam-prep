@@ -22,7 +22,7 @@ function App() {
       <Routes>
         {/* Student App Route */}
         <Route path="/:subjectSlug" element={<StudentApp />} />
-        <Route path="/" element={<Navigate to="/student" replace />} />
+        <Route path="/" element={<Navigate to="/bmis" replace />} />
 
         {/* Practice Routes */}
         <Route path="/practice/technical-writing" element={<TechWritingPractice onBack={() => window.history.back()} />} />
