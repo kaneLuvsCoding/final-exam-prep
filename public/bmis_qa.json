@@ -1,0 +1,539 @@
+[
+  {
+    "question": "Which of the following is a major economic impact of Information Systems on businesses?",
+    "options": [
+      "A. Higher operating costs",
+      "B. Increased productivity and efficiency",
+      "C. Reduced competitiveness",
+      "D. Reduced access to global markets"
+    ],
+    "answer": "B. Increased productivity and efficiency"
+  },
+  {
+    "question": "Which of the following is a key economic impact of IT?",
+    "options": [
+      "A. IT increase the cost of capital",
+      "B. IT changes the relative costs of capital and information",
+      "C. IT removes the need for information",
+      "D. IT eliminates labor as a factor of production"
+    ],
+    "answer": "B. IT changes the relative costs of capital and information"
+  },
+  {
+    "question": "What does IT help firms reduce?",
+    "options": [
+      "A. Labor force",
+      "B. Product prices",
+      "C. Transaction costs",
+      "D. Equipment maintenance"
+    ],
+    "answer": "C. Transaction costs"
+  },
+  {
+    "question": "Which IT-enabled strategy focuses on producing goods and services at a lower cost than competitors?",
+    "options": [
+      "A. Product differentiation",
+      "B. Focus strategy",
+      "C. Low-cost leadership",
+      "D. Customer intimacy"
+    ],
+    "answer": "C. Low-cost leadership"
+  },
+  {
+    "question": "When a company uses IT to build strong ties with suppliers (e.g., automated ordering), it is applying which strategy?",
+    "options": [
+      "A. Switching cost reduction",
+      "B. Supplier intimacy",
+      "C. Product differentiation",
+      "D. Cost reuse strategy"
+    ],
+    "answer": "B. Supplier intimacy"
+  },
+  {
+    "question": "Which of the following is NOT a primary activity in Porter’s value chain?",
+    "options": [
+      "A. Operations",
+      "B. Inbound Logistics",
+      "C. Human resource management",
+      "D. Marketing & sales"
+    ],
+    "answer": "C. Human resource management"
+  },
+  {
+    "question": "Which primary activity involves transforming raw materials into finished products?",
+    "options": [
+      "A. Service",
+      "B. Operations",
+      "C. Procurement",
+      "D. Outbound logistics"
+    ],
+    "answer": "B. Operations"
+  },
+  {
+    "question": "\"Improving processes using R&D and innovation\" belongs to which support activity?",
+    "options": [
+      "A. Infrastructure",
+      "B. Technology development",
+      "C. Procurement",
+      "D. Service"
+    ],
+    "answer": "B. Technology development"
+  },
+  {
+    "question": "Which of the following is a key management issue in using IT for competitive advantage?",
+    "options": [
+      "A. Choosing office furniture",
+      "B. Aligning IT with business strategy",
+      "C. Hiring temporary workers",
+      "D. Monitoring employee attendance"
+    ],
+    "answer": "B. Aligning IT with business strategy"
+  },
+  {
+    "question": "Which statement best describes a Value Web?",
+    "options": [
+      "A. A simple linear chain of business activities",
+      "B. A chain where only suppliers are included",
+      "C. A model that ignores digital technologies",
+      "D. A network of companies that collaborate to create value"
+    ],
+    "answer": "D. A network of companies that collaborate to create value"
+  },
+  {
+    "question": "Which of the following issues is associated with the traditional file environment when handling large volumes of data?",
+    "options": [
+      "A. Easy data retrieval",
+      "B. Data redundancy and inconsistency",
+      "C. Fast processing speeds",
+      "D. High security"
+    ],
+    "answer": "B. Data redundancy and inconsistency"
+  },
+  {
+    "question": "Which of the following is NOT a limitation of the traditional file environment?",
+    "options": [
+      "A. Data redundancy",
+      "B. Limited access control",
+      "C. Data centralization",
+      "D. Inconsistent data updates"
+    ],
+    "answer": "C. Data centralization"
+  },
+  {
+    "question": "How does using a database impact business operations?",
+    "options": [
+      "A. By slowing down data processing",
+      "B. By eliminating the need for customer feedback",
+      "C. By creating data silos between departments",
+      "D. By streamlining data management and improving efficiency"
+    ],
+    "answer": "D. By streamlining data management and improving efficiency"
+  },
+  {
+    "question": "What role do databases play in business analytics?",
+    "options": [
+      "A. They eliminate the need for data analysis",
+      "B. They store historical data, which is used to generate business insights",
+      "C. They slow down the analysis of business data",
+      "D. They make all business decisions automatically"
+    ],
+    "answer": "B. They store historical data, which is used to generate business insights"
+  },
+  {
+    "question": "In a traditional file environment, data is organized primarily through:",
+    "options": [
+      "A. Centralized databases",
+      "B. Individual application programs creating separate files",
+      "C. A shared relational system",
+      "D. Automatic data integration tools"
+    ],
+    "answer": "B. Individual application programs creating separate files"
+  },
+  {
+    "question": "Which technique belongs to Data Mining?",
+    "options": [
+      "A. Roll-up",
+      "B. Pivot",
+      "C. Slice",
+      "D. Clustering"
+    ],
+    "answer": "D. Clustering"
+  },
+  {
+    "question": "Which time focus is correct?",
+    "options": [
+      "A. OLAP → Future only",
+      "B. Data Mining → Past only",
+      "C. OLAP → Past and present"
+    ],
+    "answer": "C. OLAP → Past and present"
+  },
+  {
+    "question": "Which of the following is an example of text data?",
+    "options": [
+      "A. Sales table",
+      "B. Customer reviews",
+      "C. Inventory count",
+      "D. Financial balance sheet"
+    ],
+    "answer": "B. Customer reviews"
+  },
+  {
+    "question": "Which type of web mining analyzes user clicks and navigation paths?",
+    "options": [
+      "A. Web content mining",
+      "B. Web structure mining",
+      "C. Web usage mining",
+      "D. Text mining"
+    ],
+    "answer": "C. Web usage mining"
+  },
+  {
+    "question": "Which problem is MOST likely without Data Governance?",
+    "options": [
+      "A. Faster systems",
+      "B. Data inconsistency and security risks",
+      "C. Better decision-making",
+      "D. Reduced costs"
+    ],
+    "answer": "B. Data inconsistency and security risks"
+  },
+  {
+    "question": "Which of the following BEST describes knowledge?",
+    "options": [
+      "A. Raw facts",
+      "B. Processed data",
+      "C. Information combined with experience",
+      "D. Numbers only"
+    ],
+    "answer": "C. Information combined with experience"
+  },
+  {
+    "question": "A major benefit of Managing Knowledge is:",
+    "options": [
+      "A. Loss of expertise",
+      "B. Repeating the same mistakes",
+      "C. Faster learning and innovation",
+      "D. Increased confusion"
+    ],
+    "answer": "C. Faster learning and innovation"
+  },
+  {
+    "question": "Sharing best practices through intranet or training belongs to:",
+    "options": [
+      "A. Knowledge application",
+      "B. Knowledge storage",
+      "C. Knowledge dissemination",
+      "D. Knowledge creation"
+    ],
+    "answer": "C. Knowledge dissemination"
+  },
+  {
+    "question": "Which sequence correctly represents the KM Value Chain?",
+    "options": [
+      "A. Store → Share → Acquire → Apply",
+      "B. Acquire → Store → Share → Apply",
+      "C. Share → Store → Apply → Acquire",
+      "D. Apply → Share → Store → Acquire"
+    ],
+    "answer": "B. Acquire → Store → Share → Apply"
+  },
+  {
+    "question": "Which benefit results from effective KM Value Chain implementation?",
+    "options": [
+      "A. Knowledge loss",
+      "B. Poor decisions",
+      "C. Competitive advantage",
+      "D. Increased confusion"
+    ],
+    "answer": "C. Competitive advantage"
+  },
+  {
+    "question": "Information Technology mainly enables organizational change by:",
+    "options": [
+      "A. Slowing communication",
+      "B. Increasing paperwork",
+      "C. Improving information flow and coordination",
+      "D. Reducing data availability"
+    ],
+    "answer": "C. Improving information flow and coordination"
+  },
+  {
+    "question": "One major impact of IT-enabled structural change is:",
+    "options": [
+      "A. Slower decision-making",
+      "B. Faster and more flexible organizations",
+      "C. Increased hierarchy levels",
+      "D. Reduced employee responsibility"
+    ],
+    "answer": "B. Faster and more flexible organizations"
+  },
+  {
+    "question": "Which activity is performed FIRST in system analysis?",
+    "options": [
+      "A. System design",
+      "B. Coding",
+      "C. Study of existing system",
+      "D. System testing"
+    ],
+    "answer": "C. Study of existing system"
+  },
+  {
+    "question": "System Design mainly focuses on:",
+    "options": [
+      "A. What the system should do",
+      "B. User training",
+      "C. System maintenance",
+      "D. How the system will work"
+    ],
+    "answer": "D. How the system will work"
+  },
+  {
+    "question": "Pilot Conversion is suitable when:",
+    "options": [
+      "A. The system is small or low risk",
+      "B. Immediate full implementation is required",
+      "C. Users do not need training",
+      "D. System is already perfect"
+    ],
+    "answer": "A. The system is small or low risk"
+  },
+  {
+    "question": "Which method involves building a working model of the system first?",
+    "options": [
+      "A. Outsourcing",
+      "B. Prototyping",
+      "C. SDLC",
+      "D. Application package"
+    ],
+    "answer": "B. Prototyping"
+  },
+  {
+    "question": "A major disadvantage of end-user development is:",
+    "options": [
+      "A. High cost",
+      "B. Strong security",
+      "C. Slow development",
+      "D. Poor documentation and control"
+    ],
+    "answer": "D. Poor documentation and control"
+  },
+  {
+    "question": "RAD focuses on quick development using reusable components.",
+    "options": [
+      "A. True",
+      "B. False"
+    ],
+    "answer": "A. True"
+  },
+  {
+    "question": "The first step in Component-Based Development is:",
+    "options": [
+      "A. Component integration",
+      "B. Component testing",
+      "C. Component identification",
+      "D. System deployment"
+    ],
+    "answer": "C. Component identification"
+  },
+  {
+    "question": "Agile development delivers software in:",
+    "options": [
+      "A. One final release",
+      "B. Long sequential phases",
+      "C. Short iterations (sprints)",
+      "D. Only after full documentation"
+    ],
+    "answer": "C. Short iterations (sprints)"
+  },
+  {
+    "question": "Which technique is commonly used in JAD sessions?",
+    "options": [
+      "A. Coding",
+      "B. Brainstorming",
+      "C. Debugging",
+      "D. Deployment"
+    ],
+    "answer": "B. Brainstorming"
+  },
+  {
+    "question": "Which of the following is a main business benefit of an extranet?",
+    "options": [
+      "A. Increased paper usage",
+      "B. Improved communication with partners",
+      "C. Reduced security",
+      "D. Limited access to information"
+    ],
+    "answer": "B. Improved communication with partners"
+  },
+  {
+    "question": "Online shopping carts and ERP systems belong to:",
+    "options": [
+      "A. System software infrastructure",
+      "B. Internet infrastructure",
+      "C. Hardware infrastructure",
+      "D. Application software infrastructure"
+    ],
+    "answer": "D. Application software infrastructure"
+  },
+  {
+    "question": "How does an extranet improve customer service?",
+    "options": [
+      "A. By hiding order information",
+      "B. By increasing call center workload",
+      "C. By allowing customers to track orders online",
+      "D. By limiting customer access"
+    ],
+    "answer": "C. By allowing customers to track orders online"
+  },
+  {
+    "question": "Cloud computing in e-business infrastructure is primarily used for:",
+    "options": [
+      "A. Running offline software",
+      "B. Providing scalable resources on demand",
+      "C. Printing invoices manually",
+      "D. Hosting physical office servers only"
+    ],
+    "answer": "B. Providing scalable resources on demand"
+  },
+  {
+    "question": "Which of the following best describes virtualization in an e-business infrastructure?",
+    "options": [
+      "A. Creating physical copies of servers",
+      "B. Running multiple virtual systems on a single physical server",
+      "C. Advertising products online",
+      "D. Hiring remote employees"
+    ],
+    "answer": "B. Running multiple virtual systems on a single physical server"
+  },
+  {
+    "question": "Which of the following MOST increases customer trust in e-commerce?",
+    "options": [
+      "A. High prices",
+      "B. Complex website design",
+      "C. Secure payment systems",
+      "D. Slow delivery"
+    ],
+    "answer": "C. Secure payment systems"
+  },
+  {
+    "question": "Which factor is influenced by laws and government policies?",
+    "options": [
+      "A. Social factor",
+      "B. Environmental factor",
+      "C. Cost factor",
+      "D. Technological factor"
+    ],
+    "answer": "B. Environmental factor (Note: In the PESTEL framework commonly taught in Business"
+  },
+  {
+    "question": "Which method ensures only authorized users can access the system?",
+    "options": [
+      "A. Public access",
+      "B. Authentication",
+      "C. Advertising",
+      "D. Data duplication"
+    ],
+    "answer": "B. Authentication"
+  },
+  {
+    "question": "Developing an e-business strategy requires integration of:",
+    "options": [
+      "A. Only marketing strategy",
+      "B. Only information systems",
+      "C. Business, marketing, supply chain and IS strategies",
+      "D. Only social media tools"
+    ],
+    "answer": "C. Business, marketing, supply chain and IS strategies"
+  },
+  {
+    "question": "Which of the following helps achieve competitive advantage in e-business?",
+    "options": [
+      "A. Avoiding innovation",
+      "B. Using outdated systems",
+      "C. Ignoring customer needs",
+      "D. Applying innovative techniques"
+    ],
+    "answer": "D. Applying innovative techniques"
+  },
+  {
+    "question": "A poorly defined e-business strategy may cause competitive disadvantage because:",
+    "options": [
+      "A. Digital technologies are optional",
+      "B. Competitors can leverage better-aligned digital capabilities",
+      "C. Customers avoid online platforms",
+      "D. Internal controls become stronger"
+    ],
+    "answer": "B. Competitors can leverage better-aligned digital capabilities"
+  },
+  {
+    "question": "Which is an example of using the right message in marketing?",
+    "options": [
+      "A. Sending technical product ads to uninterested customers",
+      "B. Sending sports shoe ads to sports lovers",
+      "C. Sending random advertisements",
+      "D. Blocking customer communication"
+    ],
+    "answer": "B. Sending sports shoe ads to sports lovers"
+  },
+  {
+    "question": "Which of the following is part of communicating the benefits of e-channels?",
+    "options": [
+      "A. Explaining online shopping is faster and convenient",
+      "B. Ignoring customer needs",
+      "C. Increasing product prices randomly",
+      "D. Closing online portals"
+    ],
+    "answer": "A. Explaining online shopping is faster and convenient"
+  },
+  {
+    "question": "What is the main purpose of a strategy process model?",
+    "options": [
+      "A. To design website graphics",
+      "B. To provide a logical sequence for strategy development",
+      "C. To reduce employee salaries",
+      "D. To increase hardware cost"
+    ],
+    "answer": "B. To provide a logical sequence for strategy development"
+  },
+  {
+    "question": "Which of the following is part of the macro-environment?",
+    "options": [
+      "A. Company culture",
+      "B. Internal IT system",
+      "C. Government taxation policy",
+      "D. Staff training"
+    ],
+    "answer": "C. Government taxation policy"
+  },
+  {
+    "question": "Continuous environmental scanning is important because:",
+    "options": [
+      "A. Environment never changes",
+      "B. External factors change frequently",
+      "C. Competitors disappear automatically",
+      "D. It reduces employee workload"
+    ],
+    "answer": "B. External factors change frequently"
+  },
+  {
+    "question": "Analyzing the micro-environment helps a company to:",
+    "options": [
+      "A. Control global inflation",
+      "B. Change national law",
+      "C. Control economic recession",
+      "D. Understand immediate competitive pressures"
+    ],
+    "answer": "D. Understand immediate competitive pressures"
+  },
+  {
+    "question": "When performing portfolio analysis, a company should:",
+    "options": [
+      "A. Focus only on financial resources",
+      "B. Assess the current capability of business applications",
+      "C. Ignore weaknesses in the existing system",
+      "D. Only implement new projects without analysis"
+    ],
+    "answer": "B. Assess the current capability of business applications"
+  }
+]

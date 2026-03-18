@@ -1,7 +1,7 @@
 const fs = require('fs');
 const pdf = require('pdf-parse');
 
-let dataBuffer = fs.readFileSync('./public/Q&A.pdf');
+let dataBuffer = fs.readFileSync('./public/BMIS Mcq.pdf');
 
 pdf(dataBuffer).then(function(data) {
     fs.writeFileSync('./pdf_text.txt', data.text);

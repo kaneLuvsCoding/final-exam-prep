@@ -7,4 +7,4 @@ pdfParser.on("pdfParser_dataReady", pdfData => {
     fs.writeFileSync("./pdf_text.txt", pdfParser.getRawTextContent());
     console.log("Done");
 });
-pdfParser.loadPDF("./public/Q&A.pdf");
+pdfParser.loadPDF("./public/BMIS Mcq.pdf");

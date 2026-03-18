@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Which of the following is a major economic impact of Information Systems on businesses?",
+    "options": [
+      "A. Higher operating costs",
+      "B. Increased productivity and efficiency",
+      "C. Reduced competitiveness",
+      "D. Reduced access to global markets"
+    ],
+    "answer": "B. Increased productivity and efficiency"
+  },
+  {
+    "question": "Which of the following is a key economic impact of IT?",
+    "options": [
+      "A. IT increase the cost of capital",
+      "B. IT changes the relative costs of capital and information",
+      "C. IT removes the need for information",
+      "D. IT eliminates labor as a factor of production"
+    ],
+    "answer": "B. IT changes the relative costs of capital and information"
+  },
+  {
+    "question": "What does IT help firms reduce?",
+    "options": [
+      "A. Labor force",
+      "B. Product prices",
+      "C. Transaction costs",
+      "D. Equipment maintenance"
+    ],
+    "answer": "C. Transaction costs"
+  }
+]
