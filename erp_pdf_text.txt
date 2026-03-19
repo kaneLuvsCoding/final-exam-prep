@@ -1,0 +1,572 @@
+1 
+ 
+ 
+ 
+ PAN
+ 
+Multiple choice  
+1.   What is a key component of an ERP system's hardware? 
+a) Operating System 
+b) Database Management System 
+c) High-end multiprocessor servers 
+d) Virus protection software 
+ 
+2.   What is the primary role of middleware in ERP implementations? 
+a) To replace the ERP system 
+b) To develop reporting databases using extract, translate, and load tools 
+c) To act as the main server hardware 
+d) To train end-users 
+ 
+3.   Which of the following is a reason to choose a Vanilla ERP implementation? 
+a) The company has highly unique business processes 
+b) The company lacks skilled IT developers 
+c) The company wants extensive customization 
+d) The company prefers to modify the ERP system 
+ 
+4.   What is a critical platform issue for ERP implementations? 
+a) Employee vacation schedules 
+b) Network reliability and security 
+c) Office decor preferences 
+d) Marketing campaign designs 
+ 
+5.   Who oversees the project’s efforts and ensures appropriate leadership in an ERP 
+implementation? 
+a) End-users 
+b) Steering Committee 
+c) Vendors 
+d) Database Administrators 
+ 
+6.   What is the first step in the ERP vendor selection process? 
+a) Request for Proposal (RFP) 
+b) Vendor research and information gathering 
+c) Contract negotiation 
+d) Functional evaluation 
+ 
+7.   Why is involving end-users in the vendor selection process important? 
+a) To reduce costs 
+b) To help with change management and gain trust 
+c) To speed up the implementation 
+d) To eliminate the need for consultants 
+ 
+8.   Which of the following is NOT a factor to consider when selecting a vendor? 
+a) Vendor’s financial position 
+----------------Page (0) Break----------------
+2 
+ 
+ 
+ 
+ PAN
+ 
+b) Vendor’s office location 
+c) Vendor’s implementation philosophy 
+d) Vendor’s software upgrade strategies 
+ 
+9.   What is the purpose of a Request for Bid (RFB) or Request for Proposal (RFP)? 
+a) To finalize the contract 
+b) To gather detailed information from vendors about their solutions 
+c) To train employees 
+d) To install the ERP system 
+ 
+10. Which document is often a result of identifying user and system requirements? 
+a) Vendor’s financial report 
+b) Data and functional flow of departmental processes 
+c) Employee training manual 
+d) Contract agreement 
+ 
+11. What should be included in an RFB/RFP? 
+a) Vendor’s marketing strategy 
+b) Specific functionality, hardware/software infrastructure, and training requirements 
+c) Employee salaries 
+d) Company’s annual revenue 
+ 
+12. Who is responsible for evaluating the technology requirements during vendor analysis? 
+a) Office staff 
+b) IT staff 
+c) Contract staff 
+d) Marketing team 
+ 
+13. What is Total Cost of Ownership (TCO)? 
+a) The initial purchase price of the software 
+b) The cost of training employees 
+c) The overall cost of acquiring, implementing, and maintaining the ERP system 
+d) The cost of hardware only 
+ 
+14. Which of the following is a key component of an ERP contract? 
+a) Employee vacation policies 
+b) Clearly identified deliverables with delivery dates 
+c) Vendor’s office location 
+d) Company’s marketing plan 
+ 
+15. Why is negotiating with two vendors beneficial? 
+a) It speeds up the implementation process 
+b) It yields a better purchase price 
+c) It eliminates the need for a contract 
+d) It reduces training requirements 
+ 
+----------------Page (1) Break----------------
+3 
+ 
+ 
+ 
+ PAN
+ 
+16. Which ERP vendor is known for solutions tailored to mid-market companies? 
+a) SAP 
+b) Oracle/PeopleSoft 
+c) Epicor 
+d) Microsoft Great Plains 
+ 
+17. What is the role of management in the ERP selection process? 
+a) To avoid involvement in the process 
+b) To choose the right system that meets the company’s needs 
+c) To handle all technical evaluations 
+d) To train end-users 
+ 
+18. What is the purpose of documenting business processes before selecting an ERP system? 
+a) To create a marketing plan 
+b) To match requirements to system functionality 
+c) To reduce the number of vendors 
+d) To eliminate the need for IT staff 
+ 
+19. Which of the following is NOT a step in the high-level ERP purchase process? 
+a) Vendor research 
+b) Employee recruitment 
+c) Needs and requirements assessment 
+d) Contract review and change 
+ 
+20. What should be communicated during the contract management phase? 
+a) Employee personal details 
+b) Progress and changes to the contract 
+c) Vendor’s financial reports 
+d) Company’s competitors 
+ 
+True or False 
+ 
+21. The first step in the ERP vendor selection process is sending out a Request for Proposal (RFP). 
+False 
+22. Involving end-users in the vendor selection process helps with change management. True 
+23. Total Cost of Ownership (TCO) only includes the initial purchase price of the ERP software. 
+False 
+24. Negotiating with multiple vendors can lead to a better purchase price. True 
+25. An ERP contract should avoid specifying deliverables and deadlines to allow flexibility. Flase 
+26. A Vanilla ERP implementation involves heavy customization of the system. False 
+27. Third-party products are sometimes needed to add missing functionality to an ERP system. True 
+28. Disaster recovery planning is optional in ERP implementations. False 
+29. The Project Management Office (PMO) manages day-to-day aspects of the ERP project. True 
+30. Modifying an ERP system has no impact on future upgrades. False 
+ 
+ 
+----------------Page (2) Break----------------
+4 
+ 
+ 
+ 
+ PAN
+ 
+Assignment 6 
+Multiple Choice Questions  
+31. What is the primary purpose of the Go-Live Readiness Review? 
+a) To celebrate the completion of the ERP project 
+b) To ensure all necessary steps are completed before Go-Live 
+c) To replace the need for training 
+d) To reduce the project budget 
+ 
+32. How long does the stabilization phase typically last after Go-Live? 
+a) 10-20 days 
+b) 30-45 days 
+c) 60-90 days 
+d) 120-150 days 
+ 
+33. What is a key risk during the stabilization phase? 
+a) Lack of coffee in the office 
+b) Customizations that are not well-documented 
+c) Too many team meetings 
+d) Overstaffing the IT department 
+ 
+34. Who should be involved in the readiness review process? 
+a) Only senior management 
+b) Only IT staff 
+c) As many team members, users, and managers as possible 
+d) External consultants only 
+ 
+35. What is the purpose of postproduction support? 
+a) To develop new ERP features 
+b) To ensure the system operates as intended daily 
+c) To replace the stabilization phase 
+d) To reduce the number of employees 
+ 
+36. Why is training with real data important? 
+a) It makes the training sessions longer 
+b) It helps users understand what they will encounter daily 
+c) It is required by law 
+d) It reduces the need for Go-Live 
+ 
+37. What is a common issue in parallel implementations? 
+a) The system is too fast 
+b) Running old and new systems simultaneously is labor-intensive 
+c) Users refuse to attend training 
+d) The ERP system is never used 
+ 
+38. What does a knowledge management plan help achieve? 
+a) Increases support costs 
+----------------Page (3) Break----------------
+5 
+ 
+ 
+ 
+ PAN
+ 
+b) Ensures knowledge is retained and reduces support calls 
+c) Delays the Go-Live date 
+d) Replaces the need for consultants 
+ 
+39. What should be monitored during stabilization? 
+a) Office decor 
+b) Infrastructure response times and backups 
+c) Employee vacation schedules 
+d) Company stock price 
+ 
+40. What is critical for long-term ERP success? 
+a) Ignoring user feedback 
+b) A well-defined knowledge transfer process 
+c) Reducing the number of training sessions 
+d) Delaying Go-Live indefinitely 
+ 
+True or False Questions  
+41. The Go-Live Readiness Review is optional for ERP implementations. False 
+42. Training should use real data to prepare users for daily tasks. True 
+43. The stabilization phase begins before the ERP system goes live. False 
+44. Postproduction support ensures the system operates as intended. True 
+45. Only IT staff need to be trained on the new ERP system. False 
+46. Parallel implementations are the least labor-intensive approach. False 
+47. A knowledge management plan helps retain critical system knowledge. True 
+48. The stabilization phase lasts for 30 days or less. False 
+49. Senior management endorsement is unnecessary for training success. False 
+50. Having one centralized data repository can help avoid confusion, duplication, and data loss. True 
+ 
+Assignment 7 
+51. What is the definition of "risk" in the context of Enterprise Risk Management (ERM)? 
+a) A guaranteed negative outcome 
+b) The possibility of suffering harm, loss, or danger 
+c) A fully predictable event with no uncertainty 
+ 
+52. What is the definition of "risk" in the context of Enterprise Risk Management (ERM)? 
+a) A guaranteed negative outcome 
+b) The possibility of suffering harm, loss, or danger 
+c) A fully predictable event with no uncertainty 
+d) An event that always leads to financial gain 
+ 
+53. Which of the following best describes an "opportunity" in ERM? 
+a) An event that only has negative impacts 
+b) The possibility that an event will positively affect objectives 
+c) A threat that cannot be mitigated 
+ 
+54. What are the two main components of "uncertainties" in ERM? 
+----------------Page (4) Break----------------
+6 
+ 
+ 
+ 
+ PAN
+ 
+a) Profits and losses 
+b) Threats and opportunities 
+c) Costs and benefits 
+ 
+55. What are the two main components of "uncertainties" in Enterprise Risk Management (ERM)? 
+a) Profits and losses 
+b) Threats and opportunities  
+c) Costs and benefits 
+d) Strengths and weaknesses 
+ 
+56. Which of the following is NOT one of the four categories of the ERM framework? 
+a) Strategic 
+b) Operational 
+c) Marketing 
+ 
+57. What type of risk includes damage to reputation and competition? 
+a) Operational Risk 
+b) Strategic Risk 
+c) Financial/Reporting Risk 
+ 
+58. Which of the following is an example of an Operational Risk? 
+a) Foreign exchange fluctuations 
+b) Supply chain management 
+c) Regulatory fines 
+ 
+59. What does Financial/Reporting Risk primarily concern? 
+a) Natural disasters 
+b) Reliability of financial reporting 
+c) Employee turnover 
+ 
+60. Which of the following is a Hazard/Compliance Risk? 
+a) Technological innovation 
+b) Theft and property damage 
+c) Customer demand shifts 
+ 
+61. What is the first step in the ERM process? 
+a) Risk Assessment 
+b) Risk Identification 
+c) Risk Monitoring 
+ 
+62. Which step in the ERM process involves "avoiding, reducing, sharing, or accepting risks"? 
+a) Risk Response 
+b) Risk Review 
+c) Risk Reporting 
+ 
+63. How do opportunities support an organization? 
+----------------Page (5) Break----------------
+7 
+ 
+ 
+ 
+ PAN
+ 
+a) By eroding existing value 
+b) By preventing value creation 
+c) By supporting value creation or preservation 
+d) By increasing risks 
+ 
+64. How can events with positive impacts affect an organization? 
+a) They only create new risks 
+b) They may offset negative impacts or represent opportunities 
+c) They always lead to financial losses 
+d) They have no significant effect 
+ 
+65. What is the primary difference between program management and project management? 
+a) Program management is tactically focused, while project management is strategically focused. 
+b) Program management is strategically focused, while project management is tactically focused. 
+c) Both are identical in scope and focus. 
+d) Program management deals only with financial risks. 
+ 
+66. What is a key responsibility of the Project Management Office (PMO) during an ERP 
+implementation? 
+a) Eliminating all risks before the project starts. 
+b) Ensuring project teams work together and address issues efficiently. 
+c) Handling only technical aspects of the ERP system. 
+d) Delegating all decisions to external consultants. 
+ 
+67. Which of the following is a critical success factor for ERP implementation? 
+a) Avoiding all changes to project scope. 
+b) Senior management commitment and clear communication. 
+c) Exclusively using internal IT staff without external consultants. 
+d) Ignoring resistance to change among staff. 
+ 
+68. What is the purpose of Business Process Re-engineering (BPR)? 
+a) To maintain existing processes without changes. 
+b) To dismantle and redesign processes for efficiency and alignment with ERP best practices. 
+c) To focus solely on automating manual tasks. 
+d) To reduce the need for senior management involvement. 
+ 
+69. Why is change management important in ERP implementations? 
+a) To eliminate all employee resistance. 
+b) To maximize benefits and minimize failure risks by addressing human and process impacts. 
+c) To delay the project timeline for additional testing. 
+d) To focus only on technical system configurations. 
+ 
+Assignment 8 
+70. What does identifying users primarily provide input for? 
+A) Budget allocation 
+B) Security policies 
+----------------Page (6) Break----------------
+8 
+ 
+ 
+ 
+ PAN
+ 
+C) Roles and data relationships  
+D) Software licenses 
+ 
+71. When defining applications, which factor is important to consider? 
+A) The developer’s nationality 
+B) The system where the application is installed  
+C) The color of the application icon 
+D) The application’s marketing strategy 
+72. Why  should enterprises define all applications and their purpose? 
+A) To know which data they access  
+B) To calculate electricity consumption 
+C) To train new employees faster 
+D) To reduce software update frequency 
+ 
+73. What is the benefit of knowing where applications are installed? 
+A) Helps design user-friendly interfaces 
+B) Determines the scope of risks with application access  
+C) Makes installation faster 
+D) Reduces application cost 
+ 
+Tutorial 1 
+Select the correct answer for the following. 
+ 1. What is the primary goal of an ERP system? 
+ a) To replace all human employees with automation           
+ b) To integrate data and support major organizational functions 
+ c) To reduce internet usage in companies                                
+ d) To create standalone departmental software 
+ 
+  2. What is a critical challenge during ERP implementation? 
+ a) Employees refusing to use Microsoft Office                        
+ b) Retraining staff and managing resistance to change 
+ c) Increasing the number of information silos                                      
+ d) Reducing internet speed 
+ 
+  3. Which vendor is the global leader in ERP solutions? 
+ a) Microsoft Dynamics                                                                         
+ b) Oracle/PeopleSoft 
+ c) SAP                                                                                                   
+ d) Infor 
+ 
+  4.  What problem do functional silos create in organizations? 
+ a) Improved real-time information sharing                            
+ b) Bottlenecks and inefficient information flow 
+ c) Reduced need for management                                          
+ d) Faster decision-making at all levels 
+----------------Page (7) Break----------------
+9 
+ 
+ 
+ 
+ PAN
+ 
+   5. Which of the following is a key role of ERP systems in systems integration? 
+a) Encouraging departmental isolation                                                
+b) Standardizing and improving business processes 
+c) Increasing paperwork and manual processes                      
+d) Reducing the need for IT infrastructure 
+ 
+(II)   True or False Questions. 
+1.   ERP systems are identical to conventional packaged software like Microsoft Office. False 
+2.   SAP primarily targets only small businesses. False 
+3.   Change management is unimportant during ERP implementation. False 
+4.   Systems integration only involves technical changes, not human or process adjustments. False 
+5.   Web-based systems use centralized architecture exclusively. True 
+ 
+Midterm 
+Multiple Choice 
+1.What is a key risk during the stabilization phase? 
+a) Lack of coffee in the office 
+b) Customizations that are not well-documented 
+c) Too many team meetings 
+d) Overstaffing the IT department 
+ 
+2.What is the purpose of postproduction support? 
+a) To develop new ERP features 
+b) To ensure the system operates as intended daily 
+c) To replace the stabilization phase 
+d) To reduce the number of employees 
+ 
+3.Why is training with real data important? 
+a) It makes the training sessions longer 
+b) It helps users understand what they will encounter daily 
+c) It is required by law 
+d) It reduces the need for Go-Live 
+ 
+4.What is a critical platform issue for ERP implementations? 
+a) Employee vacation schedules 
+b) Network reliability and security 
+c) Office decor preferences 
+d) Marketing campaign designs 
+ 
+5.Who oversees the project’s efforts and ensures appropriate leadership in an ERP 
+implementation? 
+a) End-users 
+b) Steering Committee 
+c) Vendors 
+d) Database Administrators 
+----------------Page (8) Break----------------
+10 
+ 
+ 
+ 
+ PAN
+ 
+6.Which of the following is NOT a factor to consider when selecting a vendor? 
+a) Vendor’s financial position 
+b) Vendor’s office location 
+c) Vendor’s implementation philosophy 
+d) Vendor’s software upgrade strategies 
+ 
+7. Which of the following is a key component of an ERP contract? 
+a) Employee vacation policies 
+b) Clearly identified deliverables with delivery dates 
+c) Vendor’s office location 
+d) Company’s marketing plan 
+ 
+8. What is a common issue in parallel implementations? 
+a) The system is too fast 
+b) Running old and new systems simultaneously is labor-intensive 
+c) Users refuse to attend training 
+d) The ERP system is never used 
+ 
+9.  What is critical for long-term ERP success? 
+a) Ignoring user feedback 
+b) A well-defined knowledge transfer process 
+c) Reducing the number of training sessions 
+d) Delaying Go-Live indefinitely 
+ 
+10. What should be monitored during stabilization? 
+a) Office decor 
+b) Infrastructure response times and backups 
+c) Employee vacation schedules 
+d) Company stock price 
+ 
+True or False 
+ 1.The first step in the ERP vendor selection process is sending out a Request for Proposal   
+(RFP). False 
+2.Total Cost of Ownership (TCO) only includes the initial purchase price of the ERP software. 
+False 
+3.Training should use real data to prepare users for daily tasks. True 
+4.The Project Management Office (PMO) manages day-to-day aspects of the ERP project. True 
+5.A knowledge management plan helps retain critical system knowledge. True 
+ 
+Tuto 3 
+1.Which of the following is NOT one of the four main entries in the risk register during the risk 
+identification process? 
+A) Lists of identified risks 
+B) List of potential responses 
+C) Root causes of risk 
+----------------Page (9) Break----------------
+11 
+ 
+ 
+ 
+ PAN
+ 
+D) Project scope statement 
+E) Updated risk categories 
+ 
+2. What does mitigating a risk primarily aim to do? 
+A) Increase the probability of risk occurrence 
+B) Reduce the impact and/or probability of the risk 
+C) Completely eliminate all risks 
+D) Ignore the risk to save costs 
+E) Transfer the risk to another party 
+ 
+3. Which of the following best describes the role of risk culture within a company? 
+A) It determines how employees behave in dealing with risks. 
+B) It eliminates all risks faced by the company. 
+C) It ensures that only executives are responsible for risks. 
+D) It focuses solely on financial risk management. 
+E) It replaces the need for open communication. 
+ 
+4. Why should data in an enterprise be assigned a classification according to policy? 
+A) To ensure each department can value data subjectively 
+B) To dictate the required security for the identified data 
+C) To eliminate the need for enterprise-wide data management 
+D) To reduce the amount of data stored in the enterprise 
+E) To make data visible only to executives 
+ 
+5. What is the main difference between a policy and a standard in enterprise security? 
+A) A policy explains how security tasks should be implemented, while a standard states why they 
+are important. 
+B) A policy dictates what must be done, while a standard defines how it should be done. 
+C) A policy is optional, while a standard is mandatory. 
+D) A policy applies only to executives, while a standard applies to employees. 
+E) A policy sets encryption algorithms, while a standard decides who manages them. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+----------------Page (10) Break----------------

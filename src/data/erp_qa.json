@@ -1,0 +1,918 @@
+[
+  {
+    "question": "What is a key component of an ERP system's hardware?",
+    "options": [
+      "A. Operating System",
+      "B. Database Management System",
+      "C. High-end multiprocessor servers",
+      "D. Virus protection software"
+    ],
+    "answer": "C. High-end multiprocessor servers"
+  },
+  {
+    "question": "What is the primary role of middleware in ERP implementations?",
+    "options": [
+      "A. To replace the ERP system",
+      "B. To develop reporting databases using extract, translate, and load tools",
+      "C. To act as the main server hardware",
+      "D. To train end-users"
+    ],
+    "answer": "B. To develop reporting databases using extract, translate, and load tools"
+  },
+  {
+    "question": "Which of the following is a reason to choose a Vanilla ERP implementation?",
+    "options": [
+      "A. The company has highly unique business processes",
+      "B. The company lacks skilled IT developers",
+      "C. The company wants extensive customization",
+      "D. The company prefers to modify the ERP system"
+    ],
+    "answer": "B. The company lacks skilled IT developers"
+  },
+  {
+    "question": "What is a critical platform issue for ERP implementations?",
+    "options": [
+      "A. Employee vacation schedules",
+      "B. Network reliability and security",
+      "C. Office decor preferences",
+      "D. Marketing campaign designs"
+    ],
+    "answer": "B. Network reliability and security"
+  },
+  {
+    "question": "Who oversees the project’s efforts and ensures appropriate leadership in an ERP implementation?",
+    "options": [
+      "A. End-users",
+      "B. Steering Committee",
+      "C. Vendors",
+      "D. Database Administrators"
+    ],
+    "answer": "B. Steering Committee"
+  },
+  {
+    "question": "What is the first step in the ERP vendor selection process?",
+    "options": [
+      "A. Request for Proposal (RFP)",
+      "B. Vendor research and information gathering",
+      "C. Contract negotiation",
+      "D. Functional evaluation"
+    ],
+    "answer": "B. Vendor research and information gathering"
+  },
+  {
+    "question": "Why is involving end-users in the vendor selection process important?",
+    "options": [
+      "A. To reduce costs",
+      "B. To help with change management and gain trust",
+      "C. To speed up the implementation",
+      "D. To eliminate the need for consultants"
+    ],
+    "answer": "B. To help with change management and gain trust"
+  },
+  {
+    "question": "Which of the following is NOT a factor to consider when selecting a vendor?",
+    "options": [
+      "A. Vendor’s financial position",
+      "B. Vendor’s office location",
+      "C. Vendor’s implementation philosophy",
+      "D. Vendor’s software upgrade strategies"
+    ],
+    "answer": "B. Vendor’s office location"
+  },
+  {
+    "question": "What is the purpose of a Request for Bid (RFB) or Request for Proposal (RFP)?",
+    "options": [
+      "A. To finalize the contract",
+      "B. To gather detailed information from vendors about their solutions",
+      "C. To train employees",
+      "D. To install the ERP system"
+    ],
+    "answer": "B. To gather detailed information from vendors about their solutions"
+  },
+  {
+    "question": "Which document is often a result of identifying user and system requirements?",
+    "options": [
+      "A. Vendor’s financial report",
+      "B. Data and functional flow of departmental processes",
+      "C. Employee training manual",
+      "D. Contract agreement"
+    ],
+    "answer": "B. Data and functional flow of departmental processes"
+  },
+  {
+    "question": "What should be included in an RFB/RFP?",
+    "options": [
+      "A. Vendor’s marketing strategy",
+      "B. Specific functionality, hardware/software infrastructure, and training requirements",
+      "C. Employee salaries",
+      "D. Com y’s annual revenue"
+    ],
+    "answer": "B. Specific functionality, hardware/software infrastructure, and training requirements"
+  },
+  {
+    "question": "Who is responsible for evaluating the technology requirements during vendor analysis?",
+    "options": [
+      "A. Office staff",
+      "B. IT staff",
+      "C. Contract staff",
+      "D. Marketing team"
+    ],
+    "answer": "B. IT staff"
+  },
+  {
+    "question": "What is Total Cost of Ownership (TCO)?",
+    "options": [
+      "A. The initial purchase price of the software",
+      "B. The cost of training employees",
+      "C. The overall cost of acquiring, implementing, and maintaining the ERP system",
+      "D. The cost of hardware only"
+    ],
+    "answer": "C. The overall cost of acquiring, implementing, and maintaining the ERP system"
+  },
+  {
+    "question": "Which of the following is a key component of an ERP contract?",
+    "options": [
+      "A. Employee vacation policies",
+      "B. Clearly identified deliverables with delivery dates",
+      "C. Vendor’s office location",
+      "D. Com y’s marketing plan"
+    ],
+    "answer": "B. Clearly identified deliverables with delivery dates"
+  },
+  {
+    "question": "Why is negotiating with two vendors beneficial?",
+    "options": [
+      "A. It speeds up the implementation process",
+      "B. It yields a better purchase price",
+      "C. It eliminates the need for a contract",
+      "D. It reduces training requirements"
+    ],
+    "answer": "B. It yields a better purchase price"
+  },
+  {
+    "question": "Which ERP vendor is known for solutions tailored to mid-market com ies?",
+    "options": [
+      "A. SAP",
+      "B. Oracle/PeopleSoft",
+      "C. Epicor",
+      "D. Microsoft Great Plains"
+    ],
+    "answer": "C. Epicor"
+  },
+  {
+    "question": "What is the role of management in the ERP selection process?",
+    "options": [
+      "A. To avoid involvement in the process",
+      "B. T o choose the right system that meets the company’s needs",
+      "C. To handle all technical evaluations",
+      "D. To train end-users"
+    ],
+    "answer": "B. T o choose the right system that meets the company’s needs"
+  },
+  {
+    "question": "What is the purpose of documenting business processes before selecting an ERP system?",
+    "options": [
+      "A. To create a marketing plan",
+      "B. To match requireme nts to system functionality",
+      "C. To reduce the number of vendors",
+      "D. To eliminate the need for IT staff"
+    ],
+    "answer": "B. To match requireme nts to system functionality"
+  },
+  {
+    "question": "Which of the following is NOT a step in the high-level ERP purchase process?",
+    "options": [
+      "A. Vendor research",
+      "B. Employee recruitment",
+      "C. Needs and requirements assessment",
+      "D. Contract review and change"
+    ],
+    "answer": "B. Employee recruitment"
+  },
+  {
+    "question": "What should be communicated during the contract management phase?",
+    "options": [
+      "A. Employee personal details",
+      "B. Progress and changes to the contract",
+      "C. Vendor’s financial reports",
+      "D. Com y’s competitors"
+    ],
+    "answer": "B. Progress and changes to the contract"
+  },
+  {
+    "question": "The first step in the ERP vendor selection process is sending out a Request for Proposal (RFP).",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Involving end-users in the vendor selection process helps with change management.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "Total Cost of Ownership (TCO) only includes the initial purchase price of the ERP software.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Negotiating with multiple vendors can lead to a better purchase price.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "An ERP contract should avoid specifying deliverables and deadlines to allow flexibility.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "A Vanilla ERP implementation involves heavy customization of the system.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Third-party products are sometimes needed to add missing functionality to an ERP system.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "Disaster recovery planning is optional in ERP implementations.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "The Project Management Office (PMO) manages day-to-day aspects of the ERP project.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "Modifying an ERP system has no impact on future upgrades.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "What is the primary purpose of the Go-Live Readiness Review?",
+    "options": [
+      "A. To celebrate the completion of the ERP project",
+      "B. To ensure all necessary steps are completed before Go-Live",
+      "C. To replace the need for training",
+      "D. To reduce the project budget"
+    ],
+    "answer": "B. To ensure all necessary steps are completed before Go-Live"
+  },
+  {
+    "question": "How long does the stabilization phase typically last after Go-Live?",
+    "options": [
+      "A. 10-20 days",
+      "B. 30-45 days",
+      "C. 60-90 days",
+      "D. 120-150 days"
+    ],
+    "answer": "C. 60-90 days"
+  },
+  {
+    "question": "What is a key risk during the stabilization phase?",
+    "options": [
+      "A. Lack of coffee in the office",
+      "B. Customizations that are not well-documented",
+      "C. Too many team meetings",
+      "D. Overstaffing the IT department"
+    ],
+    "answer": "B. Customizations that are not well-documented"
+  },
+  {
+    "question": "Who should be involved in the readiness review process?",
+    "options": [
+      "A. Only senior management",
+      "B. Only IT staff",
+      "C. As many team members, users, and managers as possible",
+      "D. External consultants only"
+    ],
+    "answer": "C. As many team members, users, and managers as possible"
+  },
+  {
+    "question": "What is the purpose of postproduction support?",
+    "options": [
+      "A. To develop new ERP features",
+      "B. To ensure the sys tem operates as intended daily",
+      "C. To replace the stabilization phase",
+      "D. To reduce the number of employees"
+    ],
+    "answer": "B. To ensure the sys tem operates as intended daily"
+  },
+  {
+    "question": "Why is training with real data important?",
+    "options": [
+      "A. It makes the training sessions longer",
+      "B. It helps users understand what they will encounter daily",
+      "C. It is required by law",
+      "D. It reduces the need for Go-Live"
+    ],
+    "answer": "B. It helps users understand what they will encounter daily"
+  },
+  {
+    "question": "What is a common issue in parallel implementations?",
+    "options": [
+      "A. The system is too fast",
+      "B. Running old and new systems simultaneously is labor-intensive",
+      "C. Users refuse to attend training",
+      "D. The ERP system is never used"
+    ],
+    "answer": "B. Running old and new systems simultaneously is labor-intensive"
+  },
+  {
+    "question": "What does a knowledge management plan help achieve?",
+    "options": [
+      "A. Increases support costs",
+      "B. Ensures knowledge is retained and reduces support calls",
+      "C. Delays the Go-Live date",
+      "D. Replaces the need for consultants"
+    ],
+    "answer": "B. Ensures knowledge is retained and reduces support calls"
+  },
+  {
+    "question": "What should be monitored during stabilization?",
+    "options": [
+      "A. Office decor",
+      "B. Infrastructure response times and backups",
+      "C. Employee vacation schedules",
+      "D. Com y stock price"
+    ],
+    "answer": "B. Infrastructure response times and backups"
+  },
+  {
+    "question": "What is critical for long-term ERP success?",
+    "options": [
+      "A. Ignoring user feedback",
+      "B. A well-defined knowledge transfer process",
+      "C. Reducing the number of training sessions",
+      "D. Delaying Go-Live indefinitely"
+    ],
+    "answer": "B. A well-defined knowledge transfer process"
+  },
+  {
+    "question": "The Go-Live Readiness Review is optional for ERP implementations.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Training should use real data to prepare users for daily tasks.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "The stabilization phase begins before the ERP system goes live.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Postproduction support ensures the system operates as intended.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "Only IT staff need to be trained on the new ERP system.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Parallel implementations are the least labor-intensive approach.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "A knowledge management plan helps retain critical system knowledge.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "The stabilization phase lasts for 30 days or less.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Senior management endorsement is unnecessary for training success.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Having one centralized data repository can help avoid confusion, duplication, and data loss.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "What is the definition of \"risk\" in the context of Enterprise Risk Management (ERM)?",
+    "options": [
+      "A. A guaranteed negative outcome",
+      "B. The possibility of suffering harm, loss, or danger",
+      "C. A fully predictable event with no uncertainty"
+    ],
+    "answer": "B. The possibility of suffering harm, loss, or danger"
+  },
+  {
+    "question": "What is the definition of \"risk\" in the context of Enterprise Risk Management (ERM)?",
+    "options": [
+      "A. A guaranteed negative outcome",
+      "B. The possibility of suffering harm, loss, or danger",
+      "C. A fully predictable event with no uncertainty",
+      "D. An event that always leads to financial gain"
+    ],
+    "answer": "B. The possibility of suffering harm, loss, or danger"
+  },
+  {
+    "question": "Which of the following best describes an \"opportunity\" in ERM?",
+    "options": [
+      "A. An event that only has negative impacts",
+      "B. The possibility that an event will positively affect objectives",
+      "C. A threat that cannot be mitigated"
+    ],
+    "answer": "B. The possibility that an event will positively affect objectives"
+  },
+  {
+    "question": "What are the two main components of \"uncertainties\" in ERM?",
+    "options": [
+      "A. Profits and losses",
+      "B. Threats and opportunities",
+      "C. Costs and benefits"
+    ],
+    "answer": "B. Threats and opportunities"
+  },
+  {
+    "question": "What are the two main components of \"uncertainties\" in Enterprise Risk Management (ERM)?",
+    "options": [
+      "A. Profits and losses",
+      "B. Threats and opportunities",
+      "C. Costs and benefits",
+      "D. Strengths and weaknesses"
+    ],
+    "answer": "B. Threats and opportunities"
+  },
+  {
+    "question": "Which of the following is NOT one of the four categories of the ERM framework?",
+    "options": [
+      "A. Strategic",
+      "B. Operational",
+      "C. Marketing"
+    ],
+    "answer": "C. Marketing"
+  },
+  {
+    "question": "What type of risk includes damage to reputation and competition?",
+    "options": [
+      "A. Operational Risk",
+      "B. Strategic Risk",
+      "C. Financial/Reporting Risk"
+    ],
+    "answer": "B. Strategic Risk"
+  },
+  {
+    "question": "Which of the following is an example of an Operational Risk?",
+    "options": [
+      "A. Foreign exchange fluctuations",
+      "B. Supply chain management",
+      "C. Regulatory fines"
+    ],
+    "answer": "B. Supply chain management"
+  },
+  {
+    "question": "What does Financial/Reporting Risk primarily concern?",
+    "options": [
+      "A. Natural disasters",
+      "B. Reliability of financial reporting",
+      "C. Employee turnover"
+    ],
+    "answer": "B. Reliability of financial reporting"
+  },
+  {
+    "question": "Which of the following is a Hazard/Compliance Risk?",
+    "options": [
+      "A. Technological innovation",
+      "B. Theft and property damage",
+      "C. Customer demand shifts"
+    ],
+    "answer": "B. Theft and property damage"
+  },
+  {
+    "question": "What is the first step in the ERM process?",
+    "options": [
+      "A. Risk Assessment",
+      "B. Risk Identification",
+      "C. Risk Monitoring"
+    ],
+    "answer": "B. Risk Identification"
+  },
+  {
+    "question": "Which step in the ERM process involves \"avoiding, reducing, sharing, or accepting risks\"?",
+    "options": [
+      "A. Risk Response",
+      "B. Risk Review",
+      "C. Risk Reporting"
+    ],
+    "answer": "A. Risk Response"
+  },
+  {
+    "question": "How do opportunities support an organization?",
+    "options": [
+      "A. By eroding existing value",
+      "B. By preventing value creation",
+      "C. By supporting value creation or preservation",
+      "D. By increasing risks"
+    ],
+    "answer": "C. By supporting value creation or preservation"
+  },
+  {
+    "question": "How can events with positive impacts affect an organization ?",
+    "options": [
+      "A. They only create new risks",
+      "B. They may offset negative impacts or represent opportunities",
+      "C. They always lead to financial losses",
+      "D. They have no significant effect"
+    ],
+    "answer": "B. They may offset negative impacts or represent opportunities"
+  },
+  {
+    "question": "What is the primary difference between program management and project management?",
+    "options": [
+      "A. Program management is tactically focused, while project management is strategically focused.",
+      "B. Program management is strategically focused, while project management is tactically focused.",
+      "C. Both are identical in scope and focus.",
+      "D. Program management deals only with financial risks."
+    ],
+    "answer": "B. Program management is strategically focused, while project management is tactically focused."
+  },
+  {
+    "question": "What is a key responsibility of the Project Management Office (PMO) during an ERP implementation?",
+    "options": [
+      "A. Eliminating all risks before the project starts.",
+      "B. Ensuring project teams work together and address issues efficiently.",
+      "C. Handling only technical aspects of the ERP system.",
+      "D. Delegating all decisions to external consultants."
+    ],
+    "answer": "B. Ensuring project teams work together and address issues efficiently."
+  },
+  {
+    "question": "Which of the following is a critical success factor for ERP implementation?",
+    "options": [
+      "A. Avoiding all changes to project scope.",
+      "B. Senior management commitment and clear communication.",
+      "C. Exclusively using internal IT staff without external consultants.",
+      "D. Ignoring resistance to change among staff."
+    ],
+    "answer": "B. Senior management commitment and clear communication."
+  },
+  {
+    "question": "What is the purpose of Business Process Re-engineering (BPR)?",
+    "options": [
+      "A. To maintain existing processes without changes.",
+      "B. To dismantle and redesign processes for efficiency and alignment with ERP best practices.",
+      "C. To focus solely on automating manual tasks.",
+      "D. To reduce the need for senior management involvement."
+    ],
+    "answer": "B. To dismantle and redesign processes for efficiency and alignment with ERP best practices."
+  },
+  {
+    "question": "Why is change management important in ERP implementations?",
+    "options": [
+      "A. To eliminate all employee resistance.",
+      "B. To maximize benefits and minimize failure risks by addressing human and process impacts.",
+      "C. To delay the project timeline for additional testing.",
+      "D. To focus only on technical system configurations ."
+    ],
+    "answer": "B. To maximize benefits and minimize failure risks by addressing human and process impacts."
+  },
+  {
+    "question": "What does identifying users primarily provide input for?",
+    "options": [
+      "A. Budget allocation",
+      "B. Security policies",
+      "C. Roles and data relationships",
+      "D. Software licenses"
+    ],
+    "answer": "C. Roles and data relationships"
+  },
+  {
+    "question": "When defining applications, which factor is important to consider?",
+    "options": [
+      "A. The developer’s nationality",
+      "B. The system where the application is installed",
+      "C. The color of the application icon",
+      "D. The application’s marketing strategy"
+    ],
+    "answer": "B. The system where the application is installed"
+  },
+  {
+    "question": "Why should enterprises define all applications and their purpose?",
+    "options": [
+      "A. To know which data they access",
+      "B. To calculate electricity consumption",
+      "C. To train new employees faster",
+      "D. To reduce software update frequency"
+    ],
+    "answer": "A. To know which data they access"
+  },
+  {
+    "question": "What is the benefit of knowing where applications are installed?",
+    "options": [
+      "A. Helps design user-friendly interfaces",
+      "B. Determines the scope of risks with application access",
+      "C. Makes installation faster",
+      "D. Reduces application cost"
+    ],
+    "answer": "B. Determines the scope of risks with application access"
+  },
+  {
+    "question": "What is the primary goal of an ERP system?",
+    "options": [
+      "A. To replace all human employees with automation",
+      "B. To integrate data and support major organizational functions",
+      "C. To reduce internet usage in com ies",
+      "D. To create standalone departmental software"
+    ],
+    "answer": "B. To integrate data and support major organizational functions"
+  },
+  {
+    "question": "What is a critical challenge during ERP implementation?",
+    "options": [
+      "A. Employees refusing to use Microsoft Office",
+      "B. Retraining staff and managing resistance to change",
+      "C. Increasing the number of information silos",
+      "D. Reducing internet speed"
+    ],
+    "answer": "B. Retraining staff and managing resistance to change"
+  },
+  {
+    "question": "Which vendor is the global leader in ERP solutions?",
+    "options": [
+      "A. Microsoft Dynamics",
+      "B. Oracle/PeopleSoft",
+      "C. SAP",
+      "D. Infor"
+    ],
+    "answer": "C. SAP"
+  },
+  {
+    "question": "What problem do functional silos create in organizations?",
+    "options": [
+      "A. Improved real-time information sharing",
+      "B. Bottlenecks and inefficient information flow",
+      "C. Reduced need for management",
+      "D. Faster decision-making at all levels"
+    ],
+    "answer": "B. Bottlenecks and inefficient information flow"
+  },
+  {
+    "question": "Which of the following is a key role of ERP systems in systems integration?",
+    "options": [
+      "A. Encouraging departmental isolation",
+      "B. Standardizing and improving business processes",
+      "C. Increasing paperwork and manual processes",
+      "D. Reducing the need for IT infrastructure (II)"
+    ],
+    "answer": "B. Standardizing and improving business processes"
+  },
+  {
+    "question": "ERP systems are identical to conventional packaged software like Microsoft Office.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "SAP primarily targets only small businesses.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Change management is unimportant during ERP implementation.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Systems integration only involves technical changes, not human or process adjustments.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Web-based systems use centralized architecture exclusively.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "What is a key risk during the stabilization phase?",
+    "options": [
+      "A. Lack of coffee in the office",
+      "B. Customizations that are not well-documented",
+      "C. Too many team meetings",
+      "D. Overstaffing the IT department"
+    ],
+    "answer": "B. Customizations that are not well-documented"
+  },
+  {
+    "question": "What is the purpose of postproduction support?",
+    "options": [
+      "A. To develop new ERP features",
+      "B. To ensure the system operates as intended daily",
+      "C. To replace the stabilization phase",
+      "D. To reduce the number of employees"
+    ],
+    "answer": "B. To ensure the system operates as intended daily"
+  },
+  {
+    "question": "Why is training with real data important?",
+    "options": [
+      "A. It makes the training sessions longer",
+      "B. It helps users understand what they will encounter daily",
+      "C. It is required by law",
+      "D. It reduces the need for Go-Live"
+    ],
+    "answer": "B. It helps users understand what they will encounter daily"
+  },
+  {
+    "question": "What is a critical platform issue for ERP implementations?",
+    "options": [
+      "A. Employee vacation schedules",
+      "B. Network reliability and security",
+      "C. Office decor preferences",
+      "D. Marketing campaign designs"
+    ],
+    "answer": "B. Network reliability and security"
+  },
+  {
+    "question": "Who oversees the project’s efforts and ensures appropriate leadership in an ERP implementation?",
+    "options": [
+      "A. End-users",
+      "B. Steering Committee",
+      "C. Vendors",
+      "D. Database Administrators"
+    ],
+    "answer": "B. Steering Committee"
+  },
+  {
+    "question": "Which of the following is NOT a factor to consider when selecting a vendor?",
+    "options": [
+      "A. Vendor’s financial position",
+      "B. Vendor’s office location",
+      "C. Vendor’s implementation philosophy",
+      "D. Vendor’s software upgrade strategies"
+    ],
+    "answer": "B. Vendor’s office location"
+  },
+  {
+    "question": "Which of the following is a key component of an ERP contract?",
+    "options": [
+      "A. Employee vacation policies",
+      "B. Clearly identified deliverables with delivery dates",
+      "C. Vendor’s office location",
+      "D. Com y’s marketing plan"
+    ],
+    "answer": "B. Clearly identified deliverables with delivery dates"
+  },
+  {
+    "question": "What is a common issue in parallel implementations?",
+    "options": [
+      "A. The system is too fast",
+      "B. Running old and new systems simultaneously is labor-intensive",
+      "C. Users refuse to attend training",
+      "D. The ERP system is never used"
+    ],
+    "answer": "B. Running old and new systems simultaneously is labor-intensive"
+  },
+  {
+    "question": "What is critical for long-term ERP success?",
+    "options": [
+      "A. Ignoring user feedback",
+      "B. A well-defined knowledge transfer process",
+      "C. Reducing the number of training sessions",
+      "D. Delaying Go-Live indefinitely"
+    ],
+    "answer": "B. A well-defined knowledge transfer process"
+  },
+  {
+    "question": "What should be monitored during stabilization?",
+    "options": [
+      "A. Office decor",
+      "B. Infrastructure response times and backups",
+      "C. Employee vacation schedules",
+      "D. Com y stock price"
+    ],
+    "answer": "B. Infrastructure response times and backups"
+  },
+  {
+    "question": "The first step in the ERP vendor selection process is sending out a Request for Proposal (RFP).?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Total Cost of Ownership (TCO) only includes the initial purchase price of the ERP software.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "False"
+  },
+  {
+    "question": "Training should use real data to prepare users for daily tasks.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "The Project Management Office (PMO) manages day-to-day aspects of the ERP project.?",
+    "options": [
+      "True",
+      "False"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "A knowledge management plan helps retain critical system knowledge. True Tuto 3",
+    "options": [],
+    "answer": "D."
+  },
+  {
+    "question": "Which of the following is NOT one of the four main entries in the risk register during the risk identification process?",
+    "options": [
+      "A. Lists of identified risks",
+      "B. List of potential responses",
+      "C. Root causes of risk"
+    ],
+    "answer": "B. List of potential responses"
+  }
+]
