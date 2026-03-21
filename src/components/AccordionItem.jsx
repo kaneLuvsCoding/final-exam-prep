@@ -143,14 +143,15 @@ export default function AccordionItem({
               )}
 
               {type === 'comparison' ? (
+                answer && Array.isArray(answer) ? (
                 <div className="min-w-max md:min-w-0 overflow-hidden">
                   <table className="w-full text-left border-collapse">
                     <thead>
                       <tr className="bg-[#077d8a]/10">
-                        {headers.map((head, idx) => (
+                        {(headers || []).map((head, idx) => (
                           <th
                             key={idx}
-                            className={`p-4 font-bold text-[#077d8a] border-b border-[#077d8a]/20 ${idx < headers.length - 1 ? 'border-r border-[#077d8a]/10' : ''}`}
+                            className={`p-4 font-bold text-[#077d8a] border-b border-[#077d8a]/20 ${idx < (headers || []).length - 1 ? 'border-r border-[#077d8a]/10' : ''}`}
                           >
                             {head}
                           </th>
@@ -160,10 +161,10 @@ export default function AccordionItem({
                     <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
                       {answer.map((row, rowIdx) => (
                         <tr key={rowIdx} className="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-                          {row.map((cell, cellIdx) => (
+                          {(Array.isArray(row) ? row : [row]).map((cell, cellIdx) => (
                             <td
                               key={cellIdx}
-                              className={`p-4 text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-semibold leading-relaxed align-top whitespace-pre-line text-justify ${cellIdx < row.length - 1 ? 'border-r border-slate-100 dark:border-slate-700' : ''}`}
+                              className={`p-4 text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-semibold leading-relaxed align-top whitespace-pre-line text-justify ${cellIdx < (Array.isArray(row) ? row : [row]).length - 1 ? 'border-r border-slate-100 dark:border-slate-700' : ''}`}
                             >
                               {cell}
                             </td>
@@ -173,6 +174,9 @@ export default function AccordionItem({
                     </tbody>
                   </table>
                 </div>
+                ) : (
+                  <p className="text-slate-500 dark:text-slate-400 italic text-sm">No answer available.</p>
+                )
               ) : typeof answer === 'string' ? (
                 <div
                   className="max-w-none text-slate-700 dark:text-slate-200 text-[15px] md:text-base font-medium leading-relaxed prose prose-slate dark:prose-invert prose-p:my-2 prose-ul:my-2 prose-li:my-0.5 text-justify prose-p:text-justify prose-li:text-justify"
@@ -182,7 +186,7 @@ export default function AccordionItem({
                 />
               ) : (
                 <div className="max-w-none">
-                  {answer.map((paragraph, index) => (
+                  {(Array.isArray(answer) ? answer : (answer ? [answer] : [])).map((paragraph, index) => (
                     <p
                       key={index}
                       className="mb-3 text-slate-700 dark:text-slate-200 text-base md:text-[17px] font-medium leading-6 text-justify last:mb-0"
