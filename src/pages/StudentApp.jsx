@@ -344,10 +344,15 @@ export default function StudyHub() {
 
           let parsedAnswer = q.answer;
           if ((q.type === 'comparison' || !q.answer) && q.answers && q.answers.length > 0) {
+            const rawAns = q.answers[0].answer;
             try {
-              parsedAnswer = JSON.parse(q.answers[0].answer);
+              parsedAnswer = JSON.parse(rawAns);
             } catch (e) {
-              console.error("Failed to parse JSON answer for student view", e);
+              console.warn("Answer is not JSON, using as plain text:", e.message);
+              // Fallback: treat as plain text answer
+              parsedAnswer = typeof rawAns === 'string'
+                ? rawAns.split('\n').filter(l => l.trim() !== '')
+                : rawAns;
             }
           } else if (typeof q.answer === 'string') {
             if (q.answer.includes('<') && q.answer.includes('>')) {
