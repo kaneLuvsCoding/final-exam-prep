@@ -1,0 +1,649 @@
+[
+  {
+    "type": "mcq",
+    "question": "Which of the following is not included in failure costs?",
+    "options": [
+      "A. rework",
+      "B. repair",
+      "C. failure mode analysis",
+      "D. none of the mentioned"
+    ],
+    "answer": "D. none of the mentioned"
+  },
+  {
+    "type": "mcq",
+    "question": "Which requirements are the foundation from which quality is measured?",
+    "options": [
+      "A. Hardware",
+      "B. Software",
+      "C. Programmers",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Software"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is not a SQA plan for a project?",
+    "options": [
+      "A. evaluations to be performed",
+      "B. amount of technical work",
+      "C. audits and reviews to be performed",
+      "D. documents to be produced by the SQA group"
+    ],
+    "answer": "B. amount of technical work"
+  },
+  {
+    "type": "mcq",
+    "question": "Degree to which design specifications are followed in manufacturing the product is called",
+    "options": [
+      "A. Quality Control",
+      "B. Quality of conformance",
+      "C. Quality Assurance",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Quality of conformance"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is not included in External failure costs?",
+    "options": [
+      "A. testing",
+      "B. help line support",
+      "C. warranty work",
+      "D. complaint resolution"
+    ],
+    "answer": "A. testing"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is not an appraisal cost in SQA?",
+    "options": [
+      "A. inter-process inspection",
+      "B. maintenance",
+      "C. quality planning",
+      "D. testing"
+    ],
+    "answer": "C. quality planning"
+  },
+  {
+    "type": "mcq",
+    "question": "Who identifies, documents, and verifies that corrections have been made to the software?",
+    "options": [
+      "A. Project manager",
+      "B. Project team",
+      "C. SQA group",
+      "D. All of the mentioned"
+    ],
+    "answer": "C. SQA group"
+  },
+  {
+    "type": "mcq",
+    "question": "The primary objective of formal technical reviews is to find _________ during the process so that they do not become defects after release of the software.",
+    "options": [
+      "A. errors",
+      "B. equivalent faults",
+      "C. failure cause",
+      "D. none of the mentioned"
+    ],
+    "answer": "A. errors"
+  },
+  {
+    "type": "mcq",
+    "question": "What is not included in prevention costs?",
+    "options": [
+      "A. quality planning",
+      "B. formal technical reviews",
+      "C. test equipment",
+      "D. equipment calibration and maintenance"
+    ],
+    "answer": "D. equipment calibration and maintenance"
+  },
+  {
+    "type": "mcq",
+    "question": "Software quality assurance consists of the auditing and reporting functions of management.",
+    "options": [
+      "A. True",
+      "B. False"
+    ],
+    "answer": "A. True"
+  },
+  {
+    "type": "mcq",
+    "question": "Quality Management in software engineering is also known as",
+    "options": [
+      "A. SQA",
+      "B. SQM",
+      "C. SQI",
+      "D. SQA and SQM"
+    ],
+    "answer": "A. SQA"
+  },
+  {
+    "type": "mcq",
+    "question": "Quality also can be looked at in terms of user satisfaction which includes",
+    "options": [
+      "A. A compliant product",
+      "B. Good quality output",
+      "C. Delivery within budget and schedule",
+      "D. All of the mentioned"
+    ],
+    "answer": "D. All of the mentioned"
+  },
+  {
+    "type": "mcq",
+    "question": "Inspections and testing are what kinds of Quality Costs?",
+    "options": [
+      "A. Prevention",
+      "B. Internal Failure",
+      "C. External Failure",
+      "D. Appraisal"
+    ],
+    "answer": "A. Prevention"
+  },
+  {
+    "type": "mcq",
+    "question": "What is Six Sigma? six standard deviations",
+    "options": [
+      "A. It is the most widely used strategy for statistical quality assurance",
+      "B. The “Six Sigma” refers to six standard deviations",
+      "C. It is the most widely used strategy for statistical quality assurance AND The “Six Sigma” refers to",
+      "D. A Formal Technical Review(FTR) guideline for quality walkthrough or inspection"
+    ],
+    "answer": "C. It is the most widely used strategy for statistical quality assurance AND The “Six Sigma” refers to"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is not a core step of Six Sigma?",
+    "options": [
+      "A. Define",
+      "B. Control",
+      "C. Measure",
+      "D. Analyse"
+    ],
+    "answer": "B. Control"
+  },
+  {
+    "type": "mcq",
+    "question": "Non-conformance to software requirements is known as",
+    "options": [
+      "A. Software availability",
+      "B. Software reliability",
+      "C. Software failure",
+      "D. None of the mentioned"
+    ],
+    "answer": "C. Software failure"
+  },
+  {
+    "type": "mcq",
+    "question": "Software safety is equivalent to software reliability.",
+    "options": [
+      "A. True",
+      "B. False"
+    ],
+    "answer": "B. False"
+  },
+  {
+    "type": "mcq",
+    "question": "Misinterpretation of customer communication is a sample of possible cause defects.",
+    "options": [
+      "A. True",
+      "B. False"
+    ],
+    "answer": "A. True"
+  },
+  {
+    "type": "mcq",
+    "question": "What kind of quality cost is incurred when an error is detected in a product prior to shipment?",
+    "options": [
+      "A. Prevention",
+      "B. Internal Failure",
+      "C. External Failure",
+      "D. Appraisal"
+    ],
+    "answer": "B. Internal Failure"
+  },
+  {
+    "type": "mcq",
+    "question": "The degree to which the design specifications are followed during manufacturing is known as",
+    "options": [
+      "A. Quality of design",
+      "B. Quality of conformance",
+      "C. Quality of testing",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Quality of conformance"
+  },
+  {
+    "type": "mcq",
+    "question": "Quality of design encompasses requirements and specifications of the system.",
+    "options": [
+      "A. True",
+      "B. False"
+    ],
+    "answer": "A. True"
+  },
+  {
+    "type": "mcq",
+    "question": "According to ISO 9001, inspection and testing comes under which management responsibility?",
+    "options": [
+      "A. Process control",
+      "B. Document control",
+      "C. Control of nonconforming products",
+      "D. Servicing"
+    ],
+    "answer": "A. Process control"
+  },
+  {
+    "type": "mcq",
+    "question": "Alpha testing is done at",
+    "options": [
+      "A. Developer‟s end",
+      "B. User‟s end",
+      "C. Developer‟s & User‟s end",
+      "D. None of the mentioned"
+    ],
+    "answer": "A. Developer‟s end"
+  },
+  {
+    "type": "mcq",
+    "question": "Boundary value analysis belong to?",
+    "options": [
+      "A. White Box Testing",
+      "B. Black Box Testing",
+      "C. White Box & Black Box Testing",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Black Box Testing"
+  },
+  {
+    "type": "mcq",
+    "question": "What are the various Testing Levels?",
+    "options": [
+      "A. Unit Testing",
+      "B. System Testing",
+      "C. Integration Testing",
+      "D. All of the mentioned"
+    ],
+    "answer": "D. All of the mentioned"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is/are White box technique?",
+    "options": [
+      "A. Statement Testing",
+      "B. Decision Testing",
+      "C. Condition Coverage",
+      "D. All of the mentioned"
+    ],
+    "answer": "D. All of the mentioned"
+  },
+  {
+    "type": "mcq",
+    "question": "Exhaustive testing is",
+    "options": [
+      "A. always possible",
+      "B. practically possible",
+      "C. impractical but possible",
+      "D. impractical and impossible"
+    ],
+    "answer": "C. impractical but possible"
+  },
+  {
+    "type": "mcq",
+    "question": "White Box techniques are also classified as",
+    "options": [
+      "A. Design based testing",
+      "B. Structural testing",
+      "C. Error guessing technique",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Structural testing"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following term describes testing?",
+    "options": [
+      "A. Finding broken code",
+      "B. Evaluating deliverable to find errors",
+      "C. A stage of all projects",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Evaluating deliverable to find errors"
+  },
+  {
+    "type": "mcq",
+    "question": "The testing in which code is checked",
+    "options": [
+      "A. Black box testing",
+      "B. White box testing",
+      "C. Red box testing",
+      "D. Green box testing"
+    ],
+    "answer": "B. White box testing"
+  },
+  {
+    "type": "mcq",
+    "question": "Acceptance testing is also known as",
+    "options": [
+      "A. Grey box testing",
+      "B. White box testing",
+      "C. Alpha Testing",
+      "D. Beta testing"
+    ],
+    "answer": "D. Beta testing"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is non-functional testing?",
+    "options": [
+      "A. Black box testing",
+      "B. Performance testing",
+      "C. Unit testing",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Performance testing"
+  },
+  {
+    "type": "mcq",
+    "question": "Beta testing is done at",
+    "options": [
+      "A. User‟s end",
+      "B. Developer‟s end",
+      "C. User‟s & Developer‟s end",
+      "D. None of the mentioned"
+    ],
+    "answer": "A. User‟s end"
+  },
+  {
+    "type": "mcq",
+    "question": "Unit testing is done by",
+    "options": [
+      "A. Users",
+      "B. Developers",
+      "C. Customers",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Developers"
+  },
+  {
+    "type": "mcq",
+    "question": "Behavioral testing is",
+    "options": [
+      "A. White box testing",
+      "B. Black box testing",
+      "C. Grey box testing",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Black box testing"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is black box testing",
+    "options": [
+      "A. Basic path testing",
+      "B. Boundary value analysis",
+      "C. Code path analysis",
+      "D. None of the mentioned"
+    ],
+    "answer": "B. Boundary value analysis"
+  },
+  {
+    "type": "mcq",
+    "question": "Validation refers to the set of tasks that ensure that software correctly implements a specific function.",
+    "options": [
+      "A. True",
+      "B. False"
+    ],
+    "answer": "B. False"
+  },
+  {
+    "type": "mcq",
+    "question": "In which testing level the focus is on customer usage?",
+    "options": [
+      "A. Alpha Testing",
+      "B. Beta Testing",
+      "C. Validation Testing",
+      "D. Both Alpha and Beta"
+    ],
+    "answer": "D. Both Alpha and Beta"
+  },
+  {
+    "type": "mcq",
+    "question": "Which testing is an integration testing approach that is commonly used when “shrink-wrapped” software products are being developed?",
+    "options": [
+      "A. Regression Testing",
+      "B. Integration testing",
+      "C. Smoke testing",
+      "D. Validation testing"
+    ],
+    "answer": "C. Smoke testing"
+  },
+  {
+    "type": "mcq",
+    "question": "What is normally considered as an adjunct to the coding step",
+    "options": [
+      "A. Integration testing",
+      "B. Unit testing",
+      "C. Completion of Testing",
+      "D. Regression Testing"
+    ],
+    "answer": "B. Unit testing"
+  },
+  {
+    "type": "mcq",
+    "question": "What is the main purpose of integration testing?",
+    "options": [
+      "A. Design errors",
+      "B. Interface errors",
+      "C. Procedure errors",
+      "D. None of the above"
+    ],
+    "answer": "B. Interface errors"
+  },
+  {
+    "type": "mcq",
+    "question": "Testing of individual components by the developers are comes under which type of testing?",
+    "options": [
+      "A. Integration testing",
+      "B. Validation testing",
+      "C. Unit testing",
+      "D. None of the above"
+    ],
+    "answer": "C. Unit testing"
+  },
+  {
+    "type": "mcq",
+    "question": "_____ is a white-box testing technique first proposed by Tom McCabe.",
+    "options": [
+      "A. Equivalence Partitioning",
+      "B. Basis Path Testing",
+      "C. ) Boundary Value Analysis",
+      "D. None of the above."
+    ],
+    "answer": "B. Basis Path Testing"
+  },
+  {
+    "type": "mcq",
+    "question": "When the Testing Principles are useful while building the Software Product?",
+    "options": [
+      "A. During testing",
+      "B. During execution",
+      "C. During review",
+      "D. Throughout life-cycle"
+    ],
+    "answer": "D. Throughout life-cycle"
+  },
+  {
+    "type": "mcq",
+    "question": "When different combination of input requires different combination of actions,Which of the following technique is used in such situation?",
+    "options": [
+      "A. Boundary Value Analysis",
+      "B. Equivalence Partition",
+      "C. Decision Table",
+      "D. Decision Coverage"
+    ],
+    "answer": "C. Decision Table"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is not a part of Performance Testing?",
+    "options": [
+      "A. Measuring Transaction Rate.",
+      "B. Measuring Response Time.",
+      "C. Measuring the LOC.",
+      "D. None of the above"
+    ],
+    "answer": "C. Measuring the LOC."
+  },
+  {
+    "type": "mcq",
+    "question": "Finding Defect is not a major goal of Acceptance Testing.",
+    "options": [
+      "A. True",
+      "B. False"
+    ],
+    "answer": "WER: True (Warning: Not Found)"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is the form of Alpha and Beta Testing?",
+    "options": [
+      "A. Acceptance Testing",
+      "B. System Testing",
+      "C. Unit Testing",
+      "D. Integration Testing"
+    ],
+    "answer": "A. Acceptance Testing"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following is a myth in testing?",
+    "options": [
+      "A. Tester can find bugs",
+      "B. Any user can test software",
+      "C. Missed defects are not due to testers",
+      "D. Complete testing is not possible"
+    ],
+    "answer": "B. Any user can test software"
+  },
+  {
+    "type": "mcq",
+    "question": "SDLC stands for ________",
+    "options": [
+      "A. Software development life cycle",
+      "B. System development life cycle",
+      "C. Software design life cycle",
+      "D. System design life cycle"
+    ],
+    "answer": "A. Software development life cycle"
+  },
+  {
+    "type": "mcq",
+    "question": "Which of the following divides the input domain into classes containing data?",
+    "options": [
+      "A. Equivalent partitioning",
+      "B. Environment partitioning",
+      "C. Procedure division",
+      "D. Compilation division"
+    ],
+    "answer": "A. Equivalent partitioning"
+  },
+  {
+    "type": "mcq",
+    "question": "-------- is not a Test Document.",
+    "options": [
+      "A. Test Policy",
+      "B. Test Case",
+      "C. PIN ( Project Initiation Note)",
+      "D. RTM (requirement Traceability matrix)"
+    ],
+    "answer": "C. PIN ( Project Initiation Note)"
+  },
+  {
+    "type": "mcq",
+    "question": "Continual (Continuous) improvement cycle is based on systematic sequence of -------------- activities.",
+    "options": [
+      "A. SDLC",
+      "B. PDCA",
+      "C. waterfall model"
+    ],
+    "answer": "B. PDCA"
+  },
+  {
+    "type": "mcq",
+    "question": "----------- is the application of quality principles to all facets and business process of an organization.",
+    "options": [
+      "A. TQM",
+      "B. Software Testing",
+      "C. Software tools"
+    ],
+    "answer": "A. TQM"
+  },
+  {
+    "type": "mcq",
+    "question": "The cost incurred in first time reviews and testing is called ---------",
+    "options": [
+      "A. Red money",
+      "B. Green money",
+      "C. Blue money"
+    ],
+    "answer": "C. Blue money"
+  },
+  {
+    "type": "mcq",
+    "question": "Innovation is the ---------------activity leading to changes.",
+    "options": [
+      "A. Planned",
+      "B. Accidental",
+      "C. virtual"
+    ],
+    "answer": "A. Planned"
+  },
+  {
+    "type": "mcq",
+    "question": "Inventions may leads to major changes in technology , way of doing work.",
+    "options": [
+      "A. true",
+      "B. false"
+    ],
+    "answer": "A. true"
+  },
+  {
+    "type": "mcq",
+    "question": "„Q‟ organizations are less quality conscious organizations.",
+    "options": [
+      "A. true",
+      "B. false"
+    ],
+    "answer": "B. false"
+  },
+  {
+    "type": "mcq",
+    "question": "Quality management system of a organization based on which pillars",
+    "options": [
+      "A. Test plans, Test conditions & decisions",
+      "B. Quality processes, Guidelines and standards & Formats and templates",
+      "C. Quality police, objectives and manuals"
+    ],
+    "answer": "B. Quality processes, Guidelines and standards & Formats and templates"
+  },
+  {
+    "type": "mcq",
+    "question": "Requirement Traceability Matrix is a way of doing complete mapping of software",
+    "options": [
+      "A. true",
+      "B. false"
+    ],
+    "answer": "A. true"
+  },
+  {
+    "type": "mcq",
+    "question": "V- model uses -------- test models",
+    "options": [
+      "A. Component testing, integration testing, system testing and acceptance testing",
+      "B. alpha testing, beta testing , acceptance testing and user testing",
+      "C. black box testing, white box testing and gray box testing"
+    ],
+    "answer": "A. Component testing, integration testing, system testing and acceptance testing"
+  }
+]
